@@ -99,7 +99,7 @@ body {
     flex-direction: center;
     align-items: center;
 
-    background: url('/static/images/home-bg/moscaslider_1.jpg') no-repeat center;
+    background-image: url('/static/images/home-bg/moscaslider_1.jpg') no-repeat center;
     background-attachment: fixed;
     background-size: cover;
 }
