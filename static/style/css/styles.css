@@ -23,7 +23,7 @@
     --footer-height: 2rem;
     --footer-padding: 0.5rem;
     --footer-a-font-size: 0.7rem;
-    --main-padding-top: 0%;
+    --main-padding-top: 3rem;
     --main-padding-button: 0%;
     --section-width: 80%;
     --main-color: #333;
@@ -99,7 +99,7 @@ body {
     flex-direction: center;
     align-items: center;
 
-    background-image: url('/static/images/home-bg/moscaslider_1.jpg') no-repeat center;
+    background: url('/static/images/home-bg/moscaslider_1.jpg') no-repeat center;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -153,6 +153,11 @@ header nav ul li a:hover {
     color: var( --secundary-color );
     width: auto !important;
     padding: 1rem;
+}
+
+header nav {
+    box-shadow: -10px -50px 55px 100px rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.4);
 }
 
 #more-menu {
