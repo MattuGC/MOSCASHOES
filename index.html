@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3">
+    <title>MOSCA</title>
+    <link rel="stylesheet" href="static/style/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="rolling-text">
+            <p data-translate-key="roling-text">Bienvenido a MOSCASHOES!!!</p>
+        </div>
+        <img onclick="mobile_logo_menu()" id="menu-toggle" class="header-logo" src="static/images/mosca/cropped-mosca-iso-blanca-1-1.png" alt="MOSCA">
+        <nav id="menu">
+            <ul>
+                <li><a onclick="menu_active_color('home-menu')" id="home-menu" href="#home" class="menu-item" data-target="home" data-translate-key="menu_tag_home">Home</a></li>
+                <li><a onclick="menu_active_color('about-menu')" id="about-menu" href="#about" class="menu-item" data-target="about" data-translate-key="menu_tag_aboutUs">About Us</a></li>
+                <li><a onclick="menu_active_color('shop-menu')" id="shop-menu" href="#shop" class="menu-item" data-target="shop" data-translate-key="menu_tag_shop">Shop</a></li>
+                <li><a onclick="menu_active_color('more-menu')" id="more-menu" class="menu-item" data-translate-key="menu_tag_more">Más</a>
+                    <ul class="more-sub-menu">
+                        <li><a onclick="menu_active_color('care-menu')" href="#care" class="menu-item-more" data-target="care" data-translate-key="menu_tag_the_care_of_Shoes">The Care of Shoes</a></li>
+                        <li><a onclick="menu_active_color('measurements-menu')" href="#measurements" class="menu-item-more" data-target="measurements" data-translate-key="menu_tag_sizes_and_measurements">Sizes and Measurements</a></li>
+                    </ul>
+                </li>
+                <li><a onclick="menu_active_color('login-menu')" id="login-menu" href="#login" class="menu-item" data-target="login" data-translate-key="menu_tag_login">Log In/Sign Up</a></li>
+                <li><a onclick="menu_active_color('contact-menu')" id="contact-menu" href="#contact" class="menu-item" data-target="contact" data-translate-key="menu_tag_contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="content-section active">
+            <div class="wrapper">
+                <div class="home-content">
+                    <h2 data-translate-key="welcome">Welcome to MOSCA</h2>
+                    <p data-translate-key="innovativeTrends">Innovative fashion trends for everyone</p>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="content-section">
+            <div class="wrapper">
+              <div>
+                <h2 data-translate-key="aboutUsTitle">About Us</h2>
+                <p data-translate-key="aboutUsText">MOSCA specializes in handcrafted, personalized footwear for women, aiming to revolutionize the local fashion market with innovative and trend-setting styles.</p>
+              </div>
+            </div>
+        </section>
+        <section id="shop" class="content-section">
+            <div class="wrapper">
+                <h2 data-translate-key="shopTitle">Shop</h2>
+                <div id="product-carousel" class="product-carousel">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+        <section id="care" class="content-section">
+          <div class="wrapper">
+              <div class="care-content">
+                  <h2 data-translate-key="careOfShoes">The Care of Shoes</h2>
+                  <p data-translate-key="innovativeTrends">Tips and tricks to maintain your shoes.</p>
+              </div>
+          </div>
+      </section>
+      <section id="measurements" class="content-section">
+          <div class="wrapper">
+              <div class="measurements-content">
+                  <h2 data-translate-key="sizesAndMeasurements">Sizes and Measurements</h2>
+                  <p data-translate-key="innovativeTrends">Guide to find the perfect fit.</p>
+              </div>
+          </div>
+      </section>      
+        <section id="login" class="content-section">
+            <div class="wrapper">
+                <div class="form">
+                    <h2 data-translate-key="loginTitle">Log In/Sign Up</h2>
+                    <form action="">
+                        <p>
+                            <label data-translate-key="username" for="username">Username</label>
+                            <input type="text" id="username" name="username" required>
+                        </p>
+                        <p>
+                            <label data-translate-key="password" for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </p>
+                        <p>
+                            <button aria-label="Log In" data-translate-key="login">Log In</button>
+                        </p>
+                        <p>
+                            <a href="#signup" class="button-link" data-translate-key="signup">Sign Up</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>    
+        <section id="signup" class="content-section">
+            <div class="wrapper">
+                <div class="form">
+                    <h2 data-translate-key="billingShippingTitle">Facturación y envío</h2>
+                    <form action="">
+                        <p>
+                            <label data-translate-key="fullName" for="fullName">Nombre completo</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </p>
+                        <p>
+                            <label data-translate-key="signUpPhone" for="signupPhone">Teléfono</label>
+                            <input type="tel" id="signupPhone" name="signupPhone" required>
+                        </p>
+                        <p>
+                            <label data-translate-key="signUpEmailAddress" for="signupEmail">Correo Electrónico</label>
+                            <input type="email" id="signupEmail" name="signupEmail" required>
+                        </p>
+                        <p>
+                            <label data-translate-key="department" for="department">Departamento</label>
+                            <select id="department" name="department" required>
+                                <option value="" data-translate-key="selectDepartment">Selecciona un departamento</option>
+                                <option value="artigas">Artigas</option>
+                                <option value="canelones">Canelones</option>
+                                <option value="cerro-largo">Cerro Largo</option>
+                                <option value="colonia">Colonia</option>
+                                <option value="durazno">Durazno</option>
+                                <option value="flores">Flores</option>
+                                <option value="florida">Florida</option>
+                                <option value="lavalleja">Lavalleja</option>
+                                <option value="maldonado">Maldonado</option>
+                                <option value="montevideo">Montevideo</option>
+                                <option value="paysandu">Paysandú</option>
+                                <option value="rio-negro">Río Negro</option>
+                                <option value="rivera">Rivera</option>
+                                <option value="rocha">Rocha</option>
+                                <option value="salto">Salto</option>
+                                <option value="san-jose">San José</option>
+                                <option value="soriano">Soriano</option>
+                                <option value="tacuarembo">Tacuarembó</option>
+                                <option value="treinta-y-tres">Treinta y Tres</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label data-translate-key="city" for="city">Ciudad</label>
+                            <input type="text" id="city" name="city" required>
+                        </p>
+                        <p>
+                            <label data-translate-key="streetAddress" for="streetAddress">Dirección de la calle</label>
+                            <input type="text" id="streetAddress" name="streetAddress" required>
+                        </p>
+                        <p>
+                            <label data-translate-key="postalCode" for="postalCode">Código postal</label>
+                            <input type="text" id="postalCode" name="postalCode" required>
+                        </p>
+                        <h2 data-translate-key="additionalInfoTitle">Información adicional</h2>
+                        <p>
+                            <label data-translate-key="orderNotes" for="orderNotes">Notas del pedido (opcional)</label>
+                            <textarea id="orderNotes" name="orderNotes"></textarea>
+                        </p>
+                        <p class="termsConditions">
+                            <input type="checkbox" id="termsConditions" name="termsConditions" required>
+                            <label data-translate-key="acceptTerms" for="termsConditions">Acepto los términos y condiciones</label>
+                        </p>
+                        <p>
+                            <button aria-label="Sign Up" data-translate-key="signupButton">Registrarse</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>      
+        <section id="contact" class="content-section">
+            <div class="wrapper">
+                <div class="contacts">
+                    <h2 data-translate-key="ourContacts">Our Contacts</h2>
+                    <ul>
+                        <li>
+                            <svg class="e-font-icon-svg e-fab-instagram" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                            </svg>
+                            <a href="https://www.instagram.com/moscathecollection/" target="_blank">moscathecollection</a>
+                        </li>
+                        <li>
+                            <svg class="e-font-icon-svg e-fab-instagram" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                            </svg>
+                            <a href="https://www.instagram.com/moscastudiok/" target="_blank">moscastudiok</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="form">
+                    <h2 data-translate-key="contactUs">Send us a message</h2>
+                    <form action="">
+                      <p>
+                          <label data-translate-key="yourName" for="yourName">Your Name</label>
+                          <input type="text" id="yourName" name="yourName">
+                      </p>
+                      <p>
+                          <label data-translate-key="phone" for="phone">Phone</label>
+                          <input type="tel" id="phone" name="phone">
+                      </p>
+                      <p>
+                          <label data-translate-key="emailAddress" for="email">Email Address</label>
+                          <input type="email" id="email" name="email" required>
+                      </p>
+                      <p>
+                          <label data-translate-key="purchaseType" for="purchase-type">Wholesale or retail purchase</label>
+                          <select id="purchase-type" name="purchase-type">
+                              <option value="wholesale" data-translate-key="wholesale">Wholesale</option>
+                              <option value="retail" data-translate-key="retail">Retail</option>
+                          </select>
+                      </p>
+                      <p>
+                          <label data-translate-key="writeMessage" for="writeMessage">Write your message</label>
+                          <textarea type="text" id="writeMessage" name="writeMessage"></textarea>
+                      </p>
+                      <p>
+                          <label for="captcha">I'm not a robot holder place</label>
+                      </p>
+                      <p>
+                          <button aria-label="Send" data-translate-key="send">Send</button>
+                      </p>
+                  </form>                  
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <ul id="legals">
+            <li><a href="#privacy" class="footer-link" data-translate-key="privacyPolicy">Privacy Policy</a></li>
+            <li><a href="#terms" class="footer-link" data-translate-key="termsOfService">Terms of Service</a></li>
+            <li><a href="#payments" class="footer-link" data-translate-key="paymentsPolicy">Payments, Refund and Returns Policy</a></li>
+        </ul>
+        <p id="copyright">&copy; 2023 MOSCA. <span data-translate-key="rightsReserved">All rights reserved.</span></p>
+        <div class="language-switcher">
+            <select id="language-selector">
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="pt">PT</option>
+            </select>
+        </div>
+    </footer>
+    <script src="static/products/products.js"></script>
+    <script src="static/style/js/scripts.js"></script>
+</body>
+</html>
