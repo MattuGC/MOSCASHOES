@@ -20,9 +20,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/sneakers_aura.jpg",
+        "product_img_paths": [ "static/images/products/sneakers_aura.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "summer", "spring" ]
     },
     {
         "product_name": {
@@ -45,9 +45,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/boots_elegance.jpg",
+        "product_img_paths": [ "static/images/products/boots_elegance.jpg", "static/images/products/boots_elegance.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "winter", "autumn" ]
     },
     {
         "product_name": {
@@ -70,9 +70,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/flats_comfy.jpg",
+        "product_img_paths": [ "static/images/products/flats_comfy.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "summer" ]
     },
     {
         "product_name": {
@@ -95,9 +95,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/sandals_breeze.jpg",
+        "product_img_paths": [ "static/images/products/sandals_breeze.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "spring" ]
     },
     {
         "product_name": {
@@ -120,9 +120,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/heels_glamour.jpg",
+        "product_img_paths": [ "static/images/products/heels_glamour.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "winter" ]
     },
     {
         "product_name": {
@@ -145,9 +145,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/loafers_chic.jpg",
+        "product_img_paths": [ "static/images/products/loafers_chic.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "autumn" ]
     },
     {
         "product_name": {
@@ -170,9 +170,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/slippers_cozy.jpg",
+        "product_img_paths": [ "static/images/products/slippers_cozy.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "summer", "spring", "winter", "autumn" ]
     },
     {
         "product_name": {
@@ -195,9 +195,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/wedges_trendy.jpg",
+        "product_img_paths": [ "static/images/products/wedges_trendy.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "summer", "spring" ]
     },
     {
         "product_name": {
@@ -220,9 +220,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/moccasins_modern.jpg",
+        "product_img_paths": [ "static/images/products/moccasins_modern.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "winter", "autumn" ]
     },
     {
         "product_name": {
@@ -245,9 +245,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/ankle_boots_bold.jpg",
+        "product_img_paths": [ "static/images/products/ankle_boots_bold.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "summer", "autumn" ]
     },
     {
         "product_name": {
@@ -270,9 +270,9 @@ const products = [
             "es": "En Stock",
             "pt": "Em Stock"
         },
-        "product_pic_path": "static/images/products/clogs_casual.jpg",
+        "product_img_paths": [ "static/images/products/clogs_casual.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
-        "product_categories": [""]
+        "product_categories": [ "spring", "winter" ]
     }
 ];
 
@@ -287,10 +287,20 @@ document.addEventListener('DOMContentLoaded', function() {
         products.forEach(product => {
             const productItem = document.createElement('div');
             productItem.classList.add('product-item');
+            
+            const productGallery = document.createElement('div');
+            productGallery.classList.add( 'product-gallery' );
 
-            const productImage = document.createElement('img');
-            productImage.src = product.product_pic_path;
-            productImage.alt = product.product_name[lang];
+            var counter = 0;
+            product.product_img_paths.forEach( img_path => {
+                const productImage = document.createElement( 'img' );
+                counter += 1;
+                productImage.src = img_path;
+                productImage.classList.add( 'product_img' );
+                productImage.alt = product.product_name[ lang ];
+
+                productGallery.appendChild( productImage )
+            });
 
             const productDetails = document.createElement('div');
             productDetails.classList.add('product-details');
@@ -323,6 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const addToCartButton = document.createElement('button');
             addToCartButton.textContent = 'Add to Cart';
 
+            productDetails.appendChild(productGallery);
             productDetails.appendChild(productName);
             productDetails.appendChild(productDescription);
             productDetails.appendChild(productStock);
@@ -330,7 +341,6 @@ document.addEventListener('DOMContentLoaded', function() {
             productDetails.appendChild(colorSelector);
             productDetails.appendChild(addToCartButton);
 
-            productItem.appendChild(productImage);
             productItem.appendChild(productDetails);
 
             productCarousel.appendChild(productItem);

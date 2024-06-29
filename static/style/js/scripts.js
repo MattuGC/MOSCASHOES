@@ -96,11 +96,7 @@ function clear_active_menu() {
 function menu_active_color(section) {
     clear_active_menu();
     const menuItem = document.getElementById(section);
-    menuItem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--main-color').trim();
-    menuItem.style.background = getComputedStyle(document.documentElement).getPropertyValue('--secundary-color').trim();
-    menuItem.style.borderRadius = "11px";
-    menuItem.style.paddingLeft = "1rem";
-    menuItem.style.paddingRight = "1rem";
+    menuItem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--secundary-color').trim();
 }
 
 function mobile_logo_menu() {

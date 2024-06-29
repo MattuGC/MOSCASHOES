@@ -1,11 +1,10 @@
 {
-    "arStudio": "Estúdio AR",
-    "menu_tag_home": "Início",
-    "menu_tag_aboutUs": "Sobre Nós",
     "menu_tag_shop": "Loja",
-    "menu_tag_more": "Mais",
-    "menu_tag_the_care_of_Shoes": "O cuidado dos sapatos",
-    "menu_tag_sizes_and_measurements": "Tamanhos e Medidas",
+    "menu_tag_boots": "Botas",
+    "menu_tag_shoes": "Sapato",
+    "menu_tag_sandals": "Sandálias",
+    "menu_tag_archive": "Arquivo",
+    "menu_tag_about_us": "Sobre nós",
     "menu_tag_login": "Entrar/Cadastrar-se",
     "menu_tag_contact": "Contato",
     "roling-text": "Bem vindo a MOSCASHOES!!!",
@@ -56,5 +55,13 @@
     "rightsReserved": "Todos os direitos reservados.",
     "inStock": "Em Stock",
     "limitedStock": "Stock Limitado",
-    "outOfStock": "Esgotado"
+    "outOfStock": "Esgotado",
+    "care.title": "El cuidado del calzado",
+    "care.subtitle": "¿Cómo puedo cuidar mis zapatos Mosca: The Collection?",
+    "care.p1.title": "How can I care for my Mosca: The Collection shoes?",
+    "care.p1.text": "Every type of material has its own characteristics and requires special care. Our products are made from high-quality, exotic and precious materials. Please, follow our advice below.",
+    "care.p2.title": "PATENT LEATHERS AND LAMINATES",
+    "care.p2.text": "Use a gentle, clean, and dry cloth to eliminate any surplus dust and dirt. Be cautious with patent leathers, as they are particularly prone to color transfer; therefore, it is strongly recommended to conscientiously prevent contact with other materials. Ensure to store the shoes in the provided dual dust bags. Handle with care with the metallic finish on laminated leathers, as it is exceptionally delicate and prone to scratching. Once damaged, it cannot be restored to its initial appearance. This should not be perceived as a flaw but rather as an inherent characteristic of the material. Avoid direct contact with substances that contain alcohol such as perfumes, solvents, oils, makeups, and abrasives. Avoid direct exposure to heat, sunlight and humidity. If there is direct contact with water, allow them to dry thoroughly in a cool and well-ventilated space.",
+    "care.p3.title": "SMOOTH AND GRAINED LEATHERS",
+    "care.p3.text": "These kinds of leathers should be cleaned with a soft, dry, clean cloth to remove any excess of dust and dirt. A small quantity of neutral wax-based shoe cream can be applied with a soft cloth to rejuvenate the color. Avoid direct contact with substances that contain alcohol such as perfumes, solvents, oils, makeups, and abrasives. Avoid direct exposure to heat, sunlight and humidity. If there is direct contact with water, allow them to dry thoroughly in a cool and well-ventilated space. Always put the shoes away in the provided dual dust bags."
 }
