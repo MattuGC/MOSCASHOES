@@ -60,14 +60,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('signup').classList.add('active');
     });
 
-    const menuToggle = document.getElementById('menu-toggle');
+    /* const menuToggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
 
     menuToggle.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
-    });
+    }); */
 
     function changeBG() {
         const images = [
@@ -125,3 +125,18 @@ function mobile_logo_menu() {
         }
     }
 }
+
+document.addEventListener( 'DOMContentLoaded', function() {
+    var home_section = document.getElementById( 'home' );
+    var logo_menu = document.getElementById( 'home-menu' );
+    
+    if (home_section.classList.contains( 'activo' )) {
+        console.log('Home section active!');
+        logo_menu.classList.remove( 'home-menu' )
+        logo_menu.classList.add( 'home-menu-home' );
+    } else {
+        console.log('Home section inactive!');
+        logo_menu.classList.remove( 'home-menu-home' );
+        logo_menu.classList.add( 'home-menu' )
+    }
+});
