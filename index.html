@@ -47,16 +47,18 @@
                             </g>
                         </svg>
                     </a></li>
-                    <li><a onclick="menu_active_color('home-menu')" id="home-menu" href="#home" class="menu-item home-menu" data-target="home"></a></li>
+                    <li><a onclick="home_or_not_home()" id="home-menu" href="#home" class="menu-item home-menu-home" data-target="home"></a></li>
                 </ul>
                 <!--img onclick="mobile_logo_menu()" id="menu-toggle" class="header-logo" src="static/images/mosca/cropped-mosca-iso-blanca-1-1.png" alt="MOSCA"-->
             </nav>
             <div class="language-switcher">
-                <select id="language-selector">
-                    <option value="en">EN</option>
-                    <option value="es">ES</option>
-                    <option value="pt">PT</option>
-                </select>
+                <a id="language-selected">
+                    <div id="language-selector">
+                        <a onclick="language_selector('en')">EN</a><br>
+                        <a onclick="language_selector('es')">ES</a><br>
+                        <a onclick="language_selector('pt')">PT</a><br>
+                    </div>
+                </a>
             </div>
     </header>
     <main>
@@ -92,7 +94,7 @@
         </section>
         <section id="store" class="content-section">
             <div class="wrapper">
-                <h2 data-translate-key="storeTitle">Store</h2>
+                <h2 style="display: none;" data-translate-key="storeTitle"></h2>
                 <div id="product-carousel" class="product-carousel">
                     <!-- Products will be loaded here by JavaScript -->
                 </div>

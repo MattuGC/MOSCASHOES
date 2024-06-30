@@ -2,33 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.menu-item');
     const sections = document.querySelectorAll('.content-section');
     const footerLinks = document.querySelectorAll('.footer-link');
-    const languageSelector = document.getElementById('language-selector');
     const signUpLink = document.querySelector('a[href="#signup"]');
-
-    function loadTranslations(lang) {
-        fetch(`static/translations/${lang}.json`)
-            .then(response => response.json())
-            .then(translations => {
-                document.querySelectorAll('[data-translate-key]').forEach(element => {
-                    const key = element.getAttribute('data-translate-key');
-                    element.textContent = translations[key];
-                });
-            })
-            .catch(error => console.error('Error loading translations:', error));
-    }
-
-    function detectLanguage() {
-        const userLang = navigator.language || navigator.userLanguage;
-        return userLang.startsWith('es') ? 'es' : userLang.startsWith('pt') ? 'pt' : 'en';
-    }
-
-    const userLang = detectLanguage();
-    loadTranslations(userLang);
-    languageSelector.value = userLang;
-
-    languageSelector.addEventListener('change', () => {
-        loadTranslations(languageSelector.value);
-    });
 
     menuItems.forEach(item => {
         item.addEventListener('click', function(e) {
@@ -40,6 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
             menu_active_color(this.id);
         });
     });
+
+    const languageSelector = document.getElementById('language-selected');
+    const userLang = detectLanguage();
+    loadTranslations(userLang);
+    languageSelector.innerText = userLang;
 
     footerLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -96,7 +75,10 @@ function clear_active_menu() {
 function menu_active_color(section) {
     clear_active_menu();
     const menuItem = document.getElementById(section);
-    menuItem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--secundary-color').trim();
+    try {
+        menuItem.style.color = getComputedStyle(document.documentElement).getPropertyValue('--secundary-color').trim();
+    } catch {}
+    home_or_not_home();
 }
 
 function mobile_logo_menu() {
@@ -126,17 +108,47 @@ function mobile_logo_menu() {
     }
 }
 
-document.addEventListener( 'DOMContentLoaded', function() {
+function home_or_not_home() {
     var home_section = document.getElementById( 'home' );
     var logo_menu = document.getElementById( 'home-menu' );
-    
-    if (home_section.classList.contains( 'activo' )) {
-        console.log('Home section active!');
-        logo_menu.classList.remove( 'home-menu' )
-        logo_menu.classList.add( 'home-menu-home' );
-    } else {
-        console.log('Home section inactive!');
-        logo_menu.classList.remove( 'home-menu-home' );
-        logo_menu.classList.add( 'home-menu' )
-    }
-});
+
+    setTimeout(function() {
+        if (home_section.classList.contains( 'active' )) {
+            console.log('Home section active!');
+            logo_menu.classList.remove( 'home-menu' );
+            logo_menu.classList.add( 'home-menu-home' );
+        } else {
+            console.log('Home section inactive!');
+            logo_menu.classList.remove( 'home-menu-home' );
+            logo_menu.classList.add( 'home-menu' )
+        }
+    }, 100);
+};
+
+function detectLanguage() {
+    const userLang = navigator.language || navigator.userLanguage;
+    return userLang.startsWith('es') ? 'es' : userLang.startsWith('pt') ? 'pt' : 'en';
+}
+
+function loadTranslations(lang) {
+    fetch(`static/translations/${lang}.json`)
+        .then(response => response.json())
+        .then(translations => {
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                element.textContent = translations[key];
+            });
+        })
+        .catch(error => console.error('Error loading translations:', error));
+}
+
+function language_selector( language ) {
+    const languageSelector = document.getElementById('language-selected');
+    loadTranslations(language);
+    languageSelector.innerText  = language;
+
+    languageSelector.addEventListener('change', () => {
+        loadTranslations( language );
+    });
+    console.log( 'Lenguage changed to: ' + language );
+}

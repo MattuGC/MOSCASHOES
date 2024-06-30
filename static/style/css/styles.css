@@ -5,29 +5,30 @@
     --header-height: 3rem;
     --header-height-mobile: 6rem;
     --header-bg: rgba(0,0,0,.4);
-    --logo-top: 2rem;
-    --logo-height: 8rem;
+    --logo-top: 0.5rem;
+    --logo-height: 7rem;
     --logo-height-home: 17rem;
     --contact-us-color: #fff;
-    --margin-language: 1.5%;
+    --margin-language: 0.5rem;
     --language-switcher-top: -0.3rem;
     --language-selector-height: 92%;
-    --language-selector-font-size: 1.1rem;
+    --language-selector-font-size: 1.3rem;
+    --language-options-bg: #131313;
     --nav-li-margin: 0 1rem;
     --nav-a-font-size: 1rem;
     --wrapper-height: 45rem;
     --form-height: 47rem;
     --header-background-color: #000000bf;
     --rolling-text-top: 0rem; /* 3rem; */
-    --store-wrapper: 47rem;
-    --footer-height: 2rem;
+    --store-wrapper: 51rem;
+    --footer-height: auto;
     --footer-padding: 0.5rem;
     --footer-a-font-size: 0.7rem;
     --main-padding-top: 3rem;
     --main-padding-button: 0%;
     --section-width: 80%;
     --main-color: #33333392;
-    --secundary-color: #dd76ae;
+    --secundary-color: #7b217e;
     --tertiary-color: transp;
     --background-color: #fff;
 }
@@ -88,14 +89,6 @@ ul {
     background-color: var(--background-color);
 }
 
-/* Default */
-#home-menu {
-    color: var( --secundary-color );
-    position: absolute;
-    top: 3rem;
-    left: calc((100% - var( --logo-height )) / 2);
-}
-
 /* Body */
 body {
     line-height: 1.6;
@@ -120,14 +113,6 @@ header {
     z-index: 1000;
 }
 
-header .header-logo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: var( --logo-height );
-    top: var( --logo-top );
-}
-
 header nav {
     box-shadow: -77px 47px 333px 192px var(--header-bg);
     background: var(--header-bg);
@@ -147,12 +132,26 @@ header nav ul li {
     border-radius: 15px 15px 30px 30px;
 }
 
+#home-menu {
+    color: var( --secundary-color );
+    position: absolute;
+    top: 3rem;
+    left: calc((100% - var( --logo-height )) / 2);
+    transition: 0.1s !important;
+}
+
+#home-menu:hover {
+    filter: invert(23%) sepia(73%) saturate(6075%) hue-rotate(270deg) brightness(97%) contrast(95%);
+}
+
 .home-menu {
     transition: none !important;
     background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center;
     background-size: var( --logo-height );
+    top: var( --logo-top ) !important;
     height: var( --logo-height );
     width: var( --logo-height );
+    left: calc((100% - var( --logo-height )) / 2) !important;
 }
 
 .home-menu:hover {
@@ -166,8 +165,10 @@ header nav ul li {
     transition: none !important;
     background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center;
     background-size: var( --logo-height-home );
+    top: var( --logo-top ) !important;
     height: var( --logo-height-home );
     width: var( --logo-height-home );
+    left: calc((100% - var( --logo-height-home )) / 2) !important;
 }
 
 .home-menu-home:hover {
@@ -253,51 +254,37 @@ header nav {
 /* Language Switcher */
 header .language-switcher {
     display: flex;
-    height: 3.7rem;
-}
-
-header .language-switcher {
-    top: var( --language-switcher-top );
-    transition: 5s;
-}
-
-.language-switcher {
+    font-size: 1rem;
     position: absolute;
     top: var( --margin-language );
-    right: var( --margin-language );
+    right: 1.5rem;
     height: 100%;
     transition: 5s;
 }
 
-.language-switcher:active {
-    margin-top: -9rem;
+header #language-selected {
+    border: none;
+    font-size: var( --language-selector-font-size );
+    cursor: pointer;
+    color: var( --background-color );
+}
+
+header #language-selected:hover {
+    padding-left: 0% !important;
+}
+
+header .language-switcher:hover ~ header #language-selector {
+    display: flow !important;
 }
 
 header #language-selector {
+    display: none;
     margin-top: 0rem;
     background-color: transparent;
 }
 
 header #language-selector:hover {
     color: var( --secundary-color );
-}
-
-#language-selector {
-    border: none;
-    font-size: var( --language-selector-font-size );
-    cursor: pointer;
-    color: var( --background-color );
-    height: var( --language-selector-height );
-}
-
-#language-selector option {
-    background-color: transparent;
-    color: var( --secundary-color );
-}
-
-#language-selector option:checked {
-    background-color: var( --secundary-color );
-    color: var( --background-color );
 }
 
 .rolling-text {
@@ -379,7 +366,7 @@ main {
 
 /* General */
 section {
-    display: none;
+    display: block;
     padding: 2rem;
     padding-top: 3rem;
     width: var( --section-width );
@@ -387,10 +374,26 @@ section {
     margin-top: var( --main-padding-top );
     margin-bottom: var( --main-padding-button );
     flex: 1;
+    position: fixed;
+    top: 7%;
+    left: -88%;
+    transition: 2s;
 }
 
-.content-section.active {
-    display: block;
+.active {
+    left: calc( ( 100% - var( --section-width ) ) - 13% ) !important;
+}
+
+.wrapper {
+    background: var( --main-color );
+    box-shadow: 0 0 72px 0 rgba( 0, 0, 0, 0.2 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    scrollbar-color: var( --main-color ) var( --tertiary-color );
+    height: 50rem;
 }
 
 /* Home */
@@ -461,6 +464,7 @@ section {
     min-width: 300px;
     min-height: 33rem;
     height: auto !important;
+    transition: 1s;
 }
 
 /* .product-item img {
@@ -477,7 +481,7 @@ section {
     margin-top: 1rem;
     height: auto !important;
     width: auto !important;
-    background: var( --main-color ) !important;
+    background: transparent !important;
     color: var( --background-color );
     display: flow;
 }
@@ -742,18 +746,6 @@ button:hover, button:focus, a:hover, a:focus {
 }
 
 /* Contact */
-.wrapper {
-    background: var( --main-color );
-    box-shadow: 0 0 72px 0 rgba( 0, 0, 0, 0.2 );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 80%;
-    scrollbar-color: var( --main-color ) var( --tertiary-color );
-    height: var( --wrapper-height );
-}
-
 .wrapper > * {
     padding: 3rem;
 }
@@ -852,7 +844,7 @@ input, textarea, button, select {
 
 /* Footer */
 footer {
-    background: var( --main-color );
+    background: var( --header-background-color );
     color: var( --background-color );
     text-align: center;
     padding: var( --footer-padding );
@@ -862,6 +854,20 @@ footer {
     bottom: 0;
     z-index: 1000;
     display: table;
+}
+
+footer #copyright {
+    width: 50%;
+}
+
+footer #legals {
+    display: inline-flex;
+    width: 50%;
+}
+
+footer #legals li {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 footer a {
