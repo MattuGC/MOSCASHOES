@@ -1,0 +1,154 @@
+/* General */
+
+:root {
+    --main-color: #33333392;
+    --secundary-color: #7b217e;
+    --tertiary-color: transparent;
+    --background-color: #fff;
+    --wrapper-height: 45rem;
+    --form-height: 47rem;
+    --section-width: 80%;
+    --main-padding-top: 3rem;
+    --main-padding-button: 0%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+input {
+    color: var( --secundary-color );
+}
+
+option:checked {
+    background-color: var( --secundary-color );
+    color: var( --background-color );
+}
+
+a:hover {
+    color: var( --secundary-color );
+    border-radius: 0px 0px 30px 30px;
+    width: 5rem;
+}
+
+.form textarea:hover .form textarea:focus {
+    border-color: var( --secundary-color );
+    outline: none;
+}
+
+button:hover, button:focus, input:hover, input:focus, textarea:hover, textarea:focus, select:hover, select:focus {
+    border-color: var( --secundary-color ) !important;
+    outline: none !important;
+}
+
+button:hover {
+    background-color: var( --secundary-color );
+    color: var( --background-color );
+}
+
+ul {
+    list-style-type: none;
+}
+
+.wrapper div {
+    height: 102%;
+    width: 72%;
+    background-color: var(--background-color);
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    position: fixed;
+    top: var( --rolling-text-top );
+}
+
+.hero {
+    background: url( 'hero-image.jpg' ) no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var( --background-color );
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+/* Body */
+body {
+    line-height: 1.6;
+    color: var( --main-color );
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+
+    background: url('/static/images/home-bg/moscaslider_1.jpg') no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Sections */
+section {
+    display: block;
+    padding: 2rem;
+    padding-top: 3rem;
+    width: var( --section-width );
+    margin: 0 auto;
+    margin-top: var( --main-padding-top );
+    margin-bottom: var( --main-padding-button );
+    flex: 1;
+    position: fixed;
+    top: 7%;
+    left: -88%;
+    transition: 2s;
+}
+
+.active {
+    left: calc( ( 100% - var( --section-width ) ) - 13% ) !important;
+}
+
+.wrapper {
+    background: var( --main-color );
+    /* box-shadow: 0 0 72px 0 rgba( 0, 0, 0, 0.2 ); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    scrollbar-color: var( --main-color ) var( --tertiary-color );
+    height: 50rem;
+}
+
+/* Media Queries */
+@viewport {
+    zoom: 1;
+    max-zoom: 3;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-top: 20%;
+        padding-bottom: 10%;
+    }
+
+    section {
+        padding: 1rem;
+        width: 92%;
+        margin-top: 15%;
+        margin-bottom: 10%;
+    }
+}

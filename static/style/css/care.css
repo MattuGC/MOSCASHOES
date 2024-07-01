@@ -1,0 +1,38 @@
+/* Care */
+#care .wrapper .title-container {
+    background-color: transparent;
+    width: 30%;
+}
+
+#care h2 {
+    color: var( --secundary-color );
+    font-size: 2em;
+}
+
+#care h3 {
+    color: var( --secundary-color );
+    font-size: 1em;
+}
+
+#care .care-content {
+    align-self: center;
+    width: 100%;
+    overflow: auto;
+}
+
+#care .care-content p {
+    align-self: center;
+    width: 100%;
+}
+
+#care #production-manufacturing {
+    margin: auto;
+    display: block;
+    width: 63%;
+}
+
+@media (max-width: 768px) {
+    main #care .wrapper .care-content #production-manufacturing {
+        display: none !important;
+    }
+}

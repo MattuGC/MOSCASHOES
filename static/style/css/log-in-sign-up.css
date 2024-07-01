@@ -1,0 +1,173 @@
+/* LogIn */
+#login {
+    background-color: transparent;
+}
+
+#login .wrapper {
+    background: var(--main-color);
+    box-shadow: 0 0 72px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+}
+
+#login .wrapper > * {
+    padding: 3rem;
+}
+
+#login .form {
+    background: var(--background-color);
+    width: 70%;
+    height: var( --form-height );
+}
+
+#login form p {
+    width: 100%;
+}
+
+#login form p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+#login form label {
+    display: block;
+    color: var( --main-color );
+}
+
+#login button, #login input, #login textarea, #login select {
+    padding: 1em;
+    margin: 0.5rem 0;
+}
+
+#login button {
+    background: var(--main-color);
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+#login input, #login textarea, #login button, #login select {
+    width: 100%;
+    border: 1px solid var(--main-color);
+}
+
+#login .wrapper .form form p input:hover, 
+#login .wrapper .form form p input:focus {
+    border-color: var(--secundary-color);
+}
+
+#login .wrapper .form form p button:hover, 
+#login .wrapper .form form p button:focus {
+    border-color: var(--secundary-color);
+    background-color: var(--secundary-color);
+    color: var(--background-color);
+}
+
+.button-link {
+    display: inline-block;
+    width: 100% !important;
+    height: 2.7rem !important;
+    padding-top: 0.5rem;
+    margin: 0.5rem 0;
+    background: var(--main-color) !important;
+    color: var(--background-color) !important;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover, button:focus, a:hover, a:focus {
+    color: var( --secundary-color ) !important;
+}
+
+.form button,
+.form a {
+    border-radius: 11px 11px 11px 11px !important;
+}
+
+/* Sign Up */
+#signup {
+    background-color: transparent;
+}
+
+#signup .wrapper {
+    background: var(--main-color);
+    box-shadow: 0 0 72px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+    height: var( --wrapper-height );
+}
+
+#signup .wrapper > * {
+    overflow: auto;
+    padding: 3rem;
+}
+
+#signup .form {
+    background: var(--background-color);
+    position: relative;
+    width: 70%;
+    height: var( --form-height );
+}
+
+#signup form p {
+    width: 100%;
+}
+
+#signup form p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+#signup form label {
+    display: block;
+}
+
+#signup button, #signup input, #signup textarea, #signup select {
+    padding: 1em;
+    margin: 0.5rem 0;
+}
+
+#signup button {
+    background: var(--main-color);
+    color: var(--background-color);
+    cursor: pointer;
+}
+
+#signup input, #signup textarea, #signup button, #signup select {
+    width: 100%;
+    border: 1px solid var(--main-color);
+}
+
+#signup input[type="checkbox"] {
+    width: auto;
+}
+
+#signup .wrapper .form form p input:hover, 
+#signup .wrapper .form form p input:focus {
+    border-color: var(--secundary-color);
+}
+
+#signup .wrapper .form form p select:hover,
+#signup .wrapper .form form p select:focus {
+    border-color: var(--secundary-color);
+}
+
+#signup .wrapper .form form p button:hover, 
+#signup .wrapper .form form p button:focus {
+    border-color: var(--secundary-color);
+    background-color: var(--secundary-color);
+    color: var(--background-color);
+}
+
+.termsConditions {
+    display: flex;
+}
+
+.termsConditions label {
+    padding: 1rem;
+}
+

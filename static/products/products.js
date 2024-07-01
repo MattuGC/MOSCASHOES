@@ -3,22 +3,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/sneakers_aura.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -28,22 +32,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/boots_elegance.jpg", "static/images/products/boots_elegance.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -53,22 +61,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/flats_comfy.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -78,22 +90,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/sandals_breeze.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -103,22 +119,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/heels_glamour.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -128,22 +148,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/loafers_chic.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -153,22 +177,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/slippers_cozy.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -178,22 +206,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/wedges_trendy.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -203,22 +235,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/moccasins_modern.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -228,22 +264,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/ankle_boots_bold.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -253,22 +293,26 @@ const products = [
         "product_name": {
             "en": "Sneakers Aura",
             "es": "Zapatillas Aura",
-            "pt": "Tênis Aura"
+            "pt": "Tênis Aura",
+            "it": "Sneakers Aura"
         },
         "product_description": {
             "en": "Stylish and comfortable sneakers for everyday wear.",
             "es": "Zapatillas elegantes y cómodas para el uso diario.",
-            "pt": "Tênis elegantes e confortáveis para uso diário."
+            "pt": "Tênis elegantes e confortáveis para uso diário.",
+            "it": "Sneakers eleganti e comode per l'uso quotidiano."
         },
         "product_colors": {
             "en": ["Red", "Blue", "Black"],
             "es": ["Rojo", "Azul", "Negro"],
-            "pt": ["Vermelho", "Azul", "Preto"]
+            "pt": ["Vermelho", "Azul", "Preto"],
+            "it": ["Rosso", "Blu", "Nero"]
         },
         "product_stock": {
             "en": "In Stock",
             "es": "En Stock",
-            "pt": "Em Stock"
+            "pt": "Em Stock",
+            "it": "Disponibile"
         },
         "product_img_paths": [ "static/images/products/clogs_casual.jpg", "static/images/products/boots_elegance.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg", "static/images/products/sandals_breeze.jpg" ],
         "product_sizes": ["36", "37", "38", "39", "40"],
@@ -277,9 +321,12 @@ const products = [
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
-    const productCarousel = document.getElementById('product-carousel');
-    const languageSelector = document.getElementById('language-selector');
-    let currentLang = languageSelector.value;
+    var productCarousel = '';
+    var lang = '';
+    setTimeout(function() {
+        productCarousel = document.getElementById('product-carousel');
+        lang = document.getElementById('language-selected');
+    }, 100);
 
     // Función para renderizar los productos según el idioma
     function renderProducts(lang) {
@@ -323,6 +370,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             const colorSelector = document.createElement('select');
+            /* console.log( 'product: ' + product );
+            console.log( 'product.product_colors: ' + product.product_colors );
+            console.log( 'lang: ' + lang ); */
             product.product_colors[lang].forEach(color => {
                 const option = document.createElement('option');
                 option.value = color;
@@ -348,12 +398,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Renderizar los productos inicialmente con el idioma detectado
-    renderProducts(currentLang);
+    renderProducts(lang);
 
     // Cambiar la carga de productos al cambiar el idioma
-    languageSelector.addEventListener('change', () => {
-        currentLang = languageSelector.value;
-        renderProducts(currentLang);
+    lang.addEventListener( 'change', () => {
+        renderProducts( lang );
     });
 });
 

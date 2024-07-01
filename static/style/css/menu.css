@@ -1,0 +1,184 @@
+:root {
+    --logo-top: 0.5rem;
+    --logo-height: 7rem;
+    --logo-height-home: 17rem;
+    --logo-height-home-mobile: 7rem;
+}
+
+header nav {
+    box-shadow: -77px 47px 333px 192px var( --header-bg );
+    background: var( --header-bg );
+    height: 100%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    height: 100%;
+}
+
+header nav ul li {
+    display: table;
+    padding: var( --nav-li-margin );
+    border-radius: 15px 15px 30px 30px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+#home-menu {
+    color: var( --secundary-color );
+    position: absolute;
+    top: 3rem;
+    left: calc((100% - var( --logo-height )) / 2);
+    transition: 0.5s !important;
+}
+
+#home-menu:hover {
+    filter: invert(23%) sepia(73%) saturate(6075%) hue-rotate(270deg) brightness(97%) contrast(95%);
+}
+
+.home-menu {
+    transition: none !important;
+    background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center;
+    background-size: var( --logo-height );
+    top: var( --logo-top ) !important;
+    height: var( --logo-height );
+    width: var( --logo-height );
+    left: calc((100% - var( --logo-height )) / 2) !important;
+}
+
+.home-menu:hover {
+    background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center !important;
+    background-size: var( --logo-height ) !important;
+    height: var( --logo-height ) !important;
+    width: var( --logo-height ) !important;
+}
+
+.home-menu-home {
+    transition: none !important;
+    background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center;
+    background-size: var( --logo-height-home );
+    top: var( --logo-top ) !important;
+    height: var( --logo-height-home );
+    width: var( --logo-height-home );
+    left: calc((100% - var( --logo-height-home )) / 2) !important;
+}
+
+.home-menu-home:hover {
+    background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center !important;
+    background-size: var( --logo-height-home ) !important;
+    height: var( --logo-height-home ) !important;
+    width: var( --logo-height-home ) !important;
+}
+
+header nav ul li a {
+    color: var( --background-color );
+    text-decoration: none;
+    font-size: var( --nav-a-font-size );
+    display: table-cell;
+    vertical-align: middle;
+}
+
+header nav ul li a:hover {
+    transition: 0.5s;
+    color: var( --secundary-color );
+    width: auto !important;
+}
+
+header nav {
+    box-shadow: -10px -50px 55px 100px var( --header-bg );
+    background-color: var( --header-bg );
+}
+
+@media (max-width: 768px) {
+    header #menu {
+        text-align: justify;
+    }
+
+    header #menu .main-menu{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        background-color: var( --header-bg );
+    }
+
+    header #menu .main-menu .secundary-menu {
+        position: absolute;
+        top: calc( var( --header-height ) );
+    }
+
+    header #menu .main-menu .menu-categories {
+        transition: 1s;
+        flex-direction: column;
+        left: -100%;
+        background-color: var( --header-bg );
+        width: 100%;
+        height: 300%;
+    }
+
+    header #menu .main-menu .menu-categories li {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 2rem;
+    }
+
+    .menu-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 23px;
+        cursor: pointer;
+        margin-top: -0.2rem;
+    }
+
+    .menu-btn svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .menu-btn .bar {
+        fill: white;
+        transition: transform 0.3s, fill 0.3s, opacity 0.3s;
+    }
+
+    .menu-btn .bar1,
+    .menu-btn .bar3 {
+        transform-origin: 50% 50%;
+    }
+
+    .menu-btn.open .bar1 {
+        transform: rotate(45deg) translate(3px, 3px);
+        fill: var(--secundary-color);
+    }
+
+    .menu-btn.open .bar2 {
+        opacity: 0;
+    }
+
+    .menu-btn.open .bar3 {
+        transform: rotate(-45deg) translate(3px, -3px);
+        fill: var(--secundary-color);
+    }
+    
+    header #menu .main-menu li {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    header #menu .main-menu .submenu {
+        top: 0%;
+    }
+
+    .home-menu-home {
+        background-size: var( logo-height-home-mobile ) !important;
+        height: var( logo-height-home-mobile ) !important;
+        width: var( logo-height-home-mobile ) !important;
+    }
+
+    footer #legals {
+        display: flow !important;
+    }
+}

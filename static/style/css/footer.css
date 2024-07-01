@@ -1,0 +1,47 @@
+:root {
+    --footer-height: auto;
+    --footer-padding: 0.5rem;
+    --footer-a-font-size: 0.7rem;
+}
+
+/* Footer */
+footer {
+    background: var( --header-background-color );
+    color: var( --background-color );
+    text-align: center;
+    padding: var( --footer-padding );
+    width: 100%;
+    height: var( --footer-height );
+    z-index: 1000;
+    display: table;
+    position: fixed;
+    bottom: 0;
+
+}
+
+footer #copyright {
+    width: 50%;
+}
+
+footer #legals {
+    display: inline-flex;
+    width: auto;
+}
+
+footer #legals li {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+footer a {
+    color: var( --background-color );
+    text-decoration: none;
+    font-size: var( --footer-a-font-size );
+}
+
+footer p {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    font-size: var( --footer-a-font-size );
+}
