@@ -1,21 +1,29 @@
 :root {
+    --logo-margin: 1rem;
     --logo-top: 0.5rem;
     --logo-height: 7rem;
     --logo-height-home: 17rem;
-    --logo-height-home-mobile: 7rem;
+    --logo-height-home-hover: 23rem;
 }
 
 header nav {
-    box-shadow: -77px 47px 333px 192px var( --header-bg );
-    background: var( --header-bg );
-    height: 100%;
+    height: calc( var( --logo-height ) + ( var( --logo-margin ) * 2 ) );
 }
 
 header nav ul {
     list-style: none;
     display: flex;
     justify-content: left;
-    height: 100%;
+    height: calc( var(--logo-height ) + ( var( --logo-margin ) * 2 ) );
+    width: auto;
+}
+
+.menu-user {
+    position: absolute;
+    justify-content: right;
+    margin-right: 1rem;
+    right: 0rem;
+    width: auto;
 }
 
 header nav ul li {
@@ -31,9 +39,10 @@ header nav ul li {
 #home-menu {
     color: var( --secundary-color );
     position: absolute;
-    top: 3rem;
-    left: calc((100% - var( --logo-height )) / 2);
     transition: 0.5s !important;
+    z-index: 1002;
+    height: var( --logo-height );
+    margin: var( --logo-margin );
 }
 
 #home-menu:hover {
@@ -42,36 +51,36 @@ header nav ul li {
 
 .home-menu {
     transition: none !important;
-    background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center;
+    background: url( cropped-mosca-iso-blanca-1-1.png ) no-repeat left center;
     background-size: var( --logo-height );
-    top: var( --logo-top ) !important;
     height: var( --logo-height );
     width: var( --logo-height );
-    left: calc((100% - var( --logo-height )) / 2) !important;
+    left: calc( ( 100% - var( --logo-height ) ) / 2) !important;
 }
 
 .home-menu:hover {
     background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center !important;
     background-size: var( --logo-height ) !important;
-    height: var( --logo-height ) !important;
+    height: calc( var( --logo-height ) + 1rem  ) !important;
+    width: calc( var( --logo-height ) + 1rem  ) !important;
     width: var( --logo-height ) !important;
 }
 
 .home-menu-home {
-    transition: none !important;
-    background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center;
-    background-size: var( --logo-height-home );
-    top: var( --logo-top ) !important;
-    height: var( --logo-height-home );
-    width: var( --logo-height-home );
-    left: calc((100% - var( --logo-height-home )) / 2) !important;
+    background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center !important;
+    background-size: var( --logo-height-home ) !important;
+    top: var( --header-height ) !important;
+    height: var( --logo-height-home ) !important;
+    width: var( --logo-height-home ) !important;
+    left: calc( ( 100% - var( --logo-height-home ) ) / 2 );
 }
 
 .home-menu-home:hover {
-    background: url(cropped-mosca-iso-blanca-1-1.png) no-repeat left center !important;
-    background-size: var( --logo-height-home ) !important;
-    height: var( --logo-height-home ) !important;
-    width: var( --logo-height-home ) !important;
+    background: url( cropped-mosca-iso-blanca-1-1.png ) no-repeat left center !important;
+    background-size: var( --logo-height-home-hover ) !important;
+    height: var( --logo-height-home-hover ) !important;
+    width: var( --logo-height-home-hover ) !important;
+    left: calc( ( 100% - var( --logo-height-home-hover ) ) / 2 ) !important;
 }
 
 header nav ul li a {
@@ -88,12 +97,56 @@ header nav ul li a:hover {
     width: auto !important;
 }
 
-header nav {
-    box-shadow: -10px -50px 55px 100px var( --header-bg );
+header #menu .main-menu:hover {
     background-color: var( --header-bg );
+    transition: 1s;
+}
+
+#store-menu {
+    cursor: pointer;
+}
+
+#store-menu ~ .submenu {
+    left: -100% !important;
+}
+
+#store-menu:hover ~ .submenu {
+    left: 0rem !important;
+}
+
+#store-menu ~ .submenu:hover {
+    left: 0rem !important;
+}
+
+.submenu {
+    display: inline-table;
+    position: absolute;
+    top: 0rem;
+    margin-top: calc( var( --logo-height ) + ( var( --logo-margin ) * 2 ) );
+    width: 100%;
+    height: var( --logo-height-home );
+    background-color: var( --header-bg );
+    box-shadow: 0 23px 23px 0px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    transition: 0.5s;
+}
+
+.submenu li {
+    margin: 1rem;
+    height: 3rem;
+    padding-left: 1rem;
+}
+
+.user-logo {
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
+    :root {
+        --logo-height: 3rem;
+        --logo-height-home: 7rem;
+    }
+
     header #menu {
         text-align: justify;
     }
@@ -108,21 +161,27 @@ header nav {
     header #menu .main-menu .secundary-menu {
         position: absolute;
         top: calc( var( --header-height ) );
+        box-shadow: 0 163px 46px 66px rgba(0, 0, 0, 0.4);
+        z-index: 1001;
+    }
+
+    header #menu .main-menu .secundary-menu a:active ~ header #menu .main-menu .secundary-menu {
+        left: -100%;
     }
 
     header #menu .main-menu .menu-categories {
-        transition: 1s;
+        transition: 0.5s;
         flex-direction: column;
-        left: -100%;
         background-color: var( --header-bg );
         width: 100%;
         height: 300%;
+        left: 0rem;
     }
 
     header #menu .main-menu .menu-categories li {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        padding-left: 2rem;
+        padding-left: 1rem;
     }
 
     .menu-btn {
@@ -132,6 +191,7 @@ header nav {
         width: 23px;
         cursor: pointer;
         margin-top: -0.2rem;
+        height: inherit;
     }
 
     .menu-btn svg {
@@ -168,14 +228,40 @@ header nav {
         padding-right: 0.5rem;
     }
 
-    header #menu .main-menu .submenu {
-        top: 0%;
+    .secundary-menu {
+        top: calc( var( --logo-height ) + ( var( --logo-margin ) * 2 ) ) !important;
+    }
+
+    .home-menu {
+        height: var( --logo-height ) !important;
+        width: var( --logo-height ) !important;
+        left: calc( ( 100% - var( --logo-height ) ) / 2) !important;
+        top: 1% !important;
     }
 
     .home-menu-home {
-        background-size: var( logo-height-home-mobile ) !important;
-        height: var( logo-height-home-mobile ) !important;
-        width: var( logo-height-home-mobile ) !important;
+        background-size: calc( var( --logo-height-home ) - 1rem ) !important;
+        height: var( --logo-height-home ) !important;
+        width: var( --logo-height-home ) !important;
+        left: calc( ( 100% - var( --logo-height-home ) ) / 2) !important;
+        top: 1% !important;
+    }
+
+    #home-menu:hover {
+        filter: none;
+    }
+
+    .home-menu-home:hover {
+        filter: none;
+        background-size: calc( var( --logo-height-home ) - 1rem ) !important;
+        height: var( --logo-height-home ) !important;
+        width: var( --logo-height-home ) !important;
+        left: calc( ( 100% - var( --logo-height-home ) ) / 2) !important;
+        top: 1% !important;
+    }
+
+    .menu-user {
+        box-shadow: none !important;
     }
 
     footer #legals {

@@ -60,7 +60,7 @@
     min-width: 300px;
     min-height: 33rem;
     height: auto !important;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 /* .product-item img {

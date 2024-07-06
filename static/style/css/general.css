@@ -1,7 +1,7 @@
 /* General */
 
 :root {
-    --main-color: #33333392;
+    --main-color: #333333;
     --secundary-color: #7b217e;
     --tertiary-color: transparent;
     --background-color: #fff;
@@ -17,6 +17,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    transition: 0.5s;
 }
 
 input {
@@ -32,6 +33,7 @@ a:hover {
     color: var( --secundary-color );
     border-radius: 0px 0px 30px 30px;
     width: 5rem;
+    z-index: 1000;
 }
 
 .form textarea:hover .form textarea:focus {
@@ -57,6 +59,16 @@ ul {
     height: 102%;
     width: 72%;
     background-color: var(--background-color);
+}
+
+.inner-mask-sides {
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 20%,
+        rgba(0, 0, 0, 1) 80%,
+        rgba(0, 0, 0, 0)
+  );
 }
 
 /* Main */
@@ -99,6 +111,7 @@ body {
     background: url('/static/images/home-bg/moscaslider_1.jpg') no-repeat center;
     background-attachment: fixed;
     background-size: cover;
+    transition: all 0.5s ease 0s;
 }
 
 /* Sections */
@@ -114,7 +127,7 @@ section {
     position: fixed;
     top: 7%;
     left: -88%;
-    transition: 2s;
+    transition: 1s;
 }
 
 .active {

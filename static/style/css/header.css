@@ -6,7 +6,6 @@
     --header-background-color: #000000bf;
     --contact-us-color: #fff;
     --margin-language: 0.5rem;
-    --language-switcher-top: -0.3rem;
     --language-selector-height: 92%;
     --language-selector-font-size: 1.3rem;
     --language-options-bg: #131313;
@@ -23,38 +22,9 @@ header {
     text-align: center;
     width: 100%;
     top: var( --header-top );
-    height: var( --header-height );
+    height: var( --logo-height );
     z-index: 1000;
-}
-
-#store-menu:hover ~ .submenu {
-    display: inline-table;
-}
-
-.submenu:hover {
-    display: inline-table;
-}
-
-.submenu {
-    position: absolute;
-    display: inline-table;
-    display: none;
-    background-color: var( --header-bg );
-    padding-top: 3rem;
-    left: 0rem;
-    width: 100%;
-    list-style: none;
-    transition: 1s;
-}
-
-.submenu li {
-    margin: 1rem;
-    height: 3rem;
-    padding-left: 1rem;
-}
-
-.user-logo {
-    margin-top: 0.5rem;
+    overflow-x: clip;
 }
 
 .contact-us-logo {
@@ -67,68 +37,56 @@ header {
     --contact-us-color: var(--secundary-color);
 }
 
-.menu-right-login {
-    position: absolute;
-    right: 7rem;
-    top: 0.3rem;
-}
-
-.menu-right-wish-list {
-    position: absolute;
-    right: 10rem;
-}
-
-.menu-right-contact {
-    position: absolute;
-    right: 13rem;
-}
-
 /* Language Switcher */
-header .language-switcher {
-    display: flex;
-    font-size: 1rem;
-    position: absolute;
-    top: var( --margin-language );
-    right: 1.5rem;
-    height: 2.5rem;
-    transition: 1s;
-    overflow-x: clip;
-}
-
-header .language-switcher:hover > #language-selector {
-    right: 0rem !important;
-}
 
 header #language-selected {
+    height: inherit;
+    width: 7rem;
     border: none;
     font-size: var( --language-selector-font-size );
     cursor: pointer;
     color: var( --background-color );
-    width: 5rem;
+    text-align: center;
 }
 
-header #language-selected:hover ~ header #language-selector {
-    right: 0rem;
+header #language-selected:hover {
+    width: 7rem !important;
+}
+
+.menu-user .submenu {
+    display: inline-grid;
+    justify-content: center;
+    align-items: center;
+    right: -107%;
+    width: 44%;
+    border-radius: 0 0 50px 50px;
+}
+
+header #language-selected:hover ~ .submenu {
+    right: 0rem !important;
+}
+
+header #language-selected ~ .submenu:hover {
+    right: 0rem !important;
 }
 
 header #language-selector {
     display: inline-grid;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    background-color: transparent;
-    padding-top: 3rem;
-    right: -7rem;
-    width: 5rem;
+    width: 100%;
     transition: 0.5s;
+    cursor: pointer;
 }
 
-header #language-selector a:hover {
-    width: auto !important;
+#language-selector a {
+    margin: 1rem;
 }
 
 .rolling-text {
     position: fixed;
     top: var( --rolling-text-top );
-    left: 0px;
     width: 100%;
     background-color: var( --header-background-color );
     overflow: hidden;
@@ -136,6 +94,7 @@ header #language-selector a:hover {
     height: var( --rolling-text-height );
 }
 
+/* Rolling text - Start */
 .rolling-text p {
     /* animation properties */
     -moz-transform: translateX( 100% );
@@ -150,28 +109,30 @@ header #language-selector a:hover {
 
 /* for Firefox */
 @-moz-keyframes my-animation {
-    from { -moz-transform: translateX( 100% ); }
-    to { -moz-transform: translateX( -100% ); }
+    from { -moz-transform: translateX( -100% ); }
+    to { -moz-transform: translateX( 100% ); }
 }
   
 /* for Chrome */
 @-webkit-keyframes my-animation {
-    from { -webkit-transform: translateX( 100% ); }
-    to { -webkit-transform: translateX( -100% ); }
+    from { -webkit-transform: translateX( -100% ); }
+    to { -webkit-transform: translateX( 100% ); }
 }
   
 @keyframes my-animation {
     from {
-        -moz-transform: translateX( 100% );
-        -webkit-transform: translateX( 100% );
-        transform: translateX( 100% );
-    }
-    to {
         -moz-transform: translateX( -100% );
         -webkit-transform: translateX( -100% );
         transform: translateX( -100% );
     }
+    to {
+        -moz-transform: translateX( 100% );
+        -webkit-transform: translateX( 100% );
+        transform: translateX( 100% );
+    }
 }
+
+/* Rolling text - End */
 
 @media (max-width: 768px) {
 }
