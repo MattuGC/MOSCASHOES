@@ -1,4 +1,10 @@
 {
+    "welcome": "Welcome to MOSCA",
+    "about": "We provide the best shoes for your comfort and style.",
+    "contact": "Get in touch for inquiries!",
+    "greeting": "Hi!",
+    "rollingText": "MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE",
+
     "menu_tag_store": "Store",
     "menu_tag_boots": "Boots",
     "menu_tag_shoes": "Shoes",
@@ -7,8 +13,6 @@
     "menu_tag_about_us": "About Us",
     "menu_tag_login": "Log In /\nSign Up",
     "menu_tag_contact": "Contact",
-    "roling-text": "Pre-sale mesage - Pre-sale mesage - Pre-sale mesage - Pre-sale mesage - Pre-sale mesage - Pre-sale mesage - Pre-sale mesage - Pre-sale mesage - Pre-sale mesage",
-    "welcome": "Welcome to MOSCA",
     "innovativeTrends": "Innovative fashion trends for everyone",
     "aboutUsTitle": "About Us",
     "aboutUsText": "MOSCA specializes in handcrafted, personalized footwear for women, aiming to revolutionize the local fashion market with innovative and trend-setting styles.",

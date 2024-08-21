@@ -1,312 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3">
-        <title>MOSCA</title>
-        <link rel="stylesheet" href="static/style/css/general.css">
-        <link rel="stylesheet" href="static/style/css/header.css">
-        <link rel="stylesheet" href="static/style/css/menu.css">
-        <link rel="stylesheet" href="static/style/css/home.css">
-        <link rel="stylesheet" href="static/style/css/store.css">
-        <link rel="stylesheet" href="static/style/css/about-us.css">
-        <link rel="stylesheet" href="static/style/css/archive.css">
-        <link rel="stylesheet" href="static/style/css/care.css">
-        <link rel="stylesheet" href="static/style/css/log-in-sign-up.css">
-        <link rel="stylesheet" href="static/style/css/contacts.css">
-        <link rel="stylesheet" href="static/style/css/favorites.css">
-        <link rel="stylesheet" href="static/style/css/user.css">
-        <link rel="stylesheet" href="static/style/css/footer.css">
-    </head>
-    <body>
-        <header>
-            <div onclick="" class="rolling-text">
-                <div class="inner-mask-sides">
-                    <p data-translate-key="roling-text">Bienvenido a MOSCASHOES!!!</p>
-                </div>
-            </div>
-            <nav id="menu">
-                <ul class="main-menu">
-                    <div class="menu-btn" onclick="toggleMenu(this)">
-                        <svg viewBox="0 0 24 24">
-                            <rect class="bar bar1" x="3" y="5" width="18" height="2"></rect>
-                            <rect class="bar bar2" x="3" y="11" width="18" height="2"></rect>
-                            <rect class="bar bar3" x="3" y="17" width="18" height="2"></rect>
-                        </svg>
-                    </div>
-                    <li><a onclick="home_or_not_home()" id="home-menu" href="#home" class="menu-item home-menu-home"></a></li>
-                    <ul class="secundary-menu menu-categories">
-                        <li>
-                            <a id="store-menu" class="menu-item" data-target="store" data-translate-key="menu_tag_store">Store</a>
-                            <ul class="submenu">
-                                <li>
-                                    <a onclick="menu_active_color('the-collection-menu')" id="the-collection-menu" href="#the-collection" class="menu-item" data-target="the-collection">The Collection</a>
-                                </li>
-                                <li>
-                                    <a onclick="menu_active_color('heritage-menu')" id="heritage-menu" href="#heritage" class="menu-item" data-target="heritage">Heritage</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a onclick="menu_active_color('about-menu')" id="about-us-menu" href="#about-us" class="menu-item" data-target="about-us" data-translate-key="menu_tag_about_us">About Us</a></li>
-                        <li><a onclick="menu_active_color('archive-menu')" id="archive-menu" href="#archive" class="menu-item" data-target="archive" data-translate-key="menu_tag_archive">Archive</a></li>
-                    </ul>
-                    <ul class="secundary-menu menu-user">
-                        <li><a onclick="menu_active_color('wish-list')" id="wish-list-menu" href="#wish-list" class="menu-item" data-target="wish-list" style="font-size: 2rem;">♡</a></li>
-                        <li>
-                            <a onclick="menu_active_color('login-menu')" id="login-menu" href="#login" class="menu-item" data-target="login">
-                                <svg class="user-logo" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="12" cy="7" r="4"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li><a onclick="menu_active_color('contact-menu')" id="contact-menu" href="#contact" class="menu-item" data-target="contact">
-                            <svg class="contact-us-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
-                                <defs></defs>
-                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
-                                    <path d="M 81.353 50.79 L 63.143 36.799 l 18.302 -15.87 c 0.834 -0.723 0.924 -1.986 0.2 -2.82 c -0.723 -0.834 -1.985 -0.925 -2.82 -0.201 L 58.682 35.374 c -0.005 0.004 -0.009 0.008 -0.014 0.012 l -4.921 4.267 L 28.669 17.907 c -0.834 -0.724 -2.096 -0.633 -2.82 0.201 c -0.723 0.834 -0.634 2.097 0.201 2.82 l 18.44 15.99 l -12.442 9.912 c -0.864 0.688 -1.006 1.946 -0.318 2.81 c 0.395 0.496 0.977 0.754 1.565 0.754 c 0.436 0 0.876 -0.143 1.244 -0.435 l 13.024 -10.375 l 4.874 4.226 c 0.376 0.326 0.843 0.489 1.31 0.489 c 0.467 0 0.934 -0.163 1.31 -0.489 l 5.002 -4.337 l 18.858 14.488 c 0.363 0.279 0.792 0.414 1.217 0.414 c 0.599 0 1.193 -0.268 1.586 -0.781 C 82.393 52.718 82.229 51.463 81.353 50.79 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: var(--contact-us-color); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                                    <path d="M 84.004 10.598 H 23.49 c -3.306 0 -5.996 2.69 -5.996 5.996 v 1.616 c -1.125 -0.827 -2.636 -1.044 -3.982 -0.453 c -0.87 0.383 -2.006 0.88 -3.19 1.394 l -0.032 0.014 c -2.526 1.095 -4.385 1.88 -5.378 2.269 c -0.741 0.29 -1.362 0.72 -1.845 1.278 c -8.173 9.429 1.178 26.658 14.071 39.551 c 9.539 9.539 21.449 17.14 30.82 17.139 c 3.296 -0.001 6.278 -0.941 8.731 -3.066 c 0.557 -0.483 0.987 -1.104 1.278 -1.846 c 0.395 -1.009 1.171 -2.847 2.304 -5.456 c 0.507 -1.168 0.996 -2.286 1.373 -3.144 c 0.621 -1.413 0.355 -3.01 -0.578 -4.148 h 22.939 c 3.307 0 5.996 -2.69 5.996 -5.996 v -39.15 C 90 13.288 87.31 10.598 84.004 10.598 z M 56.603 67.439 c -1.152 2.656 -1.947 4.538 -2.36 5.592 c -0.05 0.127 -0.113 0.23 -0.173 0.282 c -7.118 6.171 -22.543 -2.315 -34.105 -13.877 C 8.402 47.872 -0.078 32.445 6.088 25.331 c 0.053 -0.061 0.156 -0.124 0.283 -0.174 c 1.063 -0.416 2.944 -1.21 5.592 -2.359 v 0 c 1.173 -0.509 2.296 -1 3.168 -1.373 l 7.266 12.256 l -4.505 8.393 c -0.843 1.57 -0.562 3.471 0.698 4.732 l 14.007 14.007 c 1.262 1.26 3.164 1.541 4.731 0.696 l 8.404 -4.505 l 12.245 7.267 l 0.006 0.01 C 57.603 65.144 57.11 66.268 56.603 67.439 z M 86.001 55.744 c 0 1.101 -0.896 1.997 -1.997 1.997 H 54.809 l -7.038 -4.177 c -1.201 -0.712 -2.711 -0.744 -3.942 -0.083 l -8.406 4.503 l -14.008 -14.02 l 4.505 -8.392 c 0.66 -1.231 0.628 -2.741 -0.084 -3.943 l -4.343 -7.319 v -7.716 c 0 -1.101 0.896 -1.997 1.997 -1.997 h 60.514 c 1.101 0 1.997 0.896 1.997 1.997 V 55.744 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: var(--contact-us-color); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                                </g>
-                            </svg>
-                        </a></li>
-                        <li>
-                            <a id="language-selected">
-                            </a>
-                            <div class="submenu">
-                                <div id="language-selector">
-                                    <a onclick="language_selector('en')">EN</a>
-                                    <a onclick="language_selector('es')">ES</a>
-                                    <a onclick="language_selector('it')">IT</a>
-                                    <a onclick="language_selector('pt')">PT</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </ul>
-            </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoSCA Shoes</title>
+    <link rel="stylesheet" href="static/style/css/general.css">
+    <link rel="stylesheet" href="static/style/css/popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Readex+Pro:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="welcome-popup" class="popup">
+        <div class="popup-content">
+            <div class="rolling-text-bg rolling-text-top">A</div>
+            <div class="rolling-text" id="top-rolling-text">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
+            
+            <img src="static/img/mosca/cropped-mosca-iso-blanca-1-1.png" class="logo top-image rotateimg360" alt="Top Image">
+            
+            <h2 id="greeting">Hi!</h2>
+            <ul id="country-list">
+                <li data-lang="en">EEUU/USA</li>
+                <li data-lang="es">ARGENTINA</li>
+                <li data-lang="es">URUGUAY</li>
+                <li data-lang="pt">BRASIL</li>
+                <li data-lang="it">ITALIA</li>
+            </ul>
+            
+            <img src="static/img/mosca/cropped-mosca-iso-blanca-1-1.png" class="logo bottom-image rotateimg180" alt="Bottom Image">
+            
+            <div class="rolling-text-bg rolling-text-bottom">A</div>
+            <div class="rolling-text" id="bottom-rolling-text">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
+        </div>
+    </div>
+
+    <header>
+        <h2 class="logo-banner">MOSCA</h2>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="rolling-text-bg rolling-text-home-top">A</div>
+        <div class="rolling-text" id="banner-top-rolling-text">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
     </header>
+
     <main>
-        <section id="home" class="content-section active">
-            <div class="wrapper" style="background: transparent; box-shadow: none;">
-                <h2 style="display: none;"></h2>
-                <div class="home-content">
-                </div>
-            </div>
+        <section id="hero">
+            <h1>Welcome to MoSCA Shoes</h1>
+            <p>Your perfect fit awaits!</p>
         </section>
-        <section id="boots" class="boots-section">
-            <div class="wrapper">
-                <div class="form">
-                    <h2>Boots</h2>
-                    <form action="">
-                        <p>
-                            <button aria-label="Log In" data-translate-key="login">Log In</button>
-                        </p>
-                    </form>
-                </div>
-            </div>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We provide the best shoes for your comfort and style.</p>
         </section>
-        <section id="about" class="content-section">
-            <div class="wrapper">
-              <div>
-                <h2 data-translate-key="aboutUsTitle">About Us</h2>
-                <p data-translate-key="aboutUsText">MOSCA specializes in handcrafted, personalized footwear for women, aiming to revolutionize the local fashion market with innovative and trend-setting styles.</p>
-              </div>
-            </div>
+
+        <section id="products">
+            <h2>Our Products</h2>
+            <div id="product-list"></div>
         </section>
-        <section id="store" class="content-section">
-            <div class="wrapper">
-                <h2 style="display: none;" data-translate-key="storeTitle"></h2>
-                <div id="product-carousel" class="product-carousel">
-                    <!-- Products will be loaded here by JavaScript -->
-                </div>
-            </div>
-        </section>
-        <section id="care" class="content-section">
-            <div class="wrapper">
-                <div class="title-container">
-                    <h2 data-translate-key="care.title">Shoe Care</h2>
-                    <h3 data-translate-key="care.subtitle">How can I care for my Mosca: The Collection shoes?</h3>
-                </div>
-                <div class="care-content">
-                    <img id="production-manufacturing" src="static/images/mosca/sello-amarillorecurso-1-1.png" alt="Production Manufacturing">
-                    <h2 data-translate-key="care.p1.title">Title</h2>
-                    <p data-translate-key="care.p1.text">Text</p>
-                    <h2 data-translate-key="care.h22.title">Title</h2>
-                    <p data-translate-key="care.p2.text">Text</p>
-                    <h2 data-translate-key="care.p3.title">Title</h2>
-                    <p data-translate-key="care.p3.text">Text</p>
-                </div>
-            </div>
-        </section>
-      <section id="measurements" class="content-section">
-          <div class="wrapper">
-              <div class="measurements-content">
-                  <h2 data-translate-key="sizesAndMeasurements">Sizes and Measurements</h2>
-                  <p data-translate-key="innovativeTrends">Guide to find the perfect fit.</p>
-              </div>
-          </div>
-        </section>      
-        <section id="login" class="content-section">
-            <div class="wrapper">
-                <div class="form">
-                    <h2 data-translate-key="loginTitle">Log In/Sign Up</h2>
-                    <form action="">
-                        <p>
-                            <label data-translate-key="username" for="username">Username</label>
-                            <input type="text" id="username" name="username" required>
-                        </p>
-                        <p>
-                            <label data-translate-key="password" for="password">Password</label>
-                            <input type="password" id="password" name="password" required>
-                        </p>
-                        <p>
-                            <button aria-label="Log In" data-translate-key="login">Log In</button>
-                        </p>
-                        <p>
-                            <a href="#signup" class="button-link" data-translate-key="signup">Sign Up</a>
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </section>    
-        <section id="signup" class="content-section">
-            <div class="wrapper">
-                <div class="form">
-                    <h2 data-translate-key="billingShippingTitle">Facturación y envío</h2>
-                    <form action="">
-                        <p>
-                            <label data-translate-key="fullName" for="fullName">Nombre completo</label>
-                            <input type="text" id="fullName" name="fullName" required>
-                        </p>
-                        <p>
-                            <label data-translate-key="signUpPhone" for="signupPhone">Teléfono</label>
-                            <input type="tel" id="signupPhone" name="signupPhone" required>
-                        </p>
-                        <p>
-                            <label data-translate-key="signUpEmailAddress" for="signupEmail">Correo Electrónico</label>
-                            <input type="email" id="signupEmail" name="signupEmail" required>
-                        </p>
-                        <p>
-                            <label data-translate-key="department" for="department">Departamento</label>
-                            <select id="department" name="department" required>
-                                <option value="" data-translate-key="selectDepartment">Selecciona un departamento</option>
-                                <option value="artigas">Artigas</option>
-                                <option value="canelones">Canelones</option>
-                                <option value="cerro-largo">Cerro Largo</option>
-                                <option value="colonia">Colonia</option>
-                                <option value="durazno">Durazno</option>
-                                <option value="flores">Flores</option>
-                                <option value="florida">Florida</option>
-                                <option value="lavalleja">Lavalleja</option>
-                                <option value="maldonado">Maldonado</option>
-                                <option value="montevideo">Montevideo</option>
-                                <option value="paysandu">Paysandú</option>
-                                <option value="rio-negro">Río Negro</option>
-                                <option value="rivera">Rivera</option>
-                                <option value="rocha">Rocha</option>
-                                <option value="salto">Salto</option>
-                                <option value="san-jose">San José</option>
-                                <option value="soriano">Soriano</option>
-                                <option value="tacuarembo">Tacuarembó</option>
-                                <option value="treinta-y-tres">Treinta y Tres</option>
-                            </select>
-                        </p>
-                        <p>
-                            <label data-translate-key="city" for="city">Ciudad</label>
-                            <input type="text" id="city" name="city" required>
-                        </p>
-                        <p>
-                            <label data-translate-key="streetAddress" for="streetAddress">Dirección de la calle</label>
-                            <input type="text" id="streetAddress" name="streetAddress" required>
-                        </p>
-                        <p>
-                            <label data-translate-key="postalCode" for="postalCode">Código postal</label>
-                            <input type="text" id="postalCode" name="postalCode" required>
-                        </p>
-                        <h2 data-translate-key="additionalInfoTitle">Información adicional</h2>
-                        <p>
-                            <label data-translate-key="orderNotes" for="orderNotes">Notas del pedido (opcional)</label>
-                            <textarea id="orderNotes" name="orderNotes"></textarea>
-                        </p>
-                        <p class="termsConditions">
-                            <input type="checkbox" id="termsConditions" name="termsConditions" required>
-                            <label data-translate-key="acceptTerms" for="termsConditions">Acepto los términos y condiciones</label>
-                        </p>
-                        <p>
-                            <button aria-label="Sign Up" data-translate-key="signupButton">Registrarse</button>
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </section>      
-        <section id="contact" class="content-section">
-            <div class="wrapper">
-                <div class="contacts">
-                    <h2 data-translate-key="ourContacts">Our Contacts</h2>
-                    <ul>
-                        <li>
-                            <svg class="e-font-icon-svg e-fab-instagram" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-                            </svg>
-                            <a href="https://www.instagram.com/moscathecollection/" target="_blank">moscathecollection</a>
-                        </li>
-                        <li>
-                            <svg class="e-font-icon-svg e-fab-instagram" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-                            </svg>
-                            <a href="https://www.instagram.com/moscastudiok/" target="_blank">moscastudiok</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="form">
-                    <h2 data-translate-key="contactUs">Send us a message</h2>
-                    <form action="">
-                      <p>
-                          <label data-translate-key="yourName" for="yourName">Your Name</label>
-                          <input type="text" id="yourName" name="yourName">
-                      </p>
-                      <p>
-                          <label data-translate-key="phone" for="phone">Phone</label>
-                          <input type="tel" id="phone" name="phone">
-                      </p>
-                      <p>
-                          <label data-translate-key="emailAddress" for="email">Email Address</label>
-                          <input type="email" id="email" name="email" required>
-                      </p>
-                      <p>
-                          <label data-translate-key="purchaseType" for="purchase-type">Wholesale or retail purchase</label>
-                          <select id="purchase-type" name="purchase-type">
-                              <option value="wholesale" data-translate-key="wholesale">Wholesale</option>
-                              <option value="retail" data-translate-key="retail">Retail</option>
-                          </select>
-                      </p>
-                      <p>
-                          <label data-translate-key="writeMessage" for="writeMessage">Write your message</label>
-                          <textarea id="writeMessage" name="writeMessage"></textarea>
-                      </p>
-                      <p>
-                          <label id="captcha">I'm not a robot holder place</label>
-                      </p>
-                      <p>
-                          <button aria-label="Send" data-translate-key="send">Send</button>
-                      </p>
-                  </form>                  
-                </div>
-            </div>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Get in touch for inquiries!</p>
         </section>
     </main>
+
     <footer>
-        <ul id="legals">
-            <li><a href="#privacy" class="footer-link" data-translate-key="privacyPolicy">Privacy Policy</a></li>
-            <li><a href="#terms" class="footer-link" data-translate-key="termsOfService">Terms of Service</a></li>
-            <li><a href="#payments" class="footer-link" data-translate-key="paymentsPolicy">Payments, Refund and Returns Policy</a></li>
-        </ul>
-        <p id="copyright">&copy; 2023 MOSCA. <span data-translate-key="rightsReserved">All rights reserved.</span></p>
+        <p>&copy; 2024 MoSCA Shoes. All rights reserved.</p>
     </footer>
-    <script src="static/products/products.js"></script>
-    <script src="static/style/js/general.js"></script>
-    <script src="static/style/js/bg.js"></script>
-    <script src="static/style/js/menu.js"></script>
-    <script src="static/style/js/sections.js"></script>
+
+    <script src="static\style\js\general.js"></script>
+    <script src="static\style\js\language.js"></script>
+    <script src="static\style\js\popup.js"></script>
+    <script src="static\products\products.js"></script>
 </body>
 </html>

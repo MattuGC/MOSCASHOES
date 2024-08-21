@@ -1,39 +1,17 @@
+# MoSCA Shoes
 
-```
-MOSCASHOES
-├─ index.html
-├─ README.md
-└─ static
-   ├─ images
-   │  ├─ home-bg
-   │  │  ├─ moscaslider_1.jpg
-   │  │  ├─ moscaslider_2.jpg
-   │  │  ├─ moscaslider_3.jpg
-   │  │  └─ moscaslider_4.jpg
-   │  ├─ mosca
-   │  │  └─ cropped-mosca-iso-blanca-1-1.png
-   │  └─ products
-   │     ├─ ankle_boots_bold.jpg
-   │     ├─ boots_elegance.jpg
-   │     ├─ clogs_casual.jpg
-   │     ├─ flats_comfy.jpg
-   │     ├─ heels_glamour.jpg
-   │     ├─ loafers_chic.jpg
-   │     ├─ moccasins_modern.jpg
-   │     ├─ sandals_breeze.jpg
-   │     ├─ slippers_cozy.jpg
-   │     ├─ sneakers_aura.jpg
-   │     └─ wedges_trendy.jpg
-   ├─ products
-   │  └─ products.js
-   ├─ style
-   │  ├─ css
-   │  │  └─ styles.css
-   │  └─ js
-   │     └─ scripts.js
-   └─ translations
-      ├─ en.json
-      ├─ es.json
-      └─ pt.json
+Welcome to the MoSCA Shoes project! This is a one-page website showcasing our shoe collection.
 
-```
+## Project Structure
+
+- **index.html**: The main HTML file.
+- **static/**: Contains all static assets.
+  - **images/**: Contains images for the website.
+  - **products/**: Contains JavaScript for product data.
+  - **style/**: Contains CSS and JavaScript files for styling and functionality.
+  - **translations/**: Contains translation files in JSON format.
+
+## Getting Started
+
+1. Open `index.html` in your browser to view the site.
+2. Customize styles in `styles.css` and functionality in `scripts.js`.

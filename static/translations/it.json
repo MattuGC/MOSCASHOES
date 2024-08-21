@@ -1,4 +1,10 @@
 {
+    "welcome": "Benvenuti a MOSCA",
+    "about": "Contattateci per maggiori informazioni!",
+    "contact": "Get in touch for inquiries!",
+    "greeting": "Ciao!",
+    "rollingText": "LA PRODUZIONE DI MOSCA È GESTITA ATTRAVERSO IL SISTEMA DI PREVENDITA / GLI ARTICOLI SARANNO PRODOTTI DOPO L'ACQUISTO",
+
     "menu_tag_store": "Negozio",
     "menu_tag_boots": "Stivali",
     "menu_tag_shoes": "Scarpe",
@@ -7,8 +13,6 @@
     "menu_tag_about_us": "Chi Siamo",
     "menu_tag_login": "Accedi /\nRegistrati",
     "menu_tag_contact": "Contatti",
-    "roling-text": "Messaggio di prevendita - Messaggio di prevendita - Messaggio di prevendita - Messaggio di prevendita - Messaggio di prevendita - Messaggio di prevendita - Messaggio di prevendita",
-    "welcome": "Benvenuti a MOSCA",
     "innovativeTrends": "Tendenze di moda innovative per tutti",
     "aboutUsTitle": "Chi Siamo",
     "aboutUsText": "MOSCA è specializzata in calzature artigianali e personalizzate per donne, con l'obiettivo di rivoluzionare il mercato della moda locale con stili innovativi e di tendenza.",

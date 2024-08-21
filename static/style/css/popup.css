@@ -1,0 +1,145 @@
+:root {
+    --rolling-text-color: black; /* Variable for rolling text color */
+    --pop-up-background-color: gray; /* Semi-transparent background */
+    --rolling-text-font-size: 1.5rem;
+    --rolling-text-margin: 3rem;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--pop-up-background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it is above other content */
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.popup-content {
+    text-align: center;
+    color: var(--text-color);
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.video-placeholder {
+    width: 80%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    background-color: transparent; /* Set background to transparent */
+    position: relative; /* Change to relative positioning */
+}
+
+#country-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the items */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+}
+
+#country-list li {
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px 20px; /* Add padding for clickable area */
+    margin: 5px; /* Add margin between items */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+#country-list li:hover {
+    background-color: var(--main-color); /* Change background on hover */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+/* Rolling text */
+.rolling-text-bg {
+    background-color: var(--main-color);
+    color: transparent;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    font-size: var(--rolling-text-font-size);
+    user-select: none;
+}
+
+.rolling-text-top {
+    margin-top: var(--rolling-text-margin);
+    top: 0; /* Position at the top */
+}
+
+.rolling-text-bottom {
+    margin-bottom: var(--rolling-text-margin);
+    bottom: 0; /* Position at the top */
+}
+
+.rolling-text {
+    /* background-color: var(--main-color); */
+    position: relative; /* Position relative for animation */
+    width: auto;
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent text from wrapping */
+    font-size: var(--rolling-text-font-size);
+    color: var(--rolling-text-color);
+}
+
+#top-rolling-text,
+#bottom-rolling-text {
+    position: absolute; /* Position absolute for scrolling */
+    animation: scroll-text 55s linear infinite; /* Adjust duration as needed */
+}
+
+#top-rolling-text {
+    margin-top: var(--rolling-text-margin);
+    top: 0; /* Position at the top */
+}
+
+#bottom-rolling-text {
+    margin-bottom: var(--rolling-text-margin);
+    bottom: 0; /* Position at the bottom */
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(100%); /* Start above */
+    }
+    100% {
+        transform: translateX(-100%); /* End below */
+    }
+}
+
+/* Pop-up Logos */
+.logo {
+    width: 7%; /* Adjust width as needed */
+    position: absolute; /* Position absolute for sliding effect */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    transition: transform 1.1s ease; /* Smooth transition for sliding out */
+}
+
+.rotateimg180 {
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.top-image {
+    top: 21%; /* Position at the top */
+}
+
+.bottom-image {
+    bottom: 21%; /* Position at the bottom */
+    left: 46.6%; /* Center horizontally */
+}

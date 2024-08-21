@@ -1,4 +1,10 @@
 {
+    "welcome": "Bem-vindo ao MOSCA",
+    "about": "Oferecemos os melhores calçados para seu conforto e estilo.",
+    "contact": "Entre em contato conosco para obter mais informações!",
+    "greeting": "Olá!",
+    "rollingText": "A PRODUÇÃO DE MOSCA É GERENCIADA POR MEIO DO SISTEMA DE PRÉ-VENDA / OS ITENS SERÃO FABRICADOS APÓS A COMPRA",
+
     "menu_tag_store": "Loja",
     "menu_tag_boots": "Botas",
     "menu_tag_shoes": "Sapato",
@@ -7,8 +13,6 @@
     "menu_tag_about_us": "Sobre nós",
     "menu_tag_login": "Entrar/Cadastrar-se",
     "menu_tag_contact": "Contato",
-    "roling-text": "Mensagem de pré-venda - Mensagem de pré-venda - Mensagem de pré-venda - Mensagem de pré-venda - Mensagem de pré-venda - Mensagem de pré-venda",
-    "welcome": "Bem-vindo ao MOSCA",
     "innovativeTrends": "Tendências de moda inovadoras para todos",
     "aboutUsTitle": "Sobre Nós",
     "aboutUsText": "MOSCA se especializa em calçados artesanais e personalizados para mulheres, com o objetivo de revolucionar o mercado de moda local com estilos inovadores e de tendência.",
