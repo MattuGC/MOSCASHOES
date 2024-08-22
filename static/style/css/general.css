@@ -4,6 +4,10 @@
     --text-color: #ffe600;
     --heading-font: 'Anton', sans-serif;
     --body-font: 'Readex Pro', sans-serif;
+    --rolling-text-color: black; /* Variable for rolling text color */
+    --rolling-text-font-size: 1.1rem;
+    --scrollbar-size: 33px;
+    --section-opacity: 0;
 }
 
 html, body {
@@ -21,11 +25,8 @@ body {
 }
 
 header {
-    background-color: var(--main-color);
     color: var(--text-color);
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
+    width: 100vw;
     overflow-x: hidden;
 }
 
@@ -47,20 +48,50 @@ h3 {
     font-size: 2rem;
 }
 
+#header-bg {
+    background-color: var(--main-color);
+    margin: -8px;
+    user-select: none;
+}
+
 .logo-banner {
-    width: 100%;
+    width: auto;
     text-align: center;
     font-size: 7.7rem;
     margin: 0.5rem;
+    padding: 1.1rem;
     line-height: 1;
+    color: var(--text-color) !important;
+}
+
+.logo-banner a:link {
+    color: var(--text-color) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+}
+
+.logo-banner a:visited {
+    color: var(--text-color) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+}
+
+.logo-banner a:hover {
+    color: var(--text-color) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
 }
 
 nav {
-    position: relative;
-    top: 9.9%;
     height: 0;
+    width: 100%;
     opacity: 0;
     transition: opacity 0.5s ease;
+    background-color: rgba(255, 255, 255); /* Some old browsers might not accept the opacity parameter */
+    background-color: rgb(255 255 255 / 50%);
 }
 
 header:hover nav {
@@ -70,22 +101,53 @@ header:hover nav {
 
 nav ul {
     display: flex;
-    justify-content: center;
     list-style-type: none;
-    margin: 0.3rem;
+    margin: 0rem;
+    padding: 0rem;
 }
 
 nav ul li {
     margin: 0 1rem;
+    display: inline;
+}
+
+#left-menu {
+    position: sticky;
+    left: 3px !important;
+}
+
+#left-menu li {
+    float: left !important;
+}
+
+#right-menu {
+    position: absolute;
+    right: 3px !important;
+}
+
+#right-menu li {
+    float: right !important;
 }
 
 nav a {
     color: var(--text-color);
     text-decoration: none;
+    user-select: none;
 }
 
 nav a:hover {
     color: var(--secondary-color);
+}
+
+.rolling-text {
+    /* background-color: var(--main-color); */
+    position: relative; /* Position relative for animation */
+    width: auto;
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent text from wrapping */
+    font-size: var(--rolling-text-font-size);
+    color: var(--rolling-text-color);
+    user-select: none;
 }
 
 #banner-top-rolling-text {
@@ -107,7 +169,7 @@ main {
     display: flex;
     flex-direction: row; /* Stack sections horizontally */
     overflow-x: hidden; /* Hide horizontal scrollbar */
-    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-y: hidden; /* Hide vertical scrolling */
 }
 
 section {
@@ -118,15 +180,52 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-y: auto; /* Allow vertical scrolling */
+    opacity: var(--section-opacity);
 }
 
 footer {
     background-color: var(--main-color);
     color: var(--text-color);
     text-align: center;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
-p {
-    color: var(--text-color);
+footer p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+*::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+}
+
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb:vertical {
+    background: #dd76ae77 url("/static/img/mosca/cropped-mosca-iso-blanca-1-1.png");
+    background-size:var(--scrollbar-size) var(--scrollbar-size);
+}
+
+*::-webkit-scrollbar-button {
+    display: none;
+}
+
+#home {
+    background-image: url("/static/img/home-bg/home-bg.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    overflow: hidden; /* Hide scrollbars */
+    opacity: 1;
+}
+
+#shop {
+    padding-top: 11rem;
+}
+
+footer p {
+    user-select: none;
 }

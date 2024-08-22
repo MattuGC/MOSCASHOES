@@ -1,7 +1,7 @@
 :root {
     --rolling-text-color: black; /* Variable for rolling text color */
     --pop-up-background-color: gray; /* Semi-transparent background */
-    --rolling-text-font-size: 1.5rem;
+    --rolling-text-font-size: 1.1rem;
     --rolling-text-margin: 3rem;
 }
 
@@ -81,16 +81,6 @@ h1, h2, h3, h4, h5, h6 {
 .rolling-text-bottom {
     margin-bottom: var(--rolling-text-margin);
     bottom: 0; /* Position at the top */
-}
-
-.rolling-text {
-    /* background-color: var(--main-color); */
-    position: relative; /* Position relative for animation */
-    width: auto;
-    overflow: hidden; /* Hide overflow */
-    white-space: nowrap; /* Prevent text from wrapping */
-    font-size: var(--rolling-text-font-size);
-    color: var(--rolling-text-color);
 }
 
 #top-rolling-text,
