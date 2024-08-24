@@ -3,4 +3,4 @@ function dissolvePopup(popup) {
     setTimeout(() => {
         popup.style.display = 'none';
     }, 500); // Match the duration of the opacity transition
-  }
+}

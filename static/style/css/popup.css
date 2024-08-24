@@ -53,7 +53,8 @@
 }
 
 #country-list li:hover {
-    background-color: var(--main-color); /* Change background on hover */
+	background: var(--main-color);
+    border-radius: 3em .5em 2em .5em/.4em 2em .5em 3em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -131,5 +132,5 @@ h1, h2, h3, h4, h5, h6 {
 
 .bottom-image {
     bottom: 21%; /* Position at the bottom */
-    left: 46.6%; /* Center horizontally */
+    left: 46.5%; /* Center horizontally */
 }

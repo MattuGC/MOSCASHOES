@@ -129,6 +129,10 @@ nav ul li {
     float: right !important;
 }
 
+li {
+    user-select: none;
+}
+
 nav a {
     color: var(--text-color);
     text-decoration: none;

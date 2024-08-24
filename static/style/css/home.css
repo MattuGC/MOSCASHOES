@@ -1,0 +1,49 @@
+
+#home-prod-manufact {
+    top: 33vh;
+    position: relative;
+    width: 44vh;
+    left: 11vw;
+}
+
+#home-boots {
+    top: -12vh;
+    position: relative;
+    width: 22vw;
+    left: 44vw;
+}
+
+#home img {
+    --a: 8deg; /* control the angle of rotation (the smaller, the better) */
+    aspect-ratio: 1;
+    border-radius: 20px;
+    transform: perspective(400px) rotate3d(var(--r,1,-1),0,calc(var(--i,1)*var(--a)));
+    -webkit-mask: linear-gradient(135deg,rgb(0, 0, 0) 40%,#000,rgb(0, 0, 0) 60%) 100% 100%/250% 250%;
+    transition: .4s;
+}
+
+#home .alt {
+    --r: 1,1;
+    -webkit-mask: linear-gradient(45deg, #000 40%, #000, #000 60%) 0 100% / 250% 250%;
+}
+
+#home img:hover {
+    --i: -1;
+    -webkit-mask-position: 0 0;
+}
+
+#home .alt:hover {
+    -webkit-mask-position: 100% 0;
+}
+
+#home .shadowfilter {
+	-webkit-filter: drop-shadow(0px 0px 4px rgba(255,255,255,0.80));
+	-webkit-transition: all 0.5s linear;
+	-o-transition: all 0.5s linear;
+	transition: all 0.5s linear;
+	
+}
+
+#home .shadowfilter:hover {
+	-webkit-filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
+}
