@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoSCA Shoes</title>
+    <link rel="stylesheet" href="static/style/css/about-mosca.css">
+    <link rel="stylesheet" href="static/style/css/footer.css">
     <link rel="stylesheet" href="static/style/css/general.css">
-    <link rel="stylesheet" href="static/style/css/popup.css">
+    <link rel="stylesheet" href="static/style/css/header.css">
+    <link rel="stylesheet" href="static/style/css/heritage.css">
     <link rel="stylesheet" href="static/style/css/home.css">
+    <link rel="stylesheet" href="static/style/css/menu.css">
+    <link rel="stylesheet" href="static/style/css/popup.css">
+    <link rel="stylesheet" href="static/style/css/sections.css">
+    <link rel="stylesheet" href="static/style/css/shop.css">
+    <link rel="stylesheet" href="static/style/css/the-collection.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Readex+Pro:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -35,30 +43,23 @@
 
     <header>
         <div id="header-bg">
-            <h2 class="logo-banner">
-                <a id="home-button" href="#home">MOSCA</a>
-            </h2>
-        </div>
-        <nav>
-            <ul>
+            <div class="logo-banner">
+                <a id="home-button" onclick="goTo('home')">MOSCA</a>
+            </div>
+            <button id="hamburguer-btn"><img src="static/img/icons/hambuguer-btn.png" alt="Menu"></button>
+            <div id="menu">
                 <div id="left-menu">
-                    <li><a href="#shop">Shop</a></li>
-                    <li><a href="#heritage">Heritage</a></li>
-                    <li><a href="#about-mosca">About Mosca</a></li>
-                    <li><a href="#the-collection">The Collection</a></li>
+                    <button onclick="goTo('shop')">Shop</button>
+                    <button onclick="goTo('heritage')">heritage</button>
+                    <button onclick="goTo('about-mosca')">About Mosca</button>
+                    <button onclick="goTo('the-collection')">The Collection</button>
                 </div>
-                <div id="right-menu">
-                    <li><a href="#login">Login</a></li>
-                    <li><a href="#cart">Cart</a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/moscathecollection/">moscathecollection</a></li>
-                    <li><a target="_blank" href="https://www.instagram.com/moscastudiok/">moscastudiok</a></li>
-                    <li><a target="_blank" href="https://api.whatsapp.com/send/?phone=5491169580903&text=Hi+%2AMosca%2A%21+I+need+more+info+about+Contact+Us+https%3A%2F%2Fmoscathecollection.com%2Fcontact-us&type=phone_number&app_absent=0">WhatsApp</a></li>
-                    <li><a id="contact-button" href="#contact">Contact</a></li>
-                </div>
-            </ul>
-        </nav>
-        <div class="rolling-text-bg rolling-text-home-top">A</div>
-        <div class="rolling-text" id="banner-top-rolling-text">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
+            </div>
+            <div id="rolling-box">
+                <div class="rolling rolling-text-bg">A</div>
+                <div class="rolling rolling-text" id="banner-top-rolling-text">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -86,11 +87,6 @@
         <section id="the-collection">
             <h2>The Collection</h2>
             <p>... Waite for it... It's almost here... Any second now...</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch for inquiries!</p>
         </section>
     </main>
 

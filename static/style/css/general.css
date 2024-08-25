@@ -2,12 +2,10 @@
     --main-color: #dd76ae;
     --secondary-color: #6c757d;
     --text-color: #ffe600;
-    --heading-font: 'Anton', sans-serif;
     --body-font: 'Readex Pro', sans-serif;
     --rolling-text-color: black; /* Variable for rolling text color */
     --rolling-text-font-size: 1.1rem;
     --scrollbar-size: 33px;
-    --section-opacity: 0;
 }
 
 html, body {
@@ -24,16 +22,9 @@ body {
     flex-direction: column;
 }
 
-header {
-    color: var(--text-color);
-    width: 100vw;
-    overflow-x: hidden;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     font-weight: normal;
-    color: var(--text-color);
 }
 
 h1 {
@@ -48,126 +39,6 @@ h3 {
     font-size: 2rem;
 }
 
-#header-bg {
-    background-color: var(--main-color);
-    margin: -8px;
-    user-select: none;
-}
-
-.logo-banner {
-    width: auto;
-    text-align: center;
-    font-size: 7.7rem;
-    margin: 0.5rem;
-    padding: 1.1rem;
-    line-height: 1;
-    color: var(--text-color) !important;
-}
-
-.logo-banner a:link {
-    color: var(--text-color) !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    text-decoration: none !important;
-}
-
-.logo-banner a:visited {
-    color: var(--text-color) !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    text-decoration: none !important;
-}
-
-.logo-banner a:hover {
-    color: var(--text-color) !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    text-decoration: none !important;
-}
-
-nav {
-    height: 0;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    background-color: rgba(255, 255, 255); /* Some old browsers might not accept the opacity parameter */
-    background-color: rgb(255 255 255 / 50%);
-}
-
-header:hover nav {
-    height: auto;
-    opacity: 100;
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0rem;
-    padding: 0rem;
-}
-
-nav ul li {
-    margin: 0 1rem;
-    display: inline;
-}
-
-#left-menu {
-    position: sticky;
-    left: 3px !important;
-}
-
-#left-menu li {
-    float: left !important;
-}
-
-#right-menu {
-    position: absolute;
-    right: 3px !important;
-}
-
-#right-menu li {
-    float: right !important;
-}
-
-li {
-    user-select: none;
-}
-
-nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    user-select: none;
-}
-
-nav a:hover {
-    color: var(--secondary-color);
-}
-
-.rolling-text {
-    /* background-color: var(--main-color); */
-    position: relative; /* Position relative for animation */
-    width: auto;
-    overflow: hidden; /* Hide overflow */
-    white-space: nowrap; /* Prevent text from wrapping */
-    font-size: var(--rolling-text-font-size);
-    color: var(--rolling-text-color);
-    user-select: none;
-}
-
-#banner-top-rolling-text {
-    top: auto !important;
-    animation: scroll-text 55s linear infinite; /* Adjust duration as needed */
-}
-
-@keyframes scroll-text {
-    0% {
-        transform: translateX(100%); /* Start above */
-    }
-    100% {
-        transform: translateX(-100%); /* End below */
-    }
-}
-
 main {
     flex: 1; /* Allow main to grow and fill the available space */
     display: flex;
@@ -176,40 +47,16 @@ main {
     overflow-y: hidden; /* Hide vertical scrolling */
 }
 
-section {
-    flex: 1; /* Allow each section to grow and fill the available space equally */
-    min-width: 100vw; /* Ensure each section takes the full viewport width */
-    padding: 2rem; /* Add padding for content */
-    box-sizing: border-box; /* Include padding in width calculation */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-y: auto; /* Allow vertical scrolling */
-    opacity: var(--section-opacity);
-}
-
-footer {
-    background-color: var(--main-color);
-    color: var(--text-color);
-    text-align: center;
-    padding: 0.5rem;
-}
-
-footer p {
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-}
-
 *::-webkit-scrollbar {
     width: var(--scrollbar-size);
 }
 
 *::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
 }
 
 *::-webkit-scrollbar-thumb:vertical {
-    background: #dd76ae77 url("/static/img/mosca/cropped-mosca-iso-blanca-1-1.png");
+    background: var(--main-color) url("/static/img/mosca/cropped-mosca-iso-blanca-1-1.png");
     background-size:var(--scrollbar-size) var(--scrollbar-size);
 }
 
@@ -217,19 +64,11 @@ footer p {
     display: none;
 }
 
-#home {
-    background-image: url("/static/img/home-bg/home-bg.png");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-    overflow: hidden; /* Hide scrollbars */
-    opacity: 1;
+button, a {
+    cursor: pointer;
 }
 
-#shop {
-    padding-top: 11rem;
-}
-
-footer p {
-    user-select: none;
+* {
+    transition: all 1s ease-in-out;
+    box-sizing: border-box; /* Include padding in width calculation */
 }

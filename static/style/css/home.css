@@ -1,16 +1,35 @@
+#home {
+    background-image: url("/static/img/home-bg/home-bg.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    overflow: hidden; /* Hide scrollbars */
+    
+    position: absolute;
+    top: 19vh;
+    left: 0px;
+    height: 77vh;
+    width: 100vw;
+
+    user-select: none;
+}
+
+#home img {
+    cursor: crosshair;
+}
 
 #home-prod-manufact {
-    top: 33vh;
     position: relative;
-    width: 44vh;
+    top: 22vh;
     left: 11vw;
+    width: 44vh;
 }
 
 #home-boots {
-    top: -12vh;
     position: relative;
+    top: 17vh;
+    left: 17vw;
     width: 22vw;
-    left: 44vw;
 }
 
 #home img {

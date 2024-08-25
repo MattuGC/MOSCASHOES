@@ -1,0 +1,61 @@
+:root {
+    --menu-height: 11vh;
+}
+
+#left-menu {
+    width: fit-content;
+}
+
+li {
+    user-select: none;
+}
+
+button {
+    all: unset; /* Quita todos los estilos aplicados */
+    display: inline-block; /* Asegura que el botón se comporte como un botón */
+    cursor: pointer;
+    
+    margin: 0.5vh;
+
+    text-decoration: none;
+    color: var(--text-color);
+
+    user-select: none;
+}
+
+button:hover {
+    color: var(--main-color);
+}
+
+#hamburguer-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100vw;
+}
+
+#hamburguer-btn img {
+    width: 3.3vw;
+}
+
+#hamburguer-btn img:hover {
+    background-image: url();
+}
+
+#menu {
+    position: absolute;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    top: 0vh;
+    height: var(--menu-height);
+    width: 100vw;
+
+    background: #ffffff55;
+    opacity: 0;
+}
+
+header:hover #menu {
+    top: var(--header-height);
+    opacity: 1;
+}

@@ -1,7 +1,5 @@
 :root {
-    --rolling-text-color: black; /* Variable for rolling text color */
     --pop-up-background-color: gray; /* Semi-transparent background */
-    --rolling-text-font-size: 1.1rem;
     --rolling-text-margin: 3rem;
 }
 
@@ -15,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* Ensure it is above other content */
+    z-index: 1001; /* Ensure it is above other content */
     opacity: 1;
     transition: opacity 0.5s ease;
 }
@@ -29,11 +27,8 @@
     justify-content: center; /* Center items horizontally */
 }
 
-.video-placeholder {
-    width: 80%; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    background-color: transparent; /* Set background to transparent */
-    position: relative; /* Change to relative positioning */
+#welcome-popup {
+    user-select: none;
 }
 
 #country-list {
@@ -57,30 +52,25 @@
     border-radius: 3em .5em 2em .5em/.4em 2em .5em 3em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
-    font-weight: normal;
-    color: var(--text-color);
-}
-
 /* Rolling text */
 .rolling-text-bg {
-    background-color: var(--main-color);
-    color: transparent;
-    position: absolute;
     left: 0;
     width: 100%;
+
+    background-color: var(--main-color);
+    color: transparent;
     font-size: var(--rolling-text-font-size);
-    user-select: none;
 }
 
 .rolling-text-top {
     margin-top: var(--rolling-text-margin);
+    position: absolute;
     top: 0; /* Position at the top */
 }
 
 .rolling-text-bottom {
     margin-bottom: var(--rolling-text-margin);
+    position: absolute;
     bottom: 0; /* Position at the top */
 }
 
