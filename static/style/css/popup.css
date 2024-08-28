@@ -20,7 +20,6 @@
 
 .popup-content {
     text-align: center;
-    color: var(--text-color);
     display: flex; /* Use flexbox for centering */
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items vertically */
@@ -41,25 +40,36 @@
 
 #country-list li {
     cursor: pointer; /* Change cursor to pointer */
-    padding: 10px 20px; /* Add padding for clickable area */
+    outline: transparent var(--sticker-outline-style) var(--sticker-outline-width);
     margin: 5px; /* Add margin between items */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth background color transition */
+    padding: 0.7rem;
+    
+    box-shadow: var(--shadow-box) transparent;
+    border: var(--button-border-width) solid transparent;
+
+    transition: all 0.3s var(--transition-style);
 }
 
 #country-list li:hover {
 	background: var(--main-color);
-    border-radius: 3em .5em 2em .5em/.4em 2em .5em 3em;
+    box-shadow: var(--shadow-box) var(--shadow-box-color);
+    border-color: var(--text-color);
+    border-style: var(--sticker-border-style);
+    outline-color: var(--text-color);
 }
 
 /* Rolling text */
-.rolling-text-bg {
+.rolling-bg {
     left: 0;
     width: 100%;
 
     background-color: var(--main-color);
     color: transparent;
     font-size: var(--rolling-text-font-size);
+
+    box-shadow: var(--shadow-box) var(--shadow-box-color);
+    border-top: var(--button-border-width) var(--sticker-border-style) var(--text-color);
+    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--text-color);
 }
 
 .rolling-text-top {
@@ -77,7 +87,7 @@
 #top-rolling-text,
 #bottom-rolling-text {
     position: absolute; /* Position absolute for scrolling */
-    animation: scroll-text 55s linear infinite; /* Adjust duration as needed */
+    animation: scroll-text var(--scroll-text-duration) linear infinite; /* Adjust duration as needed */
 }
 
 #top-rolling-text {
@@ -88,15 +98,6 @@
 #bottom-rolling-text {
     margin-bottom: var(--rolling-text-margin);
     bottom: 0; /* Position at the bottom */
-}
-
-@keyframes scroll-text {
-    0% {
-        transform: translateX(100%); /* Start above */
-    }
-    100% {
-        transform: translateX(-100%); /* End below */
-    }
 }
 
 /* Pop-up Logos */

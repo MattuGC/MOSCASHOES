@@ -1,68 +1,76 @@
-function setupLanguageSelector() {
-    const countryList = document.getElementById("country-list");
-    const welcomePopup = document.getElementById("welcome-popup");
-    const greetingElement = document.getElementById("greeting");
-    const topRollingText = document.getElementById("top-rolling-text");
-    const bottomRollingText = document.getElementById("bottom-rolling-text");
-    const topImage = document.querySelector('.top-image');
-    const bottomImage = document.querySelector('.bottom-image');
+function loadTranslations(language) {
+    const currentLanguage = document.getElementById("dropdownButton").getAttribute("alt")
+    if(currentLanguage!==language){
+        const translationFiles = {
+            en: 'static/translations/en.json', // USA
+            es: 'static/translations/es.json', // Argentina, Uruguay
+            pt: 'static/translations/pt.json', // Brasil
+            it: 'static/translations/it.json'  // Italia
+        };
 
-    countryList.addEventListener("click", function(event) {
-        if (event.target.tagName === "LI") {
-            const selectedLanguage = event.target.getAttribute("data-lang");
-            loadTranslations(selectedLanguage);
-            
-            // Slide images out before dissolving the popup
-            topImage.style.transform = 'translateX(-1000%)'; // Slide left
-            bottomImage.style.transform = 'translateX(2000%) rotate(180deg)'; // Slide right
-            
-            setTimeout(() => {
-                dissolvePopup(welcomePopup);
-            }, 500); // Match the duration of the slide-out
-        }
-    });
+        // console.log("Selected language: " + language.toUpperCase() );
 
-    countryList.addEventListener("mouseover", function(event) {
-        if (event.target.tagName === "LI") {
-            const selectedLanguage = event.target.getAttribute("data-lang");
-            const translationFiles = {
-                en: 'static/translations/en.json', // USA
-                es: 'static/translations/es.json', // Argentina, Uruguay
-                pt: 'static/translations/pt.json', // Brasil
-                it: 'static/translations/it.json'  // Italia
-            };
+        const translationFile = translationFiles[language];
 
-            const translationFile = translationFiles[selectedLanguage];
+        // Cargar el archivo de traducción
+        fetch(translationFile)
+            .then(response => response.json())
+            .then(translations => {
+                // Actualiza el texto de los elementos con el atributo data-lang-key
+                const langElements = document.querySelectorAll('[data-lang-key]');
+                langElements.forEach(element => {
+                    const key = element.getAttribute('data-lang-key');
+                    element.textContent = translations[key].toUpperCase() || key.toUpperCase(); // Usa la clave si no se encuentra la traducción
+                    
+                    if(element.textContent.toLowerCase()!==translations[key].toLowerCase()) {
+                        console.log(
+                            "Failed changing language to " + language.toUpperCase() +
+                            "\nFile: static/style/js/language.js\tLine: 73" +
+                            "\nelement.textContent => " + element.textContent +
+                            "\nkey => " + key +
+                            "\ntranslations[key] => " + translations[key]
+                        );
+                    }
 
-            fetch(translationFile)
-                .then(response => response.json())
-                .then(translations => {
-                    greetingElement.innerText = translations.greeting;
-                    topRollingText.innerText = translations.rollingText;
-                    bottomRollingText.innerText = translations.rollingText;
+                    if (element.classList.contains("context-title")) {
+                        const parent = element.parentElement;
+                        const childrens = parent.querySelectorAll("img");
+
+                        const elementDataLang = element.getAttribute("data-lang-key")
+                        
+                        if (elementDataLang !== "cart") {
+                            
+                            childrens.forEach(img => {
+                                const imgData = img.getBoundingClientRect();
+                                const height =imgData.height;
+                                const left = imgData.left;
+                                const middlePoint = imgData.width / 2;
+                                const basePosition = left + middlePoint;
+                                const top = imgData.top;
+                                var newTop = null;
+                                
+                                if (elementDataLang !== "menu") {
+                                    newTop = "-151%";
+                                } else {
+                                    newTop = top - (height/2) + "px";
+                                }
+
+                                element.style.top = newTop;
+
+                                const contextTitleWidth = element.getBoundingClientRect().width;
+                                const newLeft = basePosition - (contextTitleWidth/2);
+                                element.style.left = newLeft + "px";
+                            });
+                        } else {
+                            element.style.top = "-285%";
+                            element.style.left = "-72%";
+                        }
+                        
+                    }
                 });
-        }
-    });
+
+                // console.log("Language succesfully changed from " + currentLanguage.toUpperCase() + " to " + language.toUpperCase() + "!") ;
+                document.getElementById("dropdownButton").setAttribute("alt", language); // To avoid useless language change
+        }).catch(error => console.error('Error loading translations:', error));
+    }
 }
-  
-  function loadTranslations(language) {
-    const translationFiles = {
-        en: 'static/translations/en.json', // USA
-        es: 'static/translations/es.json', // Argentina, Uruguay
-        pt: 'static/translations/pt.json', // Brasil
-        it: 'static/translations/it.json'  // Italia
-    };
-  
-    const translationFile = translationFiles[language];
-  
-    fetch(translationFile)
-        .then(response => response.json())
-        .then(translations => {
-            // Update the page with translations
-            document.querySelector("h1").innerText = translations.welcome;
-            document.querySelector("#about h2").innerText = translations.about;
-            document.querySelector("#contact h2").innerText = translations.contact;
-            document.getElementById("greeting").innerText = translations.greeting;
-            // Add more translations as needed
-        });
-  }

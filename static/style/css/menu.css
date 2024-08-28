@@ -1,9 +1,10 @@
 :root {
-    --menu-height: 11vh;
-}
-
-#left-menu {
-    width: fit-content;
+    --menu-height: 4.7vh; /* Also update --menu-base-height they has to be the same vh */
+    --menu-base-height: 4.7vh; /* Also update --menu-height they has to be the same vh */
+    --menu-ico-height: 22px;
+    --language-menu-off: -19vh;
+    --lang-border-radius: 0.7rem;
+    --secundary-menu-top: -13%;
 }
 
 li {
@@ -18,13 +19,18 @@ button {
     margin: 0.5vh;
 
     text-decoration: none;
-    color: var(--text-color);
+
+    border-top: var(--button-border-width) var(--sticker-border-style) transparent;
+    border-bottom: var(--button-border-width) var(--sticker-border-style) transparent;
+
+    transition: all 0.5s var(--transition-style);
 
     user-select: none;
 }
 
 button:hover {
-    color: var(--main-color);
+    border-top: var(--button-border-width) var(--sticker-border-style) var(--text-color);
+    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--text-color);
 }
 
 #hamburguer-btn {
@@ -37,25 +43,164 @@ button:hover {
 
 #hamburguer-btn img {
     width: 3.3vw;
+    cursor: pointer;
 }
 
-#hamburguer-btn img:hover {
+/* #hamburguer-btn img:hover {
     background-image: url();
-}
+} */
 
 #menu {
     position: absolute;
     padding-left: 1vh;
     padding-right: 1vh;
-    top: 0vh;
+    top: calc(var(--header-height) - var(--menu-height));
     height: var(--menu-height);
     width: 100vw;
 
-    background: #ffffff55;
+    background: var(--main-color);
+    border-top: var(--button-border-width) var(--sticker-border-style) var(--text-color);
+    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--text-color);
     opacity: 0;
+    /* top: 23vh; DELETE AFTER TESTING!!! */
+
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
-header:hover #menu {
+.secundary-menu {
+    position: fixed;
+    top: var(--secundary-menu-top);
+    left: 0vw;
+    width: 100vw;
+    height: 0vh;
+
+    display: grid;
+    padding-left: .7rem;
+    padding-right: .7rem;
+    background-color: var(--sub-menu-color);
+    opacity: 0;
+    box-shadow: var(--shadow-box) var(--shadow-box-color);
+
+    transition: all var(--transition-duration) var(--transition-style);
+}
+
+#menu div button {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+#right-menu {
+    text-align: right;
+}
+
+/* header:hover #menu {
     top: var(--header-height);
     opacity: 1;
+} */
+
+#cart-button {
+    position: relative;
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+#menu img {
+    height: var(--menu-ico-height);
+}
+
+#cart-quantity {
+    position: absolute; /* Permite superponer el número */
+    top: 0; /* Ajusta la posición vertical */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta para centrar el span */
+}
+
+.social-networks {
+    justify-content: center;
+    align-items: center;
+}
+
+.language-selector {
+    position: relative; /* Necesario para posicionar el menú desplegable */
+    display: inline-block; /* Permite que el contenedor se ajuste al contenido */
+}
+
+.dropdown-button {
+    display: flex; /* Usar flexbox para alinear el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.dropdown-icon {
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+}
+
+.dropdown-menu {
+    display: block !important;
+    opacity: 0;
+    position: absolute; /* Posiciona el menú en relación al botón */
+    z-index: 1; /* Asegura que el menú esté por encima de otros elementos */
+
+    background-color: var(--sub-menu-color);
+    border-radius: 0rem 0rem var(--lang-border-radius) var(--lang-border-radius);
+
+    top: var(--language-menu-off);
+    right: auto;
+
+    transition: all var(--transition-duration) var(--transition-style);
+}
+
+.dropdown-menu button {
+    margin: 0;
+    padding: 0.3rem;
+}
+
+.dropdown-item {
+    display: flex !important;
+    text-decoration: none;
+}
+
+.lang-mosca {
+    margin: 0.33rem;
+    height: 1.5rem !important;
+    width: 1.5rem;
+}
+
+/* Personal Menu */
+/* ------------- */
+.personal-menu {
+    display: block !important;
+    opacity: 0;
+    
+    background-color: var(--sub-menu-color);
+    border-radius: var(--lang-border-radius) var(--lang-border-radius) var(--lang-border-radius) var(--lang-border-radius);
+    
+    position: absolute; /* Posiciona el menú en relación al botón */
+    top: calc(var(--header-height)* -1);
+    height: 0vh;
+    width: 20vw;
+    transform: translateX(-50%);
+    
+    z-index: 0;
+    transition: all var(--transition-duration) var(--transition-style);
+}
+
+#cart-menu:hover {
+    top: var(--menu-height);
+    opacity: 1 !important;
+    z-index: 2001;
+    height: 10vh;
+}
+
+/* #cart-button:hover .cart-menu {
+    opacity: 1 !important;
+    top: var(--menu-height);
+    z-index: 2001;
+} */
+
+#cart-button .menu-icon:hover ~ #cart-menu {
+    top: var(--menu-height);
+    opacity: 1 !important;
+    height: 10vh;
+    z-index: 2001;
 }

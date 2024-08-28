@@ -1,10 +1,10 @@
 // products.js
 const products = [
-    { name: "Product 1", image: "static/images/products/example_1.jpg" },
-    { name: "Product 2", image: "static/images/products/example_2.jpg" },
-    { name: "Product 3", image: "static/images/products/example_3.jpg" },
-    { name: "Product 4", image: "static/images/products/example_4.jpg" },
-    { name: "Product 5", image: "static/images/products/example_5.jpg" },
+    // { name: "Product 1", image: "static/images/products/example_1.jpg" },
+    // { name: "Product 2", image: "static/images/products/example_2.jpg" },
+    // { name: "Product 3", image: "static/images/products/example_3.jpg" },
+    // { name: "Product 4", image: "static/images/products/example_4.jpg" },
+    // { name: "Product 5", image: "static/images/products/example_5.jpg" },
 ];
 
 function loadProducts() {
