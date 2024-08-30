@@ -1,10 +1,6 @@
 :root {
-    --main-color: #dd76ae;
-    --sub-menu-color: #dd76af99;
-    --secondary-color: #6c757d;
-    --text-color: #ffe600;
+    --secundary-color-negative: red;
     --body-font: 'Readex Pro', sans-serif;
-    --rolling-text-color: #ffe600;
     --rolling-text-font-size: 1.1rem;
     --scrollbar-size: 33px;
     --shadow-box: 11px 11px 22px 11px;
@@ -18,11 +14,26 @@
     --scroll-text-duration: 55s;
 }
 
+/* z-index */
+/* ------- */
+
+/*
+.popup: 10000
+#menu: 9000
+.dropdown-menu: 9000
+.secundary-menu: 8000
+header .menu-icon: 6000
+.dropdown-button: 6000
+header: 5000
+.rolling: 4000
+.personal-menu: 3000
+*/
+
 html, body {
     height: 100%;
     margin: 0;
     font-family: var(--body-font), Arial, sans-serif;
-    color: var(--text-color);
+    color: var(--secundary-color);
     overflow: hidden;
 }
 
@@ -50,10 +61,6 @@ h3 {
     font-size: 2rem;
 }
 
-/* img {
-    z-index: 7000;
-} */
-
 main {
     flex: 1; /* Allow main to grow and fill the available space */
     display: flex;
@@ -62,6 +69,13 @@ main {
     overflow-y: hidden; /* Hide vertical scrolling */
 }
 
+.sewn-button{
+    box-shadow: var(--shadow-box) var(--shadow-box-color);
+    background-color: var(--main-color);
+    border: var(--button-border-width) var(--secundary-color);
+    border-style: var(--sticker-border-style);
+    outline: var(--secundary-color) var(--sticker-outline-style) var(--sticker-outline-width);
+}
 
 @keyframes scroll-text {
     0% {
@@ -96,33 +110,23 @@ button, a {
 * {
     transition: all var(--transition-duration) var(--transition-style);
     box-sizing: border-box; /* Include padding in width calculation */
+    color: var(--secundary-color);
 }
 
 .context-title {
     opacity: 0;
     pointer-events: none;
     background: var(--main-color);
-
-    box-shadow: var(--shadow-box) var(--shadow-box-color);
-    border: 2px var(--text-color);
-    border-style: var(--sticker-border-style);
-    outline: var(--text-color) var(--sticker-outline-style) var(--sticker-outline-width);
     
-    color: var(--text-color);
+    color: var(--secundary-color);
     
     position: absolute;
     padding: 0.4rem;
+    top: calc(var(--menu-height) * -1.5);
     height: auto;
+    width: auto;
     
     transition: all 0.5s var(--transition-style);
-}
-
-.menu-icon {
-    z-index: 50;
-}
-
-.menu-icon:hover ~ .context-title {
-    opacity: 1;
 }
 
 .page {

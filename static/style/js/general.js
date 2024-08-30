@@ -1,5 +1,10 @@
 // general.js
 
+// Función para obtener el valor de una variable CSS
+function getCssVariable(variable) {
+  return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     loadProducts();
     setupLanguageSelector();
@@ -9,12 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
   function setBorderRarius(){
     const contextTitle = document.getElementsByClassName("context-title");
     const countryList = document.getElementsByClassName("country-list-hover-style");
+    const secundaryMenu = document.getElementsByClassName("personal-menu");
+    const inputLabel = document.getElementsByClassName("input-label");
+    const theemeQube = document.getElementsByClassName('theeme-qube');
+
     var stickers = [];
     stickers = Array.prototype.concat.apply(stickers, contextTitle);
     stickers = Array.prototype.concat.apply(stickers, countryList);
+    stickers = Array.prototype.concat.apply(stickers, secundaryMenu);
+    stickers = Array.prototype.concat.apply(stickers, inputLabel);
+    stickers = Array.prototype.concat.apply(stickers, theemeQube);
     
     for(i=0;i<stickers.length;i++) {
-      const borderRadius = stickerShapeGenerator();
+      var borderRadius = "";
+      if(stickers[i].classList.contains("personal-menu")){
+        borderRadius = stickerShapeGenerator(4, 8);
+      } else {
+        borderRadius = stickerShapeGenerator();
+      }
       stickers[i].style.borderRadius = borderRadius;
     }
 }
@@ -48,28 +65,31 @@ function getRandomEm(min, max) {
   return randomNumber;
 }
 
-function stickerShapeGenerator() {
+function stickerShapeGenerator(min, max) {
   // const randomBorderRadius = '3em .5em 2em .5em/.4em 2em .5em 3em';
-  const min = 0;
-  const max = 5;
   var randomBorderRadius = "";
   var randomNumber = "";
 
-  randomNumber = getRandomEm(1, 5);
+  if(min === undefined) {
+    const min = 0;
+    const max = 5;
+  }
+
+  randomNumber = getRandomEm(min, max);
   randomBorderRadius = `${randomBorderRadius}${randomNumber} `;
-  randomNumber = getRandomEm(1, 5);
+  randomNumber = getRandomEm(min, max);
   randomBorderRadius = `${randomBorderRadius}${randomNumber} `;
-  randomNumber = getRandomEm(1, 5);
+  randomNumber = getRandomEm(min, max);
   randomBorderRadius = `${randomBorderRadius}${randomNumber} `;
-  randomNumber = getRandomEm(1, 5);
+  randomNumber = getRandomEm(min, max);
   randomBorderRadius = `${randomBorderRadius}${randomNumber} / `;
-  randomNumber = getRandomEm(1, 5);
+  randomNumber = getRandomEm(min, max);
   randomBorderRadius = `${randomBorderRadius}${randomNumber} `;
-  randomNumber = getRandomEm(1, 5);
+  randomNumber = getRandomEm(min, max);
   randomBorderRadius = `${randomBorderRadius}${randomNumber} `;
-  randomNumber = getRandomEm(1, 5);
+  randomNumber = getRandomEm(min, max);
   randomBorderRadius = `${randomBorderRadius}${randomNumber} `;
-  randomNumber = getRandomEm(1, 5);
+  randomNumber = getRandomEm(min, max);
   randomBorderRadius = `${randomBorderRadius}${randomNumber}`;
   
   return randomBorderRadius;

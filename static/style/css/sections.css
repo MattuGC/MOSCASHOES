@@ -1,5 +1,6 @@
 :root {
     --section-opacity: 1;
+    --section-height: 74vh;
 }
 
 section {
@@ -8,7 +9,7 @@ section {
     position: fixed;
     padding: 2rem; /* Add padding for content */
     top: 20vh;
-    height: 74vh;
+    height: var(--section-height);
     width: 100vw; /* Ensure each section takes the full viewport width */
 }
 

@@ -5,6 +5,8 @@
     --language-menu-off: -19vh;
     --lang-border-radius: 0.7rem;
     --secundary-menu-top: -13%;
+    --user-menu-top: -100vh;
+    --personal-menu-width: 20vw;
 }
 
 li {
@@ -29,8 +31,8 @@ button {
 }
 
 button:hover {
-    border-top: var(--button-border-width) var(--sticker-border-style) var(--text-color);
-    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--text-color);
+    border-top: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
+    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
 }
 
 #hamburguer-btn {
@@ -41,30 +43,35 @@ button:hover {
     width: 100vw;
 }
 
-#hamburguer-btn img {
+/* #hamburguer-btn img {
     width: 3.3vw;
     cursor: pointer;
-}
+} */
 
 /* #hamburguer-btn img:hover {
     background-image: url();
 } */
 
+ /* #menu .context-title {
+    right: 1%;
+ } */
+
 #menu {
     position: absolute;
     padding-left: 1vh;
     padding-right: 1vh;
-    top: calc(var(--header-height) - var(--menu-height));
+    top: calc(var(--menu-height) * -1);
     height: var(--menu-height);
     width: 100vw;
 
     background: var(--main-color);
-    border-top: var(--button-border-width) var(--sticker-border-style) var(--text-color);
-    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--text-color);
+    border-top: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
+    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
     opacity: 0;
     /* top: 23vh; DELETE AFTER TESTING!!! */
 
     display: grid;
+    z-index: 9000;
     grid-template-columns: auto auto;
 }
 
@@ -76,6 +83,7 @@ button:hover {
     height: 0vh;
 
     display: grid;
+    z-index: 8000;
     padding-left: .7rem;
     padding-right: .7rem;
     background-color: var(--sub-menu-color);
@@ -104,6 +112,10 @@ button:hover {
     text-align: center; /* Centra el contenido horizontalmente */
 }
 
+#cart-button .menu-icon ~ .context-title {
+    right: -50% !important;
+}
+
 #menu img {
     height: var(--menu-ico-height);
 }
@@ -129,6 +141,8 @@ button:hover {
     display: flex; /* Usar flexbox para alinear el contenido */
     align-items: center; /* Centra verticalmente el contenido */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+
+    z-index: 6000;
 }
 
 .dropdown-icon {
@@ -137,9 +151,9 @@ button:hover {
 
 .dropdown-menu {
     display: block !important;
+    z-index: 9000;
     opacity: 0;
     position: absolute; /* Posiciona el menú en relación al botón */
-    z-index: 1; /* Asegura que el menú esté por encima de otros elementos */
 
     background-color: var(--sub-menu-color);
     border-radius: 0rem 0rem var(--lang-border-radius) var(--lang-border-radius);
@@ -148,6 +162,12 @@ button:hover {
     right: auto;
 
     transition: all var(--transition-duration) var(--transition-style);
+}
+
+.language-selector:hover .dropdown-menu {
+    padding-top: 1vh;
+    top: calc(var(--menu-height) - 1vh);
+    opacity: 1 !important;
 }
 
 .dropdown-menu button {
@@ -170,37 +190,114 @@ button:hover {
 /* ------------- */
 .personal-menu {
     display: block !important;
+    overflow: hidden;
     opacity: 0;
-    
-    background-color: var(--sub-menu-color);
-    border-radius: var(--lang-border-radius) var(--lang-border-radius) var(--lang-border-radius) var(--lang-border-radius);
+    z-index: 3000;
     
     position: absolute; /* Posiciona el menú en relación al botón */
-    top: calc(var(--header-height)* -1);
-    height: 0vh;
-    width: 20vw;
-    transform: translateX(-50%);
+    right: 0;
+    top: var(--user-menu-top);
+    width: var(--personal-menu-width);
+    overflow: visible;
     
-    z-index: 0;
     transition: all var(--transition-duration) var(--transition-style);
 }
 
-#cart-menu:hover {
-    top: var(--menu-height);
+.personal-menu:hover {
     opacity: 1 !important;
-    z-index: 2001;
-    height: 10vh;
+    
+    max-height: calc(var(--section-height) - 6vh);
+    top: var(--menu-height);
+
+    cursor: default;
 }
 
-/* #cart-button:hover .cart-menu {
-    opacity: 1 !important;
+#cart-menu {
     top: var(--menu-height);
-    z-index: 2001;
-} */
+
+    transform: translateX(42%);
+}
 
 #cart-button .menu-icon:hover ~ #cart-menu {
-    top: var(--menu-height);
-    opacity: 1 !important;
-    height: 10vh;
-    z-index: 2001;
+    opacity: 1;
+
+    min-height: 22vh;
+    max-height: calc(var(--section-height) - 6vh);
 }
+
+#cart-button .personal-menu:hover {
+    min-height: 22vh;
+    max-height: calc(var(--section-height) - 6vh);
+}
+
+#login-menu {
+    margin-top: 1vh;
+    width: 32vw;
+
+    transform: translateX(-4%);
+}
+
+/* Hamburguer menu */
+/* ---------- ---- */
+
+.menu {
+    --s: 2.2vw; /* control the size */
+    --c: var(--secundary-color); /* the color */
+    
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s)/2) solid #0000; 
+    box-sizing: content-box;
+    --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0) 
+           no-repeat content-box border-box;
+    --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) 
+           repeat-y content-box border-box;
+    background: 
+      var(--_g2) left  var(--_p,0px) top,
+      var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+      var(--_g2) right var(--_p,0px) top,
+      var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+    background-size: 
+      20% 80%,
+      40% 100%;
+    position: relative;
+    clip-path: inset(0 25%);
+    -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
+    cursor: pointer;
+    transition: 
+      background-position .3s var(--_s,.3s), 
+      clip-path 0s var(--_s,.6s);
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+  }
+  .menu:before,
+  .menu:after {
+    content:"";
+    position: absolute;
+    border-radius: var(--s);
+    inset: 40% 0;
+    background: var(--c);
+    transition: transform .3s calc(.3s - var(--_s,.3s));
+  }
+  
+  .menu:checked {
+    clip-path: inset(0);
+    --_p: calc(-1*var(--s));
+    --_s: 0s;
+  }
+  .menu:checked:before {
+    transform: rotate(45deg);
+  }
+  .menu:checked:after {
+    transform: rotate(-45deg);
+  }
+  .menu:focus-visible {
+    clip-path: none;
+    -webkit-mask: none;
+    border: none;
+    outline: 2px solid var(--c);
+    outline-offset: 5px;
+  }

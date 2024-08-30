@@ -1,25 +1,38 @@
 :root {
     --heading-font: 'Anton', sans-serif;
     --header-height: 19vh;
+    --top-active-menu: 17.5vh;
     --scrolling-top: 20vh;
     --rolling-box-height: 3vh;
 }
 
 header {
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x: visible;
 
-    height: var(--header-height);
+    position: absolute;
+    height: calc(var(--scrollbar-size) + var(--header-height));
     width: 100vw;
 
     user-select: none;
     
-    z-index: 1000;
+    z-index: 5000;
 }
 
+
+header .menu-input {
+    z-index: 6000;
+}
+
+/* .hamburguer-btn:hover ~ #asdf {
+    opacity: 1;
+    left: auto;
+    right: auto;
+} */
+
 #header-bg {
-    background-color: var(--main-color);
+    position: absolute;
     height: var(--header-height);
+    background-color: var(--main-color);
 }
 
 .logo-banner {
@@ -40,21 +53,21 @@ header {
 }
 
 .logo-banner a:link {
-    color: var(--text-color) !important;
+    color: var(--secundary-color) !important;
     background: transparent !important;
     background-color: transparent !important;
     text-decoration: none !important;
 }
 
 .logo-banner a:visited {
-    color: var(--text-color) !important;
+    color: var(--secundary-color) !important;
     background: transparent !important;
     background-color: transparent !important;
     text-decoration: none !important;
 }
 
 .logo-banner a:hover {
-    color: var(--text-color) !important;
+    color: var(--secundary-color) !important;
     background: transparent !important;
     background-color: transparent !important;
     text-decoration: none !important;
@@ -67,6 +80,8 @@ header {
 .rolling {
     position: absolute;
     top: var(--header-height);
+    
+    z-index: 4000;
 }
 
 /* header:hover .rolling {
@@ -82,7 +97,7 @@ header {
     width: auto;
     
     font-size: var(--rolling-text-font-size);
-    color: var(--rolling-text-color);
+    color: var(--secundary-color);
 }
 
 #banner-top-rolling-text {

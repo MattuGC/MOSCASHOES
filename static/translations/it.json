@@ -4,6 +4,9 @@
     
     "language": "Lingua",
 
+    "main-color": "Principale",
+    "secundary-color": "Secondario",
+
     "menu": "menu",
     
     "shop": "Negozio",
@@ -20,10 +23,22 @@
     "collection": "La Collezione",
 
     "login": "Accesso",
+    "sign-in": "Accedi",
+    "login-in": "Entrare",
+    "remember-pass": "Ricorda",
+    "recover-pass": "Recupera",
+    "sign-up": "Iscriviti",
+    "create-account": "Crea account",
+    "email": "Email",
+    "password": "Password",
+    "disclamer": "I vostri dati personali saranno utilizzati per supportare la vostra esperienza su questo sito web, per gestire l'accesso al vostro account e per altri scopi descritti nella nostra politica sulla privacy.",
+
     "cart": "Carrello",
     "moscathecollection": "moscathecollection",
     "moscastudiok": "moscastudiok",
-    "WhatsApp": "WhatsApp",
+    "whatsapp": "WhatsApp",
 
-    "rights": "&copy; 2024 MoSCA Shoes. Tutti i diritti riservati."
+    "rights": "&copy; 2024 MoSCA Shoes. Tutti i diritti riservati.",
+
+    "under-construction": "... Aspettate... È quasi arrivato... Da un momento all'altro..."
 }

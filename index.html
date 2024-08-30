@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="MoSCA Shoes ofrece la mejor selección de zapatos para tu comodidad y estilo.">
     <title>MoSCA Shoes</title>
     <link rel="stylesheet" href="static/style/css/about-mosca.css">
@@ -11,12 +11,16 @@
     <link rel="stylesheet" href="static/style/css/header.css">
     <link rel="stylesheet" href="static/style/css/heritage.css">
     <link rel="stylesheet" href="static/style/css/home.css">
+    <link rel="stylesheet" href="static/style/css/login-container.css">
     <link rel="stylesheet" href="static/style/css/menu.css">
     <link rel="stylesheet" href="static/style/css/popup.css">
     <link rel="stylesheet" href="static/style/css/sections.css">
     <link rel="stylesheet" href="static/style/css/shop.css">
     <link rel="stylesheet" href="static/style/css/the-collection.css">
+    <link rel="stylesheet" href="static/style/css/theme-selector.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Readex+Pro:wght@400&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> Reemplaza con tu Client ID -->
 </head>
 <body>
     <div id="welcome-popup" class="popup">
@@ -41,15 +45,53 @@
             <div class="rolling-text" id="bottom-rolling-text">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
         </div>
     </div>
+    <div id="theme-selector">
+        <div id="pink-theme" onclick="applyTheme('pink-theme')">
+            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+        </div>
+        <div id="grey-theme" onclick="applyTheme('grey-theme')">
+            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+        </div>
+        <div id="cream-theme" onclick="applyTheme('cream-theme')">
+            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+        </div>
+        <div id="yellow-theme" onclick="applyTheme('yellow-theme')">
+            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+        </div>
+        <div id="blue-theme" onclick="applyTheme('blue-theme')">
+            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+        </div>
+    </div>
 
     <header>
+        <button id="change-theme" onclick="openThemeMenu()">
+            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Fondo cuadrante inferior derecho -->
+                <circle cx="50" cy="50" r="33" class="bg" fill="none"/>
+                                
+                <!-- Parte superior del círculo -->
+                <circle cx="50" cy="50" r="30" class="half-circle" fill="none"/>
+                
+                <!-- Parte inferior del círculo -->
+                <path class="half-circle-secondary" d="M 50 50 L 20 50 A 30 30 0 0 0 80 50 Z" />
+                
+                <!-- Círculo completo más pequeño -->
+                <circle cx="50" cy="50" r="30" class="dashed-border" fill="none" />
+            </svg>
+        </button>
         <div id="header-bg">
             <div class="logo-banner">
                 <a id="home-button" onclick="goTo('home')">MOSCA</a>
             </div>
-            <div id="hamburguer-btn">
-                <img id="hamburguer-btn-img" class="menu-icon" src="static/img/icons/hambuguer-btn.png" onclick="openCloseMenu()" alt="Menu">
-                <div class="context-title" data-lang-key="menu"></div>
+            <div id="hamburguer-btn" onclick="openCloseMenu()">
+                <!-- <img id="hamburguer-btn-img" class="menu-icon" src="static/img/icons/hambuguer-btn.png" onclick="openCloseMenu()" alt="Menu"> -->
+                <input id="menu-input" type="checkbox" role="button" class="menu">
+                <div id="menu-context-title" class="context-title sewn-button" data-lang-key="menu">Menu</div>
             </div>
             <div id="menu">
                 <div id="left-menu">
@@ -68,25 +110,71 @@
                     <button onclick="goTo('the-collection')" data-lang-key="collection">The Collection</button>
                 </div>
                 <div id="right-menu">
-                    <button onclick="" data-lang-key="login">Login</button>
-                    <div id="login-menu" class="personal-menu"></div>
-                    <button id="cart-button" onclick="">
+                    <button id="user" class="open-menu" onclick="openCloseUserMenu('login-menu')" data-lang-key="login">Login</button>
+                    <div id="login-menu" class="personal-menu sewn-button">
+                        <div id="loginContainer" class="login-item login-container grid-container">
+                            <h3 class="sign-in login-item" data-lang-key="sign-in">Sign In</h3>
+                            <form id="loginForm" class="login-form login-item" onsubmit="handleLogin(event)">
+                                <span class="login-item">
+                                    <input class="login-item sewn-button swing input-label" id="loginEmail" type="email" required/>
+                                    <label class="input-label sewn-button login-item" data-lang-key="email" for="email">Email</label>
+                                </span>
+                                <span class="login-item">
+                                    <input class="login-item sewn-button swing input-label" id="loginPassword" type="password" required/>
+                                    <label class="input-label sewn-button login-item" data-lang-key="password" for="password">PassWord</label>
+                                </span>
+                                <div class="login-item captcha"></div>
+                                <div class="login-item">
+                                    <button id="login-button" class="login-item sewn-button" data-lang-key="login-in" type="submit">Login</button>
+                                    <label id="login-rememeber-pass" class="login-item input-label" data-lang-key="remember-pass">remember-pass</label>
+                                    <label class="login-item container input-label sewn-button">
+                                        <input class="login-item" type="checkbox" checked="checked">
+                                        <span class="login-item checkmark"></span>
+                                    </label>
+                                </div>
+                            </form>
+                            <button id="recover-pass" class="login-item recover-pass sewn-button" data-lang-key="recover-pass">Recuperar clave</button>
+                            
+                            <h3 class="sign-up login-item" data-lang-key="sign-up">Sign Up</h3>
+                            <form id="signupForm" class="signup-form login-item" onsubmit="handleSignup(event)">
+                                <span class="login-item">
+                                    <input class="login-item sewn-button swing input-label" type="email" id="signupEmail" required/>
+                                    <label class="input-label sewn-button login-item" data-lang-key="email" for="email">Email</label>
+                                </span>
+                                <span class="login-item">
+                                    <input class="login-item sewn-button swing input-label" type="password" id="signupPassword" required>
+                                    <label class="input-label sewn-button login-item" data-lang-key="password" for="password">PassWord</label>
+                                </span>
+                                <div class="login-item captcha"></div>
+                                <div class="login-item">
+                                    <!-- <img class="login-item" id="disclamer" alt="i"> -->
+                                    <p class="login-item sewn-button" id="disclamer" >i</p>
+                                    <div class="context-title sewn-button login-item" data-lang-key="disclamer">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</div>
+                                    <button class="login-item sewn-button" data-lang-key="create-account" type="submit">Create Account</button>
+                                </div>
+                            </form>
+
+                            <!-- <div class="g-signin2 google-signin login-item" data-onsuccess="onSignIn"></div> -->
+                            <!-- <button class="login-item" onclick="signOut();">Sign out</button> -->
+                    </div>
+                    </div>
+                    <button id="cart-button">
                         <img class="menu-icon" src="static/img/icons/shop-cart.png" alt="cart">
                         <span id="cart-quantity">0</span>
-                        <div class="context-title" data-lang-key="cart"></div>
+                        <div id="cart-context-title" class="context-title sewn-button" data-lang-key="cart">Cart</div>
                         <div id="cart-menu" class="personal-menu"></div>
                     </button>
-                    <button class="social-networks" onclick="openLink('https://www.instagram.com/moscathecollection/')" target="_blank" href="https://www.instagram.com/moscathecollection/">
+                    <button id="moscathecollection-button" class="social-networks" onclick="openLink('https://www.instagram.com/moscathecollection/')" target="_blank" href="https://www.instagram.com/moscathecollection/">
                         <img class="menu-icon" src="static/img/icons/instagram.png" alt="moscathecollection">
-                        <div class="context-title" data-lang-key="moscathecollection"></div>
+                        <div id="moscathecollection-context-title" class="context-title sewn-button" data-lang-key="moscathecollection">moscathecollection</div>
                     </button>
-                    <button onclick="openLink('https://www.instagram.com/moscastudiok/')" target="_blank" href="https://www.instagram.com/moscastudiok/">
+                    <button id="moscastudiok-button" onclick="openLink('https://www.instagram.com/moscastudiok/')" target="_blank" href="https://www.instagram.com/moscastudiok/">
                         <img class="menu-icon" src="static/img/icons/instagram.png" alt="moscastudiok">
-                        <div class="context-title" data-lang-key="moscastudiok"></div>
+                        <div id="moscastudiok-context-title" class="context-title sewn-button" data-lang-key="moscastudiok">moscastudiok</div>
                     </button>
-                    <button onclick="openLink('https://api.whatsapp.com/send/?phone=5491169580903&text=Hi+%2AMosca%2A%21+I+need+more+info+about+Contact+Us+https%3A%2F%2Fmoscathecollection.com%2Fcontact-us&type=phone_number&app_absent=0')" target="_blank" href="https://api.whatsapp.com/send/?phone=5491169580903&text=Hi+%2AMosca%2A%21+I+need+more+info+about+Contact+Us+https%3A%2F%2Fmoscathecollection.com%2Fcontact-us&type=phone_number&app_absent=0">
+                    <button id="wa-button" onclick="openLink('https://api.whatsapp.com/send/?phone=5491169580903&text=Hi+%2AMosca%2A%21+I+need+more+info+about+Contact+Us+https%3A%2F%2Fmoscathecollection.com%2Fcontact-us&type=phone_number&app_absent=0')" target="_blank" href="https://api.whatsapp.com/send/?phone=5491169580903&text=Hi+%2AMosca%2A%21+I+need+more+info+about+Contact+Us+https%3A%2F%2Fmoscathecollection.com%2Fcontact-us&type=phone_number&app_absent=0">
                         <img class="menu-icon" src="static/img/icons/whatsapp.png" alt="WhatsApp">
-                        <div class="context-title" data-lang-key="WhatsApp"></div>
+                        <div id="wa-context-title" class="context-title sewn-button" data-lang-key="whatsapp">WhatsApp</div>
                     </button>
                     <div class="language-selector">
                         <button onclick="openCloseLanguageMenu()" id="dropdownButton" class="open-menu dropdown-button" alt="default">
@@ -119,40 +207,40 @@
         <section id="shoes" class="shop page">
             <h2 data-lang-key="shoes">Shoes</h2>
             <div id="product-list"></div>
-            <p>... Waite for it... It's almost here... Any second now...</p>
+            <p data-lang-key="under-construction">... Waite for it... It's almost here... Any second now...</p>
         </section>
 
         <section id="clothing" class="shop page">
             <h2 data-lang-key="clothing">Clothing</h2>
-            <p>... Waite for it... It's almost here... Any second now...</p>
+            <p data-lang-key="under-construction">... Waite for it... It's almost here... Any second now...</p>
         </section>
 
         <section id="heritage" class="page">
             <h2>Heritage</h2>
-            <p>... Waite for it... It's almost here... Any second now...</p>
+            <p data-lang-key="under-construction">... Waite for it... It's almost here... Any second now...</p>
         </section>
 
         <section id="damano-mosca" class="about page">
             <h2 data-lang-key="damano-mosca">Damano MOSCA</h2>
             <p>We provide the best shoes for your comfort and style.</p>
-            <p>... Waite for it... It's almost here... Any second now...</p>
+            <p data-lang-key="under-construction">... Waite for it... It's almost here... Any second now...</p>
         </section>
 
         <section id="shoe-care" class="about page">
             <h2 data-lang-key="shoe-care">Shoe Care</h2>
             <p>We provide the best shoes for your comfort and style.</p>
-            <p>... Waite for it... It's almost here... Any second now...</p>
+            <p data-lang-key="under-construction">... Waite for it... It's almost here... Any second now...</p>
         </section>
 
         <section id="sizes-and-measurements" class="about page">
             <h2 data-lang-key="sizes-and-measurements">Sizes and Measurements</h2>
             <p>We provide the best shoes for your comfort and style.</p>
-            <p>... Waite for it... It's almost here... Any second now...</p>
+            <p data-lang-key="under-construction">... Waite for it... It's almost here... Any second now...</p>
         </section>
         
         <section id="the-collection" class="page">
-            <h2>The Collection</h2>
-            <p>... Waite for it... It's almost here... Any second now...</p>
+            <h2 data-lang-key="collection">The Collection</h2>
+            <p data-lang-key="under-construction">... Waite for it... It's almost here... Any second now...</p>
         </section>
     </main>
 
@@ -162,8 +250,11 @@
 
     <script src="static\style\js\general.js"></script>
     <script src="static\style\js\language.js"></script>
+    <script src="static\style\js\login.js"></script>
     <script src="static\style\js\menu.js"></script>
     <script src="static\style\js\popup.js"></script>
     <script src="static\products\products.js"></script>
+    <script src="static\style\js\session.js"></script>
+    <script src="static\style\js\theme-selector.js"></script>
 </body>
 </html>

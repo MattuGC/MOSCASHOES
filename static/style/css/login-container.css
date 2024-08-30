@@ -1,0 +1,228 @@
+#loginContainer {
+    margin: 1vh;
+    text-align: center;
+}
+
+#loginContainer h3 {
+    margin: 0.5vw;
+}
+
+.sign-in {
+    grid-area: sign-in;
+}
+
+.sign-up {
+    grid-area: sign-up;
+}
+
+.login-form {
+    grid-area: login-form;
+}
+
+.signup-form {
+    grid-area: signup-form;
+}
+
+.recover-pass {
+    grid-area: recover-pass;
+}
+
+.google-signin {
+    grid-area: google-signin;
+}
+
+.grid-container {
+display: grid;
+grid-template-areas:
+    'sign-in sign-up'
+    'login-form signup-form'
+    'recover-pass empty'
+    'google-signin google-signin';
+gap: 10px;
+padding: 10px;
+}
+
+.grid-container > div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#disclamer:hover ~ .context-title{
+    display: block;
+    opacity: 1;
+    border-radius: 3em 3em 3em 3em/ 3em 3em 3em 3em !important;
+    padding: 2vh;
+}
+
+#disclamer {
+    cursor: default;
+    display: inline-table;
+    width: 2vw;
+    height: 1.6vw;
+}
+
+#disclamer ~ .context-title {
+    top: 1vh;
+    left: 11%;
+    width: 80%;
+}
+
+
+
+.swing {
+    display: inline-block;
+    padding: 10px 0 10px 15px;
+    font-weight: 400;
+    color: var(--secundary-color);
+    background: transparent;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+    text-indent: 27%;
+    
+    &::-webkit-input-placeholder {
+      color: #efefef;
+      text-indent: 0;
+      font-weight: 300;
+    }
+  
+    + label {
+      display: inline-block;
+      position: relative;
+      top: -22%;
+      left: -35%;
+      padding: 10px 15px;
+      text-shadow: 0 1px 0 rgba(19,74,70,.4);
+
+      transform-origin: 2px 2px;
+      transform: rotate(0);
+      animation: swing-back .4s 1 ease-in-out;
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0);
+    }
+    20% {
+        transform: rotate(116deg);
+    }
+    40% {
+        transform: rotate(60deg);
+    }
+    60% {
+        transform: rotate(98deg);
+    }
+    80% {
+        transform: rotate(76deg);
+    }
+    100% {
+        transform: rotate(82deg);
+    }
+}
+@keyframes swing-back {
+    0% {
+        transform: rotate(82deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.swing:focus,
+.swing:active {
+    color: #377D6A;
+    text-indent: 0;
+    background: #fff;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::-webkit-input-placeholder {
+        color: #aaa;
+    }
+    + label {
+        animation: swing 1.4s 1 ease-in-out;
+        transform: rotate(82deg);
+    }
+}
+
+/* Login Button */
+/* ----- ------ */
+
+#login-menu button {
+    padding: 0.5rem;
+}
+
+/* Recover Pass */
+/* ----- ------ */
+#recover-pass {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Checkbox */
+/* -------- */
+
+.container {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0.1rem;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+    height: auto;
+    width: auto;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: transparent;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: transparent;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--secundary-color);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

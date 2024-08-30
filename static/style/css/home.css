@@ -58,12 +58,8 @@
 
 #home .shadowfilter {
 	-webkit-filter: drop-shadow(0px 0px 4px rgba(255,255,255,0.80));
-	/* -webkit-transition: all 0.5s linear; */
 	-webkit-transition: all 0.5s var(--transition-style);
-	-webkit-transition: all 0.5s var(--transition-style);
-	/* -o-transition: all 0.5s linear; */
 	-o-transition: all 0.5s var(--transition-style);
-	/* transition: all 0.5s linear; */
 	transition: all 0.5s var(--transition-style);
 	
 }

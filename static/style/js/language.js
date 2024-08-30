@@ -18,6 +18,7 @@ function loadTranslations(language) {
             .then(translations => {
                 // Actualiza el texto de los elementos con el atributo data-lang-key
                 const langElements = document.querySelectorAll('[data-lang-key]');
+                
                 langElements.forEach(element => {
                     const key = element.getAttribute('data-lang-key');
                     element.textContent = translations[key].toUpperCase() || key.toUpperCase(); // Usa la clave si no se encuentra la traducción
@@ -38,7 +39,7 @@ function loadTranslations(language) {
 
                         const elementDataLang = element.getAttribute("data-lang-key")
                         
-                        if (elementDataLang !== "cart") {
+                        if (elementDataLang !== "cart" && elementDataLang !== "disclamer") {
                             
                             childrens.forEach(img => {
                                 const imgData = img.getBoundingClientRect();
@@ -60,10 +61,14 @@ function loadTranslations(language) {
                                 const contextTitleWidth = element.getBoundingClientRect().width;
                                 const newLeft = basePosition - (contextTitleWidth/2);
                                 element.style.left = newLeft + "px";
+                                element.style.width = "fit-content";
                             });
+                        } else if(elementDataLang === "disclamer") {
+                            
                         } else {
                             element.style.top = "-285%";
-                            element.style.left = "-72%";
+                            element.style.left = "0";
+                            element.style.width = "fit-content";
                         }
                         
                     }

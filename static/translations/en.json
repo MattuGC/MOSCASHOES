@@ -3,6 +3,9 @@
     "rollingText": "MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE",
     
     "language": "Language",
+
+    "main-color": "Main",
+    "secundary-color": "Secundary",
     
     "menu": "menu",
     
@@ -20,10 +23,22 @@
     "collection": "The Collection",
     
     "login": "LogIn",
+    "sign-in": "Sign In",
+    "login-in": "Enter",
+    "remember-pass": "Rememeber",
+    "recover-pass": "Recover",
+    "sign-up": "Sign UP",
+    "create-account": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "disclamer": "Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.",
+
     "cart": "Cart",
     "moscathecollection": "moscathecollection",
     "moscastudiok": "moscastudiok",
-    "WhatsApp": "WhatsApp",
+    "whatsapp": "WhatsApp",
 
-    "rights": "&copy; 2024 MoSCA Shoes. All rights reserved."
+    "rights": "&copy; 2024 MoSCA Shoes. All rights reserved.",
+
+    "under-construction": "... Waite for it... It's almost here... Any second now..."
 }
