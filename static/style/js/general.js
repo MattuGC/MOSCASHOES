@@ -16,14 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const countryList = document.getElementsByClassName("country-list-hover-style");
     const secundaryMenu = document.getElementsByClassName("personal-menu");
     const inputLabel = document.getElementsByClassName("input-label");
-    const theemeQube = document.getElementsByClassName('theeme-qube');
+    const themeQube = document.getElementsByClassName('theme-qube');
+    const buttons = document.getElementsByClassName('button');
 
     var stickers = [];
     stickers = Array.prototype.concat.apply(stickers, contextTitle);
     stickers = Array.prototype.concat.apply(stickers, countryList);
     stickers = Array.prototype.concat.apply(stickers, secundaryMenu);
     stickers = Array.prototype.concat.apply(stickers, inputLabel);
-    stickers = Array.prototype.concat.apply(stickers, theemeQube);
+    stickers = Array.prototype.concat.apply(stickers, themeQube);
+    stickers = Array.prototype.concat.apply(stickers, buttons);
     
     for(i=0;i<stickers.length;i++) {
       var borderRadius = "";

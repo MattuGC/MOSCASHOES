@@ -71,8 +71,10 @@ button:hover {
     /* top: 23vh; DELETE AFTER TESTING!!! */
 
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center; /* Centra verticalmente los elementos */
+    
     z-index: 9000;
-    grid-template-columns: auto auto;
 }
 
 .secundary-menu {
@@ -96,6 +98,11 @@ button:hover {
 #menu div button {
     display: inline-flex;
     vertical-align: middle;
+}
+
+#left-menu,
+#right-menu {
+    height: var(--menu-height);
 }
 
 #right-menu {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="MoSCA Shoes ofrece la mejor selección de zapatos para tu comodidad y estilo.">
-    <title>MoSCA Shoes</title>
+    <title>MOSCA</title>
     <link rel="stylesheet" href="static/style/css/about-mosca.css">
     <link rel="stylesheet" href="static/style/css/footer.css">
     <link rel="stylesheet" href="static/style/css/general.css">
@@ -47,24 +47,24 @@
     </div>
     <div id="theme-selector">
         <div id="pink-theme" onclick="applyTheme('pink-theme')">
-            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
-            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+            <div class="theme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
         </div>
         <div id="grey-theme" onclick="applyTheme('grey-theme')">
-            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
-            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+            <div class="theme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
         </div>
         <div id="cream-theme" onclick="applyTheme('cream-theme')">
-            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
-            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+            <div class="theme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
         </div>
         <div id="yellow-theme" onclick="applyTheme('yellow-theme')">
-            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
-            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+            <div class="theme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
         </div>
         <div id="blue-theme" onclick="applyTheme('blue-theme')">
-            <div class="theeme-qube theme-main-color" data-lang-key="main-color">Main</div>
-            <div class="theeme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+            <div class="theme-qube theme-main-color" data-lang-key="main-color">Main</div>
+            <div class="theme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
         </div>
     </div>
 
@@ -113,19 +113,93 @@
                     <button id="user" class="open-menu" onclick="openCloseUserMenu('login-menu')" data-lang-key="login">Login</button>
                     <div id="login-menu" class="personal-menu sewn-button">
                         <div id="loginContainer" class="login-item login-container grid-container">
+                            <div id="requirements" class="login-item requirements context-title sewn-button login-item">
+                                <div class="login-item email-requirements">
+                                    <h3 class="login-item" data-lang-key="email">Email</h3>
+                                    <div class="login-item user-name sewn-button">
+                                        <p class="login-item" data-lang-key="requirement-user-name">Only letters, numbers, and/or symbols (“.”, “_” and/or “-”).</p>
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path user-name-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="login-item arroba sewn-button">
+                                        <p class="login-item" data-lang-key="requirement-at">Username followed by “@”.</p>
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path arroba-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="login-item domain sewn-button">
+                                        <p class="login-item" data-lang-key="requirement-domain">After the “@” domain (e.g. “gmail”).</p>
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path domain-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="login-item domain-extention sewn-button">
+                                        <p class="login-item" data-lang-key="requirement-extention">Extensión dominio (ej: ".com", ".net").</p>
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path domain-extention-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="login-item no-spaces sewn-button">
+                                        <p class="login-item" data-lang-key="requirement-spaces">It must not contain blank spaces.</p>
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path no-spaces-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="login-item password-requirements">
+                                    <h3 class="login-item" data-lang-key="password">Password</h3>
+                                    <div class="login-item min-max-char sewn-button">
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path min-max-char-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <p class="login-item" data-lang-key="requirement-size">Between 8 and 20 characters.</p>
+                                    </div>
+                                    <div class="login-item upper-case sewn-button">
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path upper-case-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <p class="login-item" data-lang-key="requirement-upper-case">At least 1 capital letter.</p>
+                                    </div>
+                                    <div class="login-item lower-case sewn-button">
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path lower-case-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <p class="login-item at-least-1-lc" data-lang-key="requirement-lower-case">At least 1 lowercase letter.</p>
+                                    </div>
+                                    <div class="login-item number sewn-button">
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path number-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <p class="login-item" data-lang-key="requirement-number">At least 1 number.</p>
+                                    </div>
+                                    <div class="login-item special-char sewn-button">
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path special-char-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <p class="login-item" data-lang-key="requirement-special-char">At least one special character.</p>
+                                    </div>
+                                    <div class="login-item spaces sewn-button">
+                                        <svg class="login-item checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                            <path data-check="false" class="login-item checkmark-path spaces-check" d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <p class="login-item no-black-space" data-lang-key="requirement-spaces">It must not contain blank spaces.</p>
+                                    </div>
+                                </div>
+                            </div>
                             <h3 class="sign-in login-item" data-lang-key="sign-in">Sign In</h3>
                             <form id="loginForm" class="login-form login-item" onsubmit="handleLogin(event)">
                                 <span class="login-item">
-                                    <input class="login-item sewn-button swing input-label" id="loginEmail" type="email" required/>
+                                    <input class="login-item sewn-button swing input-label" id="loginEmail" type="email" onchange="loginSignUpUpdatecontextTitle('requirements', 'loginEmail')" oninvalid="this.setCustomValidity(' ')" required/>
                                     <label class="input-label sewn-button login-item" data-lang-key="email" for="email">Email</label>
                                 </span>
                                 <span class="login-item">
-                                    <input class="login-item sewn-button swing input-label" id="loginPassword" type="password" required/>
+                                    <input class="login-item sewn-button swing input-label" id="loginPassword" type="password" onchange="loginSignUpUpdatecontextTitle('requirements', 'loginPassword')" oninvalid="this.setCustomValidity(' ')" required/>
                                     <label class="input-label sewn-button login-item" data-lang-key="password" for="password">PassWord</label>
                                 </span>
                                 <div class="login-item captcha"></div>
                                 <div class="login-item">
-                                    <button id="login-button" class="login-item sewn-button" data-lang-key="login-in" type="submit">Login</button>
+                                    <button id="login-button" class="login-item sewn-button button" data-lang-key="login-in" type="submit">Login</button>
                                     <label id="login-rememeber-pass" class="login-item input-label" data-lang-key="remember-pass">remember-pass</label>
                                     <label class="login-item container input-label sewn-button">
                                         <input class="login-item" type="checkbox" checked="checked">
@@ -133,24 +207,24 @@
                                     </label>
                                 </div>
                             </form>
-                            <button id="recover-pass" class="login-item recover-pass sewn-button" data-lang-key="recover-pass">Recuperar clave</button>
+                            <button id="recover-pass" class="login-item recover-pass sewn-button button" data-lang-key="recover-pass">Recuperar clave</button>
                             
                             <h3 class="sign-up login-item" data-lang-key="sign-up">Sign Up</h3>
                             <form id="signupForm" class="signup-form login-item" onsubmit="handleSignup(event)">
                                 <span class="login-item">
-                                    <input class="login-item sewn-button swing input-label" type="email" id="signupEmail" required/>
+                                    <input class="login-item sewn-button swing input-label" type="email" id="signupEmail" onchange="loginSignUpUpdatecontextTitle('requirements', 'signupEmail')" oninvalid="this.setCustomValidity(' ')" required/>
                                     <label class="input-label sewn-button login-item" data-lang-key="email" for="email">Email</label>
                                 </span>
                                 <span class="login-item">
-                                    <input class="login-item sewn-button swing input-label" type="password" id="signupPassword" required>
+                                    <input class="login-item sewn-button swing input-label" type="password" id="signupPassword" onchange="loginSignUpUpdatecontextTitle('requirements', 'signupPassword')" oninvalid="this.setCustomValidity(' ')" required>
                                     <label class="input-label sewn-button login-item" data-lang-key="password" for="password">PassWord</label>
                                 </span>
                                 <div class="login-item captcha"></div>
                                 <div class="login-item">
                                     <!-- <img class="login-item" id="disclamer" alt="i"> -->
-                                    <p class="login-item sewn-button" id="disclamer" >i</p>
+                                    <p class="login-item sewn-button button" id="disclamer" >i</p>
                                     <div class="context-title sewn-button login-item" data-lang-key="disclamer">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</div>
-                                    <button class="login-item sewn-button" data-lang-key="create-account" type="submit">Create Account</button>
+                                    <button id="sign-up-button" class="login-item sewn-button button" data-lang-key="create-account" type="submit">Create Account</button>
                                 </div>
                             </form>
 

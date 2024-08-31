@@ -77,7 +77,6 @@ padding: 10px;
     background: transparent;
     border-radius: 3px;
     transition: all .3s ease-in-out;
-    text-indent: 27%;
     
     &::-webkit-input-placeholder {
       color: #efefef;
@@ -86,16 +85,16 @@ padding: 10px;
     }
   
     + label {
-      display: inline-block;
-      position: relative;
-      top: -22%;
-      left: -35%;
-      padding: 10px 15px;
-      text-shadow: 0 1px 0 rgba(19,74,70,.4);
-
-      transform-origin: 2px 2px;
-      transform: rotate(0);
-      animation: swing-back .4s 1 ease-in-out;
+        display: flex;
+        position: relative;
+        top: -22%;
+        left: 3%;
+        padding: 10px 15px;
+        text-shadow: 0 1px 0 rgba(19, 74, 70, .4);
+        transform-origin: 2px 2px;
+        transform: rotate(0);
+        animation: swing-back .4s 1 ease-in-out;
+        width: fit-content;
     }
 }
 
@@ -225,4 +224,66 @@ padding: 10px;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
+
+/* Login Requirementes */
+/* ----- ------------- */
+
+.requirements {
+    opacity: 0;
+    top: 0vh;
+    left: -113%;
+    height: auto;
+    width: 111%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 2rem;
+}
+
+.requirements .sewn-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+    padding: 0.3rem;
+}
+
+.requirements svg {
+    position: relative;
+    height: 1rem;
+    width: 2rem;
+}
+
+.requirements p {
+    /* margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem; */
+    margin: 0;
+}
+
+.context-title .email-requirements,
+.context-title .password-requirements {
+    height: auto;
+}
+
+.context-title .email-requirements p {
+    text-align: left;
+}
+
+.context-title .password-requirements p {
+    text-align: right;
+}
+
+.checkmark {
+    display: inline-block; /* Asegura que el SVG se comporte como un elemento en línea */
+}
+
+path[data-check="true"] {
+    color: var(--secondary-color); /* Color cuando data-check es true */
+}
+
+path[data-check="false"] {
+    color: var(--pay-attention-color); /* Color cuando data-check es false */
+}

@@ -4,6 +4,8 @@
     --sub-menu-color: #dd76afc7;
     --secundary-color: #ffe600;
 
+    --pay-attention-color: red;
+
     --theme-selector-top: -111vh;
 
     --pink: #DD76AE;
@@ -96,7 +98,7 @@
     border: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
 }
 
-.theeme-qube {
+.theme-qube {
     position: sticky;
     height: 12vh;
     width: 22vh;
