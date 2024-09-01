@@ -1,13 +1,4 @@
 :root {
-    --theme-button-bg-color: rgb(68, 68, 68);
-    --main-color: #dd76ae;
-    --sub-menu-color: #dd76afc7;
-    --secundary-color: #ffe600;
-
-    --pay-attention-color: red;
-
-    --theme-selector-top: -111vh;
-
     --pink: #DD76AE;
     --pink-transparecy: #DD76AEc7;
     --cream: #FFFED4;
@@ -18,6 +9,17 @@
     --blue-transparecy: #0A0216c7;
     --yellow: #FFFF00;
     --yellow-transparecy: #FFFF00c7;
+
+    --theme-button-bg-color: rgb(68, 68, 68);
+    --main-color: var(--grey);
+    --sub-menu-color: var(--grey-transparecy);
+    --secundary-color: var(--cream);
+
+    --pay-attention-color: red;
+
+    --theme-selector-top: -111vh;
+
+    --theme-selector-size: 4vh;
 }
 
 /* Theme Selector Button */
@@ -42,23 +44,59 @@
     stroke-dasharray: 4; /* Longitud de las líneas cortas */
 }
 
-#change-theme {
+/* Theme Selector Button */
+/* ----- -------- ------ */
+#theme-selector-button {
+    padding-top: 1vw;
+    padding-left: 1vw;
     position: absolute;
     border-width: 0vw;
     margin: 0vw;
     top: 0vh;
     left: 0vw;
-    height: 9vh;
-    width: 4.7vw;
-    
+    height: auto;
+    width: auto;
     background-color: transparent;
 
+    cursor: pointer;
     z-index: 20000;
 }
 
-#change-theme svg {
-    width: 4.7vw;
-    height: 9.1vh;
+#theme-context-title {
+    left: 16vh !important;
+    top: -100%;
+    opacity: 0;
+    
+    transition: all var(--transition-duration) var(--transition-style);
+    z-index: 6000;
+}
+
+#theme-selector-button:hover ~ #theme-context-title {
+    top: 2vh !important;
+    opacity: 1;
+}
+
+.half-drop {
+    height: var(--theme-selector-size);
+    width: var(--theme-selector-size);
+    box-shadow: var(--shadow-box) var(--shadow-box-color);
+    border-style: var(--sticker-border-style);
+    border-width: var(--button-border-width);
+    outline-style: var(--sticker-outline-style);
+    outline-width: var(--sticker-outline-width);
+    outline-color: var(--secundary-color);
+}
+
+.hd-main {
+    background-color: var(--main-color);
+    border-color: var(--secundary-color);
+    border-radius: 100% 0% 0% 100% / 100% 0% 100% 0%;
+}
+
+.hd-secundary {
+    background-color: var(--secundary-color);
+    border-color: var(--main-color);
+    border-radius: 100% 0% 100% 0% / 0% 0% 100% 100%;
 }
 
 /* Theme Selector Section */
@@ -84,8 +122,8 @@
 
     cursor: pointer;
 
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10vh);
+    backdrop-filter: blur(10vh);
 }
 
 #theme-selector > div {
@@ -95,7 +133,8 @@
 
     height: 100vh;
 
-    border: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
+    border-width: var(--button-border-width);
+    border-style: var(--sticker-border-style);
 }
 
 .theme-qube {
@@ -105,7 +144,7 @@
 
     box-shadow: var(--shadow-box) var(--shadow-box-color);
 
-    border-width: 2px;
+    border-width: 0.3vh;
     border-style: var(--sticker-border-style);
     outline-width: var(--sticker-outline-width);
     outline-style: var(--sticker-outline-style);
@@ -125,6 +164,11 @@
     left: 100%;
 }
 
+#pink-theme {
+    border-color: var(--pink);
+    outline-color: var(--pink);
+}
+
 #pink-theme .theme-main-color {
     background-color: var(--pink);
     color: var(--yellow);
@@ -139,6 +183,11 @@
 
     border-color: var(--pink);
     outline-color: var(--pink);
+}
+
+#cream-theme {
+    border-color: var(--cream);
+    outline-color: var(--cream);
 }
 
 #cream-theme .theme-main-color {
@@ -157,6 +206,11 @@
     outline-color: var(--cream);
 }
 
+#grey-theme {
+    border-color: var(--grey);
+    outline-color: var(--grey);
+}
+
 #grey-theme .theme-main-color {
     background-color: var(--grey);
     color: var(--cream);
@@ -173,6 +227,11 @@
     outline-color: var(--grey);
 }
 
+#blue-theme {
+    border-color: var(--blue);
+    outline-color: var(--blue);
+}
+
 #blue-theme .theme-main-color {
     background-color: var(--blue);
     color: var(--cream);
@@ -187,6 +246,11 @@
 
     border-color: var(--blue);
     outline-color: var(--blue);
+}
+
+#yellow-theme {
+    border-color: var(--yellow);
+    outline-color: var(--yellow);
 }
 
 #yellow-theme .theme-main-color {

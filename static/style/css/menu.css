@@ -1,7 +1,7 @@
 :root {
     --menu-height: 4.7vh; /* Also update --menu-base-height they has to be the same vh */
     --menu-base-height: 4.7vh; /* Also update --menu-height they has to be the same vh */
-    --menu-ico-height: 22px;
+    --menu-ico-height: 2.8vh;
     --language-menu-off: -19vh;
     --lang-border-radius: 0.7rem;
     --secundary-menu-top: -13%;
@@ -77,6 +77,10 @@ button:hover {
     z-index: 9000;
 }
 
+#menu .context-title {
+    right: 2vh;
+}
+
 .secundary-menu {
     position: fixed;
     top: var(--secundary-menu-top);
@@ -109,10 +113,11 @@ button:hover {
     text-align: right;
 }
 
-/* header:hover #menu {
-    top: var(--header-height);
-    opacity: 1;
-} */
+.icon {
+    height: 3vh;
+    margin: auto;
+    fill: var(--secundary-color);
+}
 
 #cart-button {
     position: relative;
@@ -128,10 +133,11 @@ button:hover {
 }
 
 #cart-quantity {
-    position: absolute; /* Permite superponer el número */
-    top: 0; /* Ajusta la posición vertical */
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajusta para centrar el span */
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
 }
 
 .social-networks {
@@ -262,10 +268,10 @@ button:hover {
     --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) 
            repeat-y content-box border-box;
     background: 
-      var(--_g2) left  var(--_p,0px) top,
-      var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
-      var(--_g2) right var(--_p,0px) top,
-      var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+      var(--_g2) left  var(--_p,0vh) top,
+      var(--_g1) left  calc(var(--s)/10 + var(--_p,0vh)) top,
+      var(--_g2) right var(--_p,0vh) top,
+      var(--_g1) right calc(var(--s)/10 + var(--_p,0vh)) top;
     background-size: 
       20% 80%,
       40% 100%;
@@ -305,6 +311,6 @@ button:hover {
     clip-path: none;
     -webkit-mask: none;
     border: none;
-    outline: 2px solid var(--c);
-    outline-offset: 5px;
+    outline: 0.3vh solid var(--c);
+    outline-offset: 0.6vh;
   }

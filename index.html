@@ -69,21 +69,11 @@
     </div>
 
     <header>
-        <button id="change-theme" onclick="openThemeMenu()">
-            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                <!-- Fondo cuadrante inferior derecho -->
-                <circle cx="50" cy="50" r="33" class="bg" fill="none"/>
-                                
-                <!-- Parte superior del círculo -->
-                <circle cx="50" cy="50" r="30" class="half-circle" fill="none"/>
-                
-                <!-- Parte inferior del círculo -->
-                <path class="half-circle-secondary" d="M 50 50 L 20 50 A 30 30 0 0 0 80 50 Z" />
-                
-                <!-- Círculo completo más pequeño -->
-                <circle cx="50" cy="50" r="30" class="dashed-border" fill="none" />
-            </svg>
-        </button>
+        <div id="theme-selector-button" onclick="openThemeMenu()">
+            <div class="half-drop hd-main"></div>
+            <div class="half-drop hd-secundary"></div>
+        </div>
+        <div id="theme-context-title" class="context-title sewn-button button texto-rotado-derecha" data-lang-key="theme">Theme</div>
         <div id="header-bg">
             <div class="logo-banner">
                 <a id="home-button" onclick="goTo('home')">MOSCA</a>
@@ -190,18 +180,18 @@
                             <h3 class="sign-in login-item" data-lang-key="sign-in">Sign In</h3>
                             <form id="loginForm" class="login-form login-item" onsubmit="handleLogin(event)">
                                 <span class="login-item">
-                                    <input class="login-item sewn-button swing input-label" id="loginEmail" type="email" onchange="loginSignUpUpdatecontextTitle('requirements', 'loginEmail')" oninvalid="this.setCustomValidity(' ')" required/>
+                                    <input class="login-item sewn-button input swing input-label" id="loginEmail" type="email" onchange="loginSignUpUpdatecontextTitle('requirements', 'loginEmail')" oninvalid="this.setCustomValidity(' ')" required/>
                                     <label class="input-label sewn-button login-item" data-lang-key="email" for="email">Email</label>
                                 </span>
                                 <span class="login-item">
-                                    <input class="login-item sewn-button swing input-label" id="loginPassword" type="password" onchange="loginSignUpUpdatecontextTitle('requirements', 'loginPassword')" oninvalid="this.setCustomValidity(' ')" required/>
+                                    <input class="login-item sewn-button input swing input-label" id="loginPassword" type="password" onchange="loginSignUpUpdatecontextTitle('requirements', 'loginPassword')" oninvalid="this.setCustomValidity(' ')" required/>
                                     <label class="input-label sewn-button login-item" data-lang-key="password" for="password">PassWord</label>
                                 </span>
                                 <div class="login-item captcha"></div>
                                 <div class="login-item">
                                     <button id="login-button" class="login-item sewn-button button" data-lang-key="login-in" type="submit">Login</button>
                                     <label id="login-rememeber-pass" class="login-item input-label" data-lang-key="remember-pass">remember-pass</label>
-                                    <label class="login-item container input-label sewn-button">
+                                    <label class="login-item check-container input-label sewn-button">
                                         <input class="login-item" type="checkbox" checked="checked">
                                         <span class="login-item checkmark"></span>
                                     </label>
@@ -212,11 +202,11 @@
                             <h3 class="sign-up login-item" data-lang-key="sign-up">Sign Up</h3>
                             <form id="signupForm" class="signup-form login-item" onsubmit="handleSignup(event)">
                                 <span class="login-item">
-                                    <input class="login-item sewn-button swing input-label" type="email" id="signupEmail" onchange="loginSignUpUpdatecontextTitle('requirements', 'signupEmail')" oninvalid="this.setCustomValidity(' ')" required/>
+                                    <input class="login-item sewn-button input swing input-label" type="email" id="signupEmail" onchange="loginSignUpUpdatecontextTitle('requirements', 'signupEmail')" oninvalid="this.setCustomValidity(' ')" required/>
                                     <label class="input-label sewn-button login-item" data-lang-key="email" for="email">Email</label>
                                 </span>
                                 <span class="login-item">
-                                    <input class="login-item sewn-button swing input-label" type="password" id="signupPassword" onchange="loginSignUpUpdatecontextTitle('requirements', 'signupPassword')" oninvalid="this.setCustomValidity(' ')" required>
+                                    <input class="login-item sewn-button input swing input-label" type="password" id="signupPassword" onchange="loginSignUpUpdatecontextTitle('requirements', 'signupPassword')" oninvalid="this.setCustomValidity(' ')" required>
                                     <label class="input-label sewn-button login-item" data-lang-key="password" for="password">PassWord</label>
                                 </span>
                                 <div class="login-item captcha"></div>
@@ -233,21 +223,40 @@
                     </div>
                     </div>
                     <button id="cart-button">
-                        <img class="menu-icon" src="static/img/icons/shop-cart.png" alt="cart">
+                        <!-- <img class="menu-icon" src="static/img/icons/shop-cart.png" alt="cart">
+                        <svg class="icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  alt="Cart"> -->
+                        <svg class="icon menu-icon" alt="Cart" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 483.1 483.1" xml:space="preserve" class="icon">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g>
+                                    <path d="M434.55,418.7l-27.8-313.3c-0.5-6.2-5.7-10.9-12-10.9h-58.6c-0.1-52.1-42.5-94.5-94.6-94.5s-94.5,42.4-94.6,94.5h-58.6 c-6.2,0-11.4,4.7-12,10.9l-27.8,313.3c0,0.4,0,0.7,0,1.1c0,34.9,32.1,63.3,71.5,63.3h243c39.4,0,71.5-28.4,71.5-63.3 C434.55,419.4,434.55,419.1,434.55,418.7z M241.55,24c38.9,0,70.5,31.6,70.6,70.5h-141.2C171.05,55.6,202.65,24,241.55,24z M363.05,459h-243c-26,0-47.2-17.3-47.5-38.8l26.8-301.7h47.6v42.1c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h141.2v42.1 c0,6.6,5.4,12,12,12s12-5.4,12-12v-42.1h47.6l26.8,301.8C410.25,441.7,389.05,459,363.05,459z"></path>
+                                </g>
+                            </g>
+                        </svg>
                         <span id="cart-quantity">0</span>
                         <div id="cart-context-title" class="context-title sewn-button" data-lang-key="cart">Cart</div>
                         <div id="cart-menu" class="personal-menu"></div>
                     </button>
                     <button id="moscathecollection-button" class="social-networks" onclick="openLink('https://www.instagram.com/moscathecollection/')" target="_blank" href="https://www.instagram.com/moscathecollection/">
-                        <img class="menu-icon" src="static/img/icons/instagram.png" alt="moscathecollection">
+                        <!-- <img class="menu-icon" src="static/img/icons/instagram.png" alt="moscathecollection"> -->
+                        <svg class="icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" alt="moscathecollection">
+                            <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 0 0 1.384 2.126A5.868 5.868 0 0 0 4.14 23.37c.766.297 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.913-.558a5.898 5.898 0 0 0 2.126-1.384 5.86 5.86 0 0 0 1.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 0 0-1.384-2.126A5.847 5.847 0 0 0 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 0 1-.899 1.382 3.744 3.744 0 0 1-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 0 1-1.379-.899 3.644 3.644 0 0 1-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 1 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 0 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+                        </svg>
                         <div id="moscathecollection-context-title" class="context-title sewn-button" data-lang-key="moscathecollection">moscathecollection</div>
                     </button>
                     <button id="moscastudiok-button" onclick="openLink('https://www.instagram.com/moscastudiok/')" target="_blank" href="https://www.instagram.com/moscastudiok/">
-                        <img class="menu-icon" src="static/img/icons/instagram.png" alt="moscastudiok">
+                        <!-- <img class="menu-icon" src="static/img/icons/instagram.png" alt="moscastudiok"> -->
+                        <svg class="icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" alt="moscastudiok">
+                            <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 0 0 1.384 2.126A5.868 5.868 0 0 0 4.14 23.37c.766.297 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.913-.558a5.898 5.898 0 0 0 2.126-1.384 5.86 5.86 0 0 0 1.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 0 0-1.384-2.126A5.847 5.847 0 0 0 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 0 1-.899 1.382 3.744 3.744 0 0 1-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 0 1-1.379-.899 3.644 3.644 0 0 1-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 1 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 0 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+                        </svg>
                         <div id="moscastudiok-context-title" class="context-title sewn-button" data-lang-key="moscastudiok">moscastudiok</div>
                     </button>
                     <button id="wa-button" onclick="openLink('https://api.whatsapp.com/send/?phone=5491169580903&text=Hi+%2AMosca%2A%21+I+need+more+info+about+Contact+Us+https%3A%2F%2Fmoscathecollection.com%2Fcontact-us&type=phone_number&app_absent=0')" target="_blank" href="https://api.whatsapp.com/send/?phone=5491169580903&text=Hi+%2AMosca%2A%21+I+need+more+info+about+Contact+Us+https%3A%2F%2Fmoscathecollection.com%2Fcontact-us&type=phone_number&app_absent=0">
-                        <img class="menu-icon" src="static/img/icons/whatsapp.png" alt="WhatsApp">
+                        <!-- <img class="menu-icon" src="static/img/icons/whatsapp.png" alt="WhatsApp"> -->
+                        <svg class="icon menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" alt="WhatsApp">
+                            <path d="M16.6 14.01c-.26-.13-1.53-.75-1.77-.84-.23-.09-.4-.13-.57.13-.17.26-.66.84-.81 1.01-.15.17-.3.19-.56.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.15-.26-.02-.4.12-.53.12-.12.26-.32.39-.48.13-.15.17-.26.26-.43.08-.17.04-.32-.02-.43-.06-.13-.57-1.37-.78-1.88-.2-.5-.41-.43-.56-.44-.14-.01-.31-.02-.48-.02a.9.9 0 0 0-.66.31c-.23.23-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.48-.61 1.69-1.19.21-.58.21-1.07.15-1.17-.07-.1-.26-.16-.54-.29zm-5.21 7.69h-.01a9.96 9.96 0 0 1-5.01-1.35L1 21.39l1.37-4.98A9.965 9.965 0 0 1 2 11.5 10 10 0 0 1 12 1.5a9.991 9.991 0 0 1 7.08 2.93 9.997 9.997 0 0 1 2.92 7.08 10 10 0 0 1-10 10z"/>
+                        </svg>
                         <div id="wa-context-title" class="context-title sewn-button" data-lang-key="whatsapp">WhatsApp</div>
                     </button>
                     <div class="language-selector">
@@ -318,8 +327,10 @@
         </section>
     </main>
 
-    <footer>
-        <p data-lang-key="rights">&copy; 2024 MoSCA Shoes. All rights reserved.</p>
+    <footer class="centrar">
+        <div class="contenido">
+            <p>&copy;</p><p data-lang-key="rights">2024 MoSCA Shoes. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="static\style\js\general.js"></script>

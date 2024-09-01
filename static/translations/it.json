@@ -4,6 +4,7 @@
     
     "language": "Lingua",
 
+    "theme": "Tema",
     "main-color": "Principale",
     "secundary-color": "Secondario",
 
@@ -48,7 +49,7 @@
     "moscastudiok": "moscastudiok",
     "whatsapp": "WhatsApp",
 
-    "rights": "&copy; 2024 MoSCA Shoes. Tutti i diritti riservati.",
+    "rights": "2024 MoSCA Shoes. Tutti i diritti riservati.",
 
     "under-construction": "... Aspettate... È quasi arrivato... Da un momento all'altro..."
 }

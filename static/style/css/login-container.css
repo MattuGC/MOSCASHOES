@@ -31,21 +31,25 @@
     grid-area: google-signin;
 }
 
-.grid-container {
-display: grid;
-grid-template-areas:
-    'sign-in sign-up'
-    'login-form signup-form'
-    'recover-pass empty'
-    'google-signin google-signin';
-gap: 10px;
-padding: 10px;
+#menu .input {
+    width: 80%;
 }
 
-.grid-container > div {
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'sign-in sign-up'
+        'login-form signup-form'
+        'recover-pass empty'
+        'google-signin google-signin';
+    gap: 1.25vh;
+    padding: 1.25vh;
+}
+
+/* .grid-container > div {
     margin-left: auto;
     margin-right: auto;
-}
+} */
 
 #disclamer:hover ~ .context-title{
     display: block;
@@ -71,11 +75,10 @@ padding: 10px;
 
 .swing {
     display: inline-block;
-    padding: 10px 0 10px 15px;
+    padding: 1.25vh 0 1.25vh 1.8vh;
     font-weight: 400;
     color: var(--secundary-color);
     background: transparent;
-    border-radius: 3px;
     transition: all .3s ease-in-out;
     
     &::-webkit-input-placeholder {
@@ -89,12 +92,13 @@ padding: 10px;
         position: relative;
         top: -22%;
         left: 3%;
-        padding: 10px 15px;
-        text-shadow: 0 1px 0 rgba(19, 74, 70, .4);
-        transform-origin: 2px 2px;
+        padding: 0.7vh;
+        text-shadow: 0 0.1vh 0 rgba(19, 74, 70, .4);
+        transform-origin: 0.3vw 0.3vh;
         transform: rotate(0);
         animation: swing-back .4s 1 ease-in-out;
         width: fit-content;
+        font-size: 0.8rem;
     }
 }
 
@@ -162,7 +166,7 @@ padding: 10px;
 /* Checkbox */
 /* -------- */
 
-.container {
+.check-container {
     position: relative;
     cursor: pointer;
     -webkit-user-select: none;
@@ -170,59 +174,68 @@ padding: 10px;
     -ms-user-select: none;
     user-select: none;
     padding: 0.1rem;
-  }
+    border-radius: 0.1em / 10em 10em 0.1em 0.1em;
+    height: 3vh;
+    display: inline-flex;
+    width: 3vh;
+}
   
   /* Hide the browser's default checkbox */
-  .container input {
+.check-container input {
     position: relative;
     opacity: 0;
     cursor: pointer;
     height: auto;
     width: auto;
-  }
+}
   
-  /* Create a custom checkbox */
-  .checkmark {
+/* Create a custom checkbox */
+.checkmark {
     position: absolute;
     top: 0;
     left: 0;
     height: auto;
     width: auto;
     background-color: transparent;
-  }
+}
   
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: transparent;
-  }
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+background-color: transparent;
+}
   
-  /* When the checkbox is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: transparent;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
+}
   
-  /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
     display: block;
-  }
+}
   
-  /* Style the checkmark/indicator */
-  .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid var(--secundary-color);
-    border-width: 0 3px 3px 0;
+/* Style the checkmark/indicator */
+/* .check-container .checkmark:after {
+    left: 1.1vw;
+    top: 0.6vh;
+    width: 0.6vw;
+    height: 1.3vh;
+    border-width: 0 0.4vw 0.4vh 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+} */
+.check-container .checkmark:after {
+    content: "";
+    display: none;
+    width: 0.6vw; /* Ajusta el tamaño del tilde */
+    height: 1.3vh; /* Ajusta el tamaño del tilde */
+    border: solid var(--secundary-color); /* Asegúrate de que el color sea visible */
+    border-width: 0 2px 2px 0; /* Ajusta los bordes para formar un tilde */
+    left: 5px; /* Ajusta la posición del tilde */
+    top: 2px; /* Ajusta la posición del tilde */
     transform: rotate(45deg);
 }
 
@@ -237,7 +250,7 @@ padding: 10px;
     width: 111%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 2.0vh;
     padding: 2rem;
 }
 

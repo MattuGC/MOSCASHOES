@@ -41,7 +41,7 @@
 #country-list li {
     cursor: pointer; /* Change cursor to pointer */
     outline: transparent var(--sticker-outline-style) var(--sticker-outline-width);
-    margin: 5px; /* Add margin between items */
+    margin: 0.6vh; /* Add margin between items */
     padding: 0.7rem;
     
     box-shadow: var(--shadow-box) transparent;

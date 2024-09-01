@@ -1,13 +1,13 @@
 :root {
     --body-font: 'Readex Pro', sans-serif;
     --rolling-text-font-size: 1.1rem;
-    --scrollbar-size: 33px;
-    --shadow-box: 11px 11px 22px 11px;
+    --scrollbar-size: 3.3vh;
+    --shadow-box: 1.1vw 1.1vw 2.75vh 1.1vw;
     --shadow-box-color: #00000033;
     --sticker-border-style: dashed;
-    --button-border-width: 2px;
+    --button-border-width: 0.25vh;
     --sticker-outline-style: solid;
-    --sticker-outline-width: 1px;
+    --sticker-outline-width: 0.125vh;
     --transition-style: ease-in-out;
     --transition-duration: 1s;
     --scroll-text-duration: 55s;
@@ -24,6 +24,7 @@
 header .menu-icon: 6000
 .dropdown-button: 6000
 header: 5000
+footer: 5000
 .rolling: 4000
 .personal-menu: 3000
 */
@@ -37,7 +38,7 @@ html, body {
 }
 
 body {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -67,6 +68,12 @@ main {
     flex-direction: row; /* Stack sections horizontally */
     overflow-x: hidden; /* Hide horizontal scrollbar */
     overflow-y: hidden; /* Hide vertical scrolling */
+
+    background-image: url(/static/img/home-bg/home-bg.png);
+    background-image: url("/static/img/home-bg/home-bg.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .sewn-button{
@@ -111,6 +118,16 @@ button, a {
     transition: all var(--transition-duration) var(--transition-style);
     box-sizing: border-box; /* Include padding in width calculation */
     color: var(--secundary-color);
+}
+
+.texto-rotado-izquierda {
+    transform: rotate(-90deg); /* Rota el texto 90 grados en sentido antihorario */
+    transform-origin: left top; /* Cambia el punto de origen de la rotación */
+}
+
+.texto-rotado-derecha {
+    transform: rotate(90deg); /* Rota el texto 90 grados en sentido antihorario */
+    transform-origin: left top; /* Cambia el punto de origen de la rotación */
 }
 
 .context-title {
