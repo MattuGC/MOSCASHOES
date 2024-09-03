@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputLabel = document.getElementsByClassName("input-label");
     const themeQube = document.getElementsByClassName('theme-qube');
     const buttons = document.getElementsByClassName('button');
+    const curiousFrame = document.getElementsByClassName('curious-frame');
 
     var stickers = [];
     stickers = Array.prototype.concat.apply(stickers, contextTitle);
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stickers = Array.prototype.concat.apply(stickers, inputLabel);
     stickers = Array.prototype.concat.apply(stickers, themeQube);
     stickers = Array.prototype.concat.apply(stickers, buttons);
+    stickers = Array.prototype.concat.apply(stickers, curiousFrame);
     
     for(i=0;i<stickers.length;i++) {
       var borderRadius = "";
@@ -99,4 +101,29 @@ function stickerShapeGenerator(min, max) {
 
 function openLink(link) {
   window.open(link, '_blank').focus();
+}
+
+function pxToVHVW(pxQuantity, type, typeOrigin) {
+  if(type==='vh') {
+    let screenHeight = window.innerHeight;
+    let vhQuantity = (pxQuantity/screenHeight) * 100;
+    console.log('vhQuantity: ' + vhQuantity);
+    
+    return vhQuantity + 'vh';
+  } else if (type==='vw') {
+    let screenWidth = window.innerWidth;
+    let vwQuantity = (pxQuantity/screenWidth) * 100;
+    console.log('vwQuantity: ' + vwQuantity);
+    return vwQuantity;
+  } else if (type==='px') {
+    if(typeOrigin==='vh') {
+      let screenHeight = window.innerHeight;
+      pxQuantity = (screenHeight / 100) * pxQuantity;
+      console.log('pxQuantity: ' + pxQuantity);
+    } else if(typeOrigin==='vw') {
+      let screenWidth = window.innerWidth;
+      pxQuantity = (screenWidth / 100) * pxQuantity;
+      console.log('pxQuantity: ' + pxQuantity);
+    }
+  }
 }

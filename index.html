@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="static/style/css/about-mosca.css">
     <link rel="stylesheet" href="static/style/css/footer.css">
     <link rel="stylesheet" href="static/style/css/general.css">
+    <link rel="stylesheet" href="static/style/css/hddn.css">
     <link rel="stylesheet" href="static/style/css/header.css">
     <link rel="stylesheet" href="static/style/css/heritage.css">
     <link rel="stylesheet" href="static/style/css/home.css">
@@ -65,6 +66,18 @@
         <div id="blue-theme" onclick="applyTheme('blue-theme')">
             <div class="theme-qube theme-main-color" data-lang-key="main-color">Main</div>
             <div class="theme-qube theme-secundary-color" data-lang-key="secundary-color">Secundary</div>
+        </div>
+    </div>
+    <div id="power-selector" class="sewn-button curious-frame"></div>
+    <div class="curious-container">
+        <div id="curious" class="sewn-button curious-frame">
+            <div id="curious-context-title" class="context-title sewn-button">
+                <h2 data-lang-key="curious">Curious?</h2>
+                <p data-lang-key="greate-power-1">With greate power comes greate numbers... and responsability... cof...</p>
+                <p data-lang-key="greate-power-2">Are you willing to take the risk of using the power you've found?</p>
+                <p data-lang-key="ready">Ready?</p>
+                <input placeholder="20" type="number" class="input-label" id="power-limit" onchange="changePowerLimit()" name="power-limit">
+            </div>
         </div>
     </div>
 
@@ -283,8 +296,9 @@
 
     <main>
         <section id="home">
-            <img id="home-prod-manufact" src="static/img/home-bg/home-production-manufactoring.png" alt="Production Manufactoring">
-            <img id="home-boots" src="static/img/home-bg/home-boots.png" alt="Boots" class="alt shadowfilter">
+            <img id="home-prod-manufact" class="sticker" src="static/img/home-bg/home-production-manufactoring.png" alt="Production Manufactoring">
+            <!-- <img id="home-boots" src="static/img/home-bg/home-boots.png" alt="Boots" class="alt shadowfilter"> -->
+            <img id="home-boots" class="sticker" src="static/img/home-bg/home-boots.png"  alt="Boots">
         </section>
 
         <section id="shoes" class="shop page">
@@ -334,6 +348,8 @@
     </footer>
 
     <script src="static\style\js\general.js"></script>
+    <script src="static\style\js\hddn.js"></script>
+    <script src="static\style\js\home.js"></script>
     <script src="static\style\js\language.js"></script>
     <script src="static\style\js\login.js"></script>
     <script src="static\style\js\menu.js"></script>

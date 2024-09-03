@@ -1,0 +1,82 @@
+:root {
+    --power-limit: 20;
+}
+
+.curious-container {
+    position: absolute;
+}
+
+#curious {
+    opacity: 1;
+    background-color: transparent;
+
+    position: absolute;
+    transform: translate(100vw, 100vh);
+    height: 88vh;
+    width: 88vw;
+
+    transition: all var(--transition-duration) var(--transition-style);
+
+    -webkit-backdrop-filter: blur(1vh);
+    backdrop-filter: blur(1vh);
+
+    cursor: pointer;
+    user-select: none;
+    z-index: 20000;
+}
+
+#curious-context-title {
+    opacity: 1;
+    display: grid;
+    text-align: center;
+    position: sticky;
+    width: fit-content;
+    top: 50vh;
+    left: 50vw;
+    z-index: 20001;
+    pointer-events: all;
+    padding: 3vh;
+    cursor: auto;
+}
+
+#power-limit {
+    background: var(--main-color);
+    border: none;
+    text-align: center;
+    padding: 1vh;
+    border-radius: 3vh;
+    width: fit-content;
+    margin: auto;
+    content: var(--power-limit);
+}
+
+#power-limit:focus {
+    border: 0vw !important;
+    outline: 0vw !important;
+    -webkit-box-shadow: inset 0px 0px 2vh 0.7vh rgba(0,0,0,0.8);
+    -moz-box-shadow: inset 0px 0px 2vh 0.7vh rgba(0,0,0,0.8);
+    box-shadow: inset 0px 0px 2vh 0.7vh rgba(0,0,0,0.8);
+}
+
+/* Chrome, Safari, Edge, Opera */
+#power-limit::-webkit-outer-spin-button,
+#power-limit::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#power-limit[type=number] {
+  -moz-appearance: textfield;
+}
+
+#power-selector {
+    position: absolute;
+    right: 0vw;
+    height: 7vh;
+    width: 7vh;
+    margin: 1vh;
+    background: var(--main-color);
+    cursor: pointer;
+    z-index: 0;
+}
