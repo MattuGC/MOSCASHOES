@@ -1,10 +1,10 @@
 // products.js
 const products = [
-    // { name: "Product 1", image: "static/images/products/example_1.jpg" },
-    // { name: "Product 2", image: "static/images/products/example_2.jpg" },
-    // { name: "Product 3", image: "static/images/products/example_3.jpg" },
-    // { name: "Product 4", image: "static/images/products/example_4.jpg" },
-    // { name: "Product 5", image: "static/images/products/example_5.jpg" },
+    // { name: "Ankle Boots Bold", image: "/static/img/products/ankle_boots_bold.jpg" },
+    // { name: "Boots Elegance", image: "/static/img/products/boots_elegance.jpg" },
+    // { name: "Clogs Casual", image: "/static/img/products/clogs_casual.jpg" },
+    // { name: "Flats Comfy", image: "/static/img/products/flats_comfy.jpg" },
+    // { name: "Heels Glamour", image: "/static/img/products/heels_glamour.jpg" },
 ];
 
 function loadProducts() {
@@ -20,4 +20,19 @@ function loadProducts() {
         productDiv.innerHTML = `<h3>${product.name}</h3><img src="${product.image}" alt="${product.name}">`;
         productList.appendChild(productDiv);
     });
+}
+
+function selectCategory(sectionID, category) {
+    const section = document.getElementById(sectionID);
+    section.getElementsByClassName('categories')[0].style.transform = 'translateY(-122%)';
+}
+
+function openProduct(sectionID, productID) {
+    const section = document.getElementById(sectionID);
+    
+    // Get Product Data
+    // var product = products[productID];
+
+    var productPopUp = section.getElementsByClassName('product-pop-up')[0];
+    productPopUp.style.top = '0vh';
 }

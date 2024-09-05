@@ -63,8 +63,6 @@ function throwRetractCloths(open){
     let position = null;
     var positionData = null;
     let arrayIndex = [0,1,2,3];
-
-    console.log('open: ' + open);
     
     for(i=0;i<backgroundCloth.length;i++) {
         position = Math.floor(Math.random() * arrayIndex.length);

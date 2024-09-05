@@ -1,13 +1,3 @@
-// function handleLogin(event) {
-//     event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
-//     const email = document.getElementById('email').value;
-//     const password = document.getElementById('password').value;
-
-//     // Aquí puedes añadir la lógica para autenticar al usuario, por ejemplo, enviando los datos a tu servidor
-//     console.log('Email:', email);
-//     console.log('Password:', password);
-// }
-
 function onSignIn(googleUser) {
     const profile = googleUser.getBasicProfile();
     console.log('ID: ' + profile.getId());
@@ -27,20 +17,34 @@ function signOut() {
 
 function handleLogin(event) {
     event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
+    // const email = document.getElementById('loginEmail').value;
+    // const password = document.getElementById('loginPassword').value;
 
-    // Aquí puedes añadir la lógica para autenticar al usuario, por ejemplo, enviando los datos a tu servidor
-    console.log('Login Email:', email);
-    console.log('Login Password:', password);
+    // // Aquí puedes añadir la lógica para autenticar al usuario, por ejemplo, enviando los datos a tu servidor
+    // console.log('Login Email:', email);
+    // console.log('Login Password:', password);
 }
 
 function handleSignup(event) {
     event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
-    const email = document.getElementById('signupEmail').value;
-    const password = document.getElementById('signupPassword').value;
+    // const email = document.getElementById('signupEmail').value;
+    // const password = document.getElementById('signupPassword').value;
 
-    // Aquí puedes añadir la lógica para crear un nuevo usuario, por ejemplo, enviando los datos a tu servidor
-    console.log('Signup Email:', email);
-    console.log('Signup Password:', password);
+    // // Aquí puedes añadir la lógica para crear un nuevo usuario, por ejemplo, enviando los datos a tu servidor
+    // console.log('Signup Email:', email);
+    // console.log('Signup Password:', password);
+}
+
+class Login {
+    constructor(user, password, timu) {
+        this.userName = user;
+        this.password = password;
+        this.timu = timu;
+        localStorage.setItem('user', this);
+    }
+}
+
+function logIn(userName, password) {
+    const timu = "";
+    const user = new Login(userName, password, timu);
 }

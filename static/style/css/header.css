@@ -1,7 +1,7 @@
 :root {
     --heading-font: 'Anton', sans-serif;
     --top-active-menu: 17.5vh;
-    --scrolling-top: 20vh;
+    --scrolling-origin-top: 0vh;
     --rolling-box-height: 3vh;
     --logo-banner-height: 13vh;
     --header-height: 16vh;

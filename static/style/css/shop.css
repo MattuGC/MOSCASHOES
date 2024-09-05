@@ -1,3 +1,122 @@
 .shop {
     left: -100vw;
+    overflow: visible;
+}
+
+.products-sections {
+    margin: 0vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    overflow: auto;
+    height: 77vh;
+}
+
+.category {
+    padding: 20px;
+    text-align: center;
+    overflow: auto;
+    position: sticky;
+    top: 0vh;
+    left: 0vh;
+    height: 72vh;
+    width: 26vw;
+}
+
+.category:hover {
+    filter: brightness(55%);
+}
+
+.categories {
+    position: absolute;
+    transition: all var(--transition-duration) var(--transition-style);
+    z-index: 1;
+}
+
+.shoes {
+    transform: rotate(11deg);
+}
+
+.flats {
+    transform: rotate(9deg);
+}
+
+.boots {
+    transform: rotate(-3.3deg);
+}
+
+.product {
+    margin: auto;
+}
+
+.product img {
+    width: 11vw;
+}
+
+.fake-pics {
+    position: sticky;
+    display: inline;
+}
+
+.fake-pic {
+    position: absolute;
+}
+
+.fake-one {
+    transform:  translateX(-22%)
+                rotate(9.9deg);
+}
+
+.fake-two {
+    transform:  translateX(-11%)
+                rotate(-3.3deg);
+}
+
+.fake-three {
+    transform:  translateX(14%)
+                rotate(7.2deg);
+}
+
+figure {
+    background: #ffffff;
+    display: inline-block;
+    padding: 15px 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+    -webkit-transition: all .20s linear;
+    -moz-transition: all .20s linear;
+    transition: all .20s linear;
+    cursor: pointer;
+    position: relative;
+    transform: rotate(3.3deg);
+}
+figcaption {
+    color: #333;
+    font-size: 25px;
+    position: relative;
+    top: 15px;
+}
+figure img {
+    display: block;
+    width: 250px;
+}
+.figure-hover:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
+    transform: rotate(0deg);
+}
+
+.product-pop-up {
+    position: absolute;
+    top: -100vh;
+    left: 0vh;
+    height: 100%;
+    width: 100%;
 }

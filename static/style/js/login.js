@@ -32,77 +32,15 @@ function checkPassword(password) {
     );
 }
 
-function setValid(element, type) {
-    // console.log("Valid " + type + ".");
+function setValid(element) {
     element.style.borderColor = getCssVariable('--secundary-color');
     element.style.outlineColor = getCssVariable('--secundary-color');
 }
 
-function setInvalid(element, type) {
-    // console.log("Invalid " + type + ".");
+function setInvalid(element) {
     element.style.borderColor = getCssVariable('--pay-attention-color');
     element.style.outlineColor = getCssVariable('--pay-attention-color');
 }
-
-const logInButton = document.getElementById('login-button');
-logInButton.addEventListener('click', function(event) {
-    const loginEmail = document.getElementById('loginEmail');
-    const loginEmailValue =  loginEmail.value;
-    var error = false;
-
-    const loginRequirements = document.getElementById('requirements');
-    if (checkEmailValue(loginEmailValue)) {
-        setValid(loginEmail, 'E-mail');
-        loginRequirements.style.opacity = 0;
-    } else {
-        setInvalid(loginEmail, 'E-mail');
-        loginRequirements.style.opacity = 1;
-        error = true;
-    }
-    
-    const loginPassword = document.getElementById('loginPassword');
-    const loginPasswordValue =  loginPassword.value;
-    
-    if (checkPassword(loginPasswordValue)) {
-        setValid(loginPassword, 'PassWord');
-        if(!error){
-            loginRequirements.style.opacity = 0;
-        }
-    } else {
-        setInvalid(loginPassword, 'PassWord');
-        loginRequirements.style.opacity = 1;
-    }
-});
-
-const signUpButton = document.getElementById('sign-up-button');
-signUpButton.addEventListener('click', function(event) {
-    const signUpEmail = document.getElementById('signupEmail');
-    const signUpEmailValue =  signUpEmail.value;
-    var error = false;
-    
-    const signUpRequirements = document.getElementById('signup-requirements');
-    if (checkEmailValue(signUpEmailValue)) {
-        setValid(signUpEmail, 'E-mail');
-        signUpRequirements.style.opacity = 0;
-    } else {
-        setInvalid(signUpEmail, 'E-mail');
-        signUpRequirements.style.opacity = 1;
-        error = true;
-    }
-    
-    const signUpPassword = document.getElementById('signupPassword');
-    const signUpPasswordValue =  signUpPassword.value;
-    
-    if (checkPassword(signUpPasswordValue)) {
-        setValid(signUpPassword, 'PassWord');
-        if(!error) {
-            signUpRequirements.style.opacity = 0;
-        }
-    } else {
-        setInvalid(signUpPassword, 'PassWord');
-        signUpRequirements.style.opacity = 1;
-    }
-});
 
 // at-least-8-char
 // not-more-20-char
@@ -133,10 +71,6 @@ function validarEmail(email) {
 
 function loginSignUpUpdatecontextTitle(containerID, inputID) {
     const contextTitle = document.getElementById(containerID);
-
-    // const typeForm = containerID.split('-')[0];
-    // const form = document.getElementById(typeForm + 'Form');
-    // console.log('# + inputID: ' + '#' + inputID);
     
     const input = document.querySelector('#' + inputID);
 
@@ -208,3 +142,74 @@ function loginSignUpUpdatecontextTitle(containerID, inputID) {
         spacesCheck.setAttribute('data-check', hasSpaces);
     }
 }
+
+// Listners
+// --------
+
+const logInButton = document.getElementById('login-button');
+logInButton.addEventListener('click', function() {
+    const loginEmail = document.getElementById('loginEmail');
+    const loginEmailValue =  loginEmail.value;
+    
+    const loginPassword = document.getElementById('loginPassword');
+    const loginPasswordValue =  loginPassword.value;
+    
+    var userEmail = false;
+    var userPassword = false;
+
+    const loginRequirements = document.getElementById('requirements');
+    if (checkEmailValue(loginEmailValue)) {
+        setValid(loginEmail);
+        userEmail = true;
+        // loginRequirements.style.opacity = 0;
+    } else {
+        setInvalid(loginEmail);
+        // loginRequirements.style.opacity = 1;
+    }
+    
+    if (checkPassword(loginPasswordValue)) {
+        setValid(loginPassword);
+        userPassword = true;
+    } else {
+        setInvalid(loginPassword);
+        // loginRequirements.style.opacity = 1;
+    }
+
+    if (userEmail && userPassword) {
+        loginRequirements.style.opacity = 0;
+        logIn(loginEmailValue, loginPasswordValue);
+    } else {
+        loginRequirements.style.opacity = 1;
+    }
+});
+
+const signUpButton = document.getElementById('sign-up-button');
+signUpButton.addEventListener('click', function() {
+    const signUpEmail = document.getElementById('signupEmail');
+    const signUpEmailValue =  signUpEmail.value;
+    var error = false;
+    
+    const signUpRequirements = document.getElementById('requirements');
+    if (checkEmailValue(signUpEmailValue)) {
+        setValid(signUpEmail);
+        signUpRequirements.style.opacity = 0;
+    } else {
+        setInvalid(signUpEmail);
+        signUpRequirements.style.opacity = 1;
+        error = true;
+    }
+    
+    const signUpPassword = document.getElementById('signupPassword');
+    const signUpPasswordValue =  signUpPassword.value;
+    
+    if (checkPassword(signUpPasswordValue)) {
+        setValid(signUpPassword);
+        if(!error) {
+            signUpRequirements.style.opacity = 0;
+        }
+    } else {
+        setInvalid(signUpPassword);
+        signUpRequirements.style.opacity = 1;
+    }
+});
+

@@ -37,7 +37,7 @@
     position: sticky;
 
     cursor: -webkit-grab;
-    cursor: pointer;
+    cursor: grab;
 
     transition: all var(--transition-duration) var(--transition-style);
 }
