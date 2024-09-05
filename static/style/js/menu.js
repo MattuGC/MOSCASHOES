@@ -58,8 +58,9 @@ items.forEach(item => {
 //------------
 function openCloseMenu() {
     const menu = document.getElementById("menu");
-    const menuActiveTop = getCssVariable('--top-active-menu');
+    const menuActiveTop = getCssVariable('--logo-banner-height');
     const menuButton = document.getElementById('menu-input');
+    const rollingBox = document.getElementById('rolling-box');
     
     if(menu.style.opacity==="0") {
         // console.log("Showing menu...");
@@ -67,11 +68,13 @@ function openCloseMenu() {
         menu.style.opacity = 1;
         menu.style.top = menuActiveTop;
         menuButton.checked = true;
+        rollingBox.style.top = '0vh';
     } else {
         // console.log("Hidding menu...");
         
         menu.style.opacity = 0;
         menu.style.top = "calc(var(--menu-height) * -1)";
+        rollingBox.style.top = `${getCssVariable('--menu-height')} !important`;
         menuButton.checked = false;
     }
 }
@@ -88,15 +91,14 @@ window.addEventListener('click', function(event) {
     const clickLoginMenu = event.target.matches('#login-menu');
     const clickLoginContainer = event.target.matches('#loginContainer');
     const clickLoginItem = event.target.matches('.login-item');
+    const rollingBox = document.getElementById('rolling-box');
     
     if (!clickHamburguerButton && !clickMenuButton && !clickMenu && !clickOpenMenu && !clickPersonalMenu && !clickLoginMenu && !clickLoginContainer && !clickLoginItem) {
         // console.log("Hidding menu...");
-
-        const headerHeight = getCssVariable('--header-height');
-        const menuHeight = getCssVariable('--menu-height');
         
         menu.style.opacity = 0;
         menu.style.top = "calc(var(--menu-height) * -1)";
+        rollingBox.style.top = '0vh';
 
         if(menuButton.checked === true) {
             menuButton.checked = false;
@@ -111,7 +113,7 @@ menuHover.addEventListener('mouseover', function(event) {
 
     menuContextTitle.style.opacity = 1;
     menuContextTitle.style.left = "auto";
-    menuContextTitle.style.right = "auto";
+    menuContextTitle.style.right = "100%";
     menuContextTitle.style.top = "33%";
 });
 
@@ -125,25 +127,29 @@ menuHover.addEventListener('mouseout', function(event) {
 // Secundary Menu Button
 //----------------------
 
-function openCloseSecundaryMenu(secundaryMenu) {
-    const shopMenu = document.getElementById(secundaryMenu);
-    const headerHeight = getCssVariable('--header-height');
+function openCloseSecundaryMenu(secundaryMenuID) {
+    const secundaryMenu = document.getElementById(secundaryMenuID);
+    const logoBannerHeight = getCssVariable('--logo-banner-height');
     const menuHeight = getCssVariable('--menu-height');
+    const rollingBox = document.getElementById('rolling-box');
+    const rollingBoxTop = `calc(${menuHeight} + ${secundaryMenu}) !important`;
     
-    if(shopMenu.style.opacity==="0" || shopMenu.style.opacity==="") {
+    if(secundaryMenu.style.opacity==="0" || secundaryMenu.style.opacity==="") {
         // console.log("Showing shop menu...");
 
-        shopMenu.style.opacity = 1;
+        secundaryMenu.style.opacity = 1;
         
-        shopMenu.style.top = "calc(" + headerHeight + " + " + menuHeight + " - 1.3vh)";
-        shopMenu.style.height = "auto";
+        secundaryMenu.style.top = "calc(" + logoBannerHeight + " + " + menuHeight + ")";
+        secundaryMenu.style.height = "auto";
+        rollingBox.style.top = rollingBoxTop;
 
     } else {
         // console.log("Hidding shop menu...");
         
-        shopMenu.style.opacity = 0;
-        shopMenu.style.top = getCssVariable("--secundary-menu-top");
-        shopMenu.style.height = "0";
+        secundaryMenu.style.opacity = 0;
+        secundaryMenu.style.top = getCssVariable("--secundary-menu-top");
+        secundaryMenu.style.height = "0";
+        rollingBox.style.top = '0vh';
     }
 }
 
@@ -151,6 +157,10 @@ function openCloseSecundaryMenu(secundaryMenu) {
 window.addEventListener('click', function(event) {
     const shopMenu = document.getElementById("shop-menu");
     const clickHamburguerButton = event.target.matches('.shop-menu');
+    const rollingBox = document.getElementById('rolling-box');
+    const logoBannerHeight = getCssVariable('--logo-banner-height');
+    const menuHeight = getCssVariable('--menu-height');
+    const rollingBoxTop = `calc(${logoBannerHeight} + ${menuHeight} + ${shopMenu})`;
     
     if (!clickHamburguerButton) {
         // console.log("Hidding menu...");
@@ -158,6 +168,7 @@ window.addEventListener('click', function(event) {
         shopMenu.style.opacity = 0;
         shopMenu.style.top = getCssVariable("--secundary-menu-top");
         shopMenu.style.height = "0";
+        rollingBox.style.top = '0vh';
     }
 });
 
@@ -165,6 +176,8 @@ window.addEventListener('click', function(event) {
 window.addEventListener('click', function(event) {
     const aboutMosca = document.getElementById("about-mosca-menu");
     const clickHamburguerButton = event.target.matches('.about-mosca-menu');
+    const rollingBox = document.getElementById('rolling-box');
+    const logoBannerHeight = getCssVariable('--logo-banner-height');
     
     if (!clickHamburguerButton) {
         // console.log("Hidding menu...");
@@ -172,6 +185,7 @@ window.addEventListener('click', function(event) {
         aboutMosca.style.opacity = 0;
         aboutMosca.style.top = getCssVariable("--secundary-menu-top");
         aboutMosca.style.height = "0";
+        rollingBox.style.top = '0vh';
     }
 });
 
@@ -196,7 +210,7 @@ window.addEventListener('click', function(event) {
 //---------- ---- ----
 
 // sleep time expects milliseconds
-function sleep (time) {
+function sleep(time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
 

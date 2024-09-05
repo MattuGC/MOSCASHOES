@@ -1,16 +1,17 @@
 :root {
     --heading-font: 'Anton', sans-serif;
-    --header-height: 19vh;
     --top-active-menu: 17.5vh;
     --scrolling-top: 20vh;
     --rolling-box-height: 3vh;
+    --logo-banner-height: 13vh;
+    --header-height: 16vh;
 }
 
 header {
     overflow-x: visible;
 
     position: absolute;
-    height: calc(var(--scrollbar-size) + var(--header-height));
+    height: calc(var(--scrollbar-size) + var(--logo-banner-height));
     width: 100vw;
 
     user-select: none;
@@ -31,7 +32,7 @@ header .menu-input {
 
 #header-bg {
     position: absolute;
-    height: var(--header-height);
+    height: var(--logo-banner-height);
     background-color: var(--main-color);
 }
 
@@ -42,7 +43,7 @@ header .menu-input {
     justify-content: center;
     align-items: center;
 
-    height: 13vh;
+    height: var(--logo-banner-height);
 
     font-size: 6.6rem;
     font-family: var(--heading-font);
@@ -74,12 +75,15 @@ header .menu-input {
 }
 
 #rolling-box {
+    position: absolute;
+    top: 0vh;
     line-height: var(--rolling-box-height);
 }
 
 .rolling {
     position: absolute;
-    top: var(--header-height);
+    top: var(--logo-banner-height);
+    height: var(--rolling-box-height);
     
     z-index: 4000;
 }

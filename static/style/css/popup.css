@@ -61,7 +61,7 @@
 /* Rolling text */
 .rolling-bg {
     left: 0;
-    width: 100%;
+    width: 100vw;
 
     background-color: var(--main-color);
     color: transparent;

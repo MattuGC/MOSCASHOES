@@ -8,27 +8,10 @@ function getCssVariable(variable) {
 document.addEventListener("DOMContentLoaded", () => {
     loadProducts();
     setupLanguageSelector();
-    setBorderRarius();
-  });
+    setAllBorderRadius();
+});
   
-  function setBorderRarius(){
-    const contextTitle = document.getElementsByClassName("context-title");
-    const countryList = document.getElementsByClassName("country-list-hover-style");
-    const secundaryMenu = document.getElementsByClassName("personal-menu");
-    const inputLabel = document.getElementsByClassName("input-label");
-    const themeQube = document.getElementsByClassName('theme-qube');
-    const buttons = document.getElementsByClassName('button');
-    const curiousFrame = document.getElementsByClassName('curious-frame');
-
-    var stickers = [];
-    stickers = Array.prototype.concat.apply(stickers, contextTitle);
-    stickers = Array.prototype.concat.apply(stickers, countryList);
-    stickers = Array.prototype.concat.apply(stickers, secundaryMenu);
-    stickers = Array.prototype.concat.apply(stickers, inputLabel);
-    stickers = Array.prototype.concat.apply(stickers, themeQube);
-    stickers = Array.prototype.concat.apply(stickers, buttons);
-    stickers = Array.prototype.concat.apply(stickers, curiousFrame);
-    
+function setBorderRarius(stickers){
     for(i=0;i<stickers.length;i++) {
       var borderRadius = "";
       if(stickers[i].classList.contains("personal-menu")){
@@ -40,16 +23,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 }
 
+function setAllBorderRadius() {
+    const contextTitle = document.getElementsByClassName("context-title");
+    const countryList = document.getElementsByClassName("country-list-hover-style");
+    const secundaryMenu = document.getElementsByClassName("personal-menu");
+    const inputLabel = document.getElementsByClassName("input-label");
+    const themeQube = document.getElementsByClassName('theme-qube');
+    const buttons = document.getElementsByClassName('button');
+    const curiousFrame = document.getElementsByClassName('curious-frame');
+    const backgroundCloth = document.getElementsByClassName('background-cloth');
+    const page = document.getElementsByClassName('page');
+
+    var stickers = [];
+    stickers = Array.prototype.concat.apply(stickers, contextTitle);
+    stickers = Array.prototype.concat.apply(stickers, countryList);
+    stickers = Array.prototype.concat.apply(stickers, secundaryMenu);
+    stickers = Array.prototype.concat.apply(stickers, inputLabel);
+    stickers = Array.prototype.concat.apply(stickers, themeQube);
+    stickers = Array.prototype.concat.apply(stickers, buttons);
+    stickers = Array.prototype.concat.apply(stickers, curiousFrame);
+    stickers = Array.prototype.concat.apply(stickers, backgroundCloth);
+    stickers = Array.prototype.concat.apply(stickers, page);
+
+    setBorderRarius(stickers);
+}
+
 function goTo(page) {
   // console.log("Going to " + page + "!");
-  if(document.getElementsByClassName("active").length > 0) {
-    document.getElementsByClassName("active")[0].classList.remove("active");
+  if( document.getElementsByClassName("active").length === 0 && page === 'home') {
+    return;
+  } else {
+    throwRetractCloths(false);
+    if(document.getElementsByClassName("active").length > 0) {
+        document.getElementsByClassName("active")[0].classList.remove("active");
+    }
+    if(page!=="home") {
+      document.getElementById(page).classList.add("active");
+      throwRetractCloths(true);
+    }
+  
+    openCloseMenu();
   }
-  if(page!=="home") {
-    document.getElementById(page).classList.add("active");
-  }
-
-  openCloseMenu();
 }
 
 function getRandomEm(min, max) {

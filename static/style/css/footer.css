@@ -1,8 +1,13 @@
+:root {
+    --footer-height: 3vh;
+}
+
 footer {
     background-color: var(--main-color);
     text-align: center;
     padding: 0.5rem;
     user-select: none;
+    height: var(--footer-height);
 
     z-index: 5000;
 }

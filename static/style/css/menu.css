@@ -35,12 +35,23 @@ button:hover {
     border-bottom: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
 }
 
+#cart-button:hover,
+#moscathecollection-button:hover,
+#moscastudiok-button:hover,
+#wa-button:hover {
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
 #hamburguer-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0;
-    width: 100vw;
+    position: absolute;
+    right: 0vw;
+    top: 0vh;
+    height: var(--logo-banner-height);
 }
 
 /* #hamburguer-btn img {

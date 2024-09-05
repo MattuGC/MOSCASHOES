@@ -1,19 +1,62 @@
 :root {
     --section-opacity: 1;
-    --section-height: 74vh;
+    --section-height: 81vh;
+    --section-width: 92vw;
 }
 
 section {
-    overflow-y: auto; /* Allow vertical scrolling */
-    
+    overflow-y: auto;
+
     position: fixed;
-    padding: 2rem; /* Add padding for content */
-    top: 20vh;
+    padding: 2rem;
+    top: 0vh;
     height: var(--section-height);
-    width: 100vw; /* Ensure each section takes the full viewport width */
+    width: var(--section-width);
 }
 
+/* .page {
+    background-color: white;
+} */
+
 .active {
-    top: calc(var(--header-height) + var(--rolling-box-height)) !important;
-    left: 0vw !important;
+    top: calc(var(--logo-banner-height) + var(--rolling-box-height)) !important;
+    left: 4.2vw !important;
+    transform: rotate(-2.2deg);
+    z-index: 1;
+}
+
+.background-cloth {
+    position: absolute;
+    width: 92vw;
+    height: 72vh;
+}
+
+.invert-colors {
+    background-color: var(--secundary-color);
+    border-color: var(--main-color);
+    outline-color: var(--main-color);
+}
+
+.background-cloth:nth-of-type(1) {
+    top: -11vh;
+    left: -111vw;
+    transform: rotate(1deg);
+}
+
+.background-cloth:nth-of-type(2) {
+    top: 22vh;
+    left: 222vw;
+    transform: rotate(2deg);
+}
+
+.background-cloth:nth-of-type(3) {
+    top: 133vh;
+    left: 333vw;
+    transform: rotate(3deg);
+}
+
+.background-cloth:nth-of-type(4) {
+    top: 144vh;
+    left: -244vw;
+    transform: rotate(4deg);
 }

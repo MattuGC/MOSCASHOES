@@ -2,9 +2,9 @@
     overflow: hidden; /* Hide scrollbars */
     
     position: absolute;
-    top: 19vh;
+    top: calc(var(--rolling-box-height) + var(--logo-banner-height));
     left: 0vh;
-    height: 77vh;
+    height: calc(100vh - var(--rolling-box-height) - var(--logo-banner-height) - var(--footer-height));
     width: 100vw;
 
     /* user-select: none; */

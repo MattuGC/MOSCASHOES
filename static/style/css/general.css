@@ -147,7 +147,3 @@ button, a {
     
     transition: all 0.5s var(--transition-style);
 }
-
-.page {
-    background-color: white;
-}

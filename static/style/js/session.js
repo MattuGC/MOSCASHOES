@@ -1,12 +1,12 @@
-function handleLogin(event) {
-    event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+// function handleLogin(event) {
+//     event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
 
-    // Aquí puedes añadir la lógica para autenticar al usuario, por ejemplo, enviando los datos a tu servidor
-    console.log('Email:', email);
-    console.log('Password:', password);
-}
+//     // Aquí puedes añadir la lógica para autenticar al usuario, por ejemplo, enviando los datos a tu servidor
+//     console.log('Email:', email);
+//     console.log('Password:', password);
+// }
 
 function onSignIn(googleUser) {
     const profile = googleUser.getBasicProfile();
