@@ -6,6 +6,7 @@
     left: 0vh;
     height: calc(100vh - var(--rolling-box-height) - var(--logo-banner-height) - var(--footer-height));
     width: 100vw;
+    background-color: transparent !important;
 
     /* user-select: none; */
 }

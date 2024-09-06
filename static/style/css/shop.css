@@ -5,9 +5,15 @@
 
 .products-sections {
     margin: 0vh;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    width: 100%;
+    
+    display: flex;
+    gap: 2%;
+    flex-wrap: wrap;
+    
+    justify-content: space-between;
+    align-items: center;
+
     overflow: auto;
     height: 77vh;
 }
@@ -21,10 +27,6 @@
     left: 0vh;
     height: 72vh;
     width: 26vw;
-}
-
-.category:hover {
-    filter: brightness(55%);
 }
 
 .categories {
@@ -50,35 +52,11 @@
 }
 
 .product img {
-    width: 11vw;
-}
-
-.fake-pics {
-    position: sticky;
-    display: inline;
-}
-
-.fake-pic {
-    position: absolute;
-}
-
-.fake-one {
-    transform:  translateX(-22%)
-                rotate(9.9deg);
-}
-
-.fake-two {
-    transform:  translateX(-11%)
-                rotate(-3.3deg);
-}
-
-.fake-three {
-    transform:  translateX(14%)
-                rotate(7.2deg);
+    width: 22vw;
 }
 
 figure {
-    background: #ffffff;
+    background: var(--main-color);
     display: inline-block;
     padding: 15px 15px 30px;
     text-align: center;
@@ -94,14 +72,13 @@ figure {
     transform: rotate(3.3deg);
 }
 figcaption {
-    color: #333;
-    font-size: 25px;
+    color: var(--secundary-color);
+    font-size: 1rem;
     position: relative;
     top: 15px;
 }
 figure img {
     display: block;
-    width: 250px;
 }
 .figure-hover:hover {
     -webkit-transform: scale(1.2);
@@ -111,12 +88,4 @@ figure img {
     -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
     box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
     transform: rotate(0deg);
-}
-
-.product-pop-up {
-    position: absolute;
-    top: -100vh;
-    left: 0vh;
-    height: 100%;
-    width: 100%;
 }

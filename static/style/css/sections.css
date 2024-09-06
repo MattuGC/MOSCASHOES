@@ -12,6 +12,11 @@ section {
     top: 0vh;
     height: var(--section-height);
     width: var(--section-width);
+    
+    background-color: var(--secundary-color) !important;
+    border: var(--button-border-width) var(--main-color) !important;
+    border-style: var(--sticker-border-style) !important;
+    outline: var(--main-color) var(--sticker-outline-style) var(--sticker-outline-width) !important;
 }
 
 /* .page {

@@ -27,12 +27,38 @@ function selectCategory(sectionID, category) {
     section.getElementsByClassName('categories')[0].style.transform = 'translateY(-122%)';
 }
 
-function openProduct(sectionID, productID) {
-    const section = document.getElementById(sectionID);
+function openProduct(productID) {
+    // const section = document.getElementById(sectionID);
     
     // Get Product Data
     // var product = products[productID];
+    // Populate with product data
 
-    var productPopUp = section.getElementsByClassName('product-pop-up')[0];
-    productPopUp.style.top = '0vh';
+    var productPopUp = document.getElementsByClassName('product-pop-up')[0];
+    productPopUp.style.top = '3.3vh';
+}
+
+function tabSelection(tabSelectionID) {
+    var buttons = document.querySelectorAll('.tabs button');
+    for(i=0;i<buttons.length;i++) {
+        buttons[i].classList.remove('button-selected');
+    }
+
+    var buttonSelection = document.getElementById(tabSelectionID.replace(/-data$/, ""));
+    console.log('tabSelectionID.replace(/-data$/, ""): ' + tabSelectionID.replace(/-data$/, ""));
+    console.log('Adding buttonSelection the class "button-selected: " ' + buttonSelection);
+    buttonSelection.classList.add('button-selected');
+
+    var tabs = document.querySelectorAll('.info div');
+    for(j=0;j<tabs.length;j++) {
+        tabs[j].classList.remove('active-tab');
+    }
+
+    var tab = document.getElementById(tabSelectionID);
+    tab.classList.add('active-tab');
+}
+
+function closeProduct() {
+    var productPopUp = document.getElementById('product-pop-up');
+    productPopUp.style.top = '-200vh';
 }

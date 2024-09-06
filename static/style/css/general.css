@@ -18,6 +18,7 @@
 
 /*
 #curious: 20000
+.product-pop-up: 11000
 .popup: 10000
 #theme-selector: 10000
 #menu: 9000
@@ -95,23 +96,6 @@ main {
     }
 }
 
-/* *::-webkit-scrollbar {
-    width: var(--scrollbar-size);
-}
-
-*::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-*::-webkit-scrollbar-thumb:vertical {
-    background: var(--main-color) url("/static/img/mosca/cropped-mosca-iso-blanca-1-1.png");
-    background-size:var(--scrollbar-size) var(--scrollbar-size);
-}
-
-*::-webkit-scrollbar-button {
-    display: none;
-} */
-
 button, a {
     cursor: pointer;
 }
@@ -146,4 +130,39 @@ button, a {
     width: auto;
     
     transition: all 0.5s var(--transition-style);
+}
+
+main button:hover,
+#loginContainer button:hover {
+    background-color: var(--secundary-color);
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* ScrollBar */
+/* --------- */
+
+::-webkit-scrollbar {
+    width: 0.33vh;
+    height: 0.33vh;
+}
+::-webkit-scrollbar-button {
+    width: 1vh;
+    height: 1vh;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 22%;
+    height: 11vh;
+}
+::-webkit-scrollbar-track {
+    background: var(--secundary-color);
+    border: 1vh var(--sticker-border-style) var(--main-color);
+    border-radius: 0%;
+}
+::-webkit-scrollbar-track:active {
+    background: var(--secundary-color);
+}
+::-webkit-scrollbar-corner {
+    background: var(--main-color);
 }
