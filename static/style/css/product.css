@@ -19,7 +19,7 @@
     justify-items: center;
     align-items: center;
     grid-template-areas:
-      "pics title title"
+      "title title title"
       "pics price buy-button"
       "pics size buy-button"
       "pics empty empty"
@@ -118,6 +118,8 @@
     display: flex;
 
     background-color: var(--secundary-color);
+    border-color: var(--main-color);
+    outline-color: var(--main-color);
 }
 
 .info div {
@@ -139,6 +141,8 @@
     grid-area: related-products;
     padding: 1vh;
     background-color: var(--secundary-color);
+    border-color: var(--main-color);
+    outline-color: var(--main-color);
 }
 
 .related-products-list {
