@@ -6,6 +6,11 @@
     width: 92%;
     z-index: 11000;
     transform: rotate(-1.1deg);
+    user-select: none;
+}
+
+.product-pop-up {
+    text-shadow: 0 0 1rem var(--main-color);
 }
 
 .container {
@@ -40,16 +45,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 1s var(--transition-sty);
 }
 
 .close-product:hover {
     cursor: pointer;
+    background-color: var(--secundary-color);
+    border-color: var(--main-color);
+    outline-color: var(--main-color);
 }
 
 .close-product svg {
     width: 3vh;
     height: 3vh;
     fill: var(--secundary-color);
+    transition: all 1s var(--transition-sty);
+}
+
+.close-product:hover svg {
+    fill: var(--main-color);
 }
 
 .buy-button {
@@ -116,10 +130,6 @@
     border: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
 
     display: flex;
-
-    background-color: var(--secundary-color);
-    border-color: var(--main-color);
-    outline-color: var(--main-color);
 }
 
 .info div {
@@ -139,10 +149,8 @@
 
 .related-products {
     grid-area: related-products;
-    padding: 1vh;
-    background-color: var(--secundary-color);
-    border-color: var(--main-color);
-    outline-color: var(--main-color);
+    padding-bottom: 1vh;
+    width: 80%;
 }
 
 .related-products-list {
@@ -160,10 +168,43 @@
     padding: inherit;
 }
 
-.pics { grid-area: pics; }
+.pics {
+    grid-area: pics;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 7%;
+}
 
-.pics img {
+.pics .main-pic {
     height: 40vh;
+    transform: rotate(-11deg);
+    transition: all var(--transition-duration) var(--transition-style);
+}
+
+.pics .pics-slider {
+    padding-bottom: 1vh;
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--secundary-color);
+}
+
+.pics .all-pics {
+    height: 100%;
+    display: flex;
+    gap: 3.3%;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: auto;
+    padding: inherit;
+    width: -webkit-fill-available;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+.pics .all-pics img {
+    height: 11vh;
+    transition: all 0.5s var(--transition-style);
 }
 
 .buy-button button {

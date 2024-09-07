@@ -23,7 +23,20 @@ function loadProducts() {
 }
 
 function selectCategory(sectionID, category) {
-    const section = document.getElementById(sectionID);
+    var section = document.getElementById(sectionID);
+
+    var products = section.getElementsByClassName('product');
+    for( i=0; i<products.length ;i++ ) {
+        if( products[i].getAttribute( 'data-category' ) !== category ) {
+            products[i].setAttribute( 'data-show', '0' );
+        }
+    }
+
+    var categories = document.getElementsByClassName('category');
+
+    categories[0].style.left = '-100vw';
+    categories[1].style.left = '100vw';
+    categories[2].style.left = '100vw';
     section.getElementsByClassName('categories')[0].style.transform = 'translateY(-122%)';
 }
 
@@ -45,8 +58,6 @@ function tabSelection(tabSelectionID) {
     }
 
     var buttonSelection = document.getElementById(tabSelectionID.replace(/-data$/, ""));
-    console.log('tabSelectionID.replace(/-data$/, ""): ' + tabSelectionID.replace(/-data$/, ""));
-    console.log('Adding buttonSelection the class "button-selected: " ' + buttonSelection);
     buttonSelection.classList.add('button-selected');
 
     var tabs = document.querySelectorAll('.info div');
@@ -59,6 +70,13 @@ function tabSelection(tabSelectionID) {
 }
 
 function closeProduct() {
-    var productPopUp = document.getElementById('product-pop-up');
+    var productPopUp = document.getElementsByClassName('product-pop-up')[0];
     productPopUp.style.top = '-200vh';
+}
+
+function setMainPic(productID, imgURL) {
+    var product = document.getElementById(productID);
+    var mainPic = product.getElementsByClassName('main-pic')[0];
+    mainPic.setAttribute('src', imgURL);
+    setRandomRotation('main-pic');
 }

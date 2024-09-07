@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loadProducts();
     setupLanguageSelector();
     setAllBorderRadius();
+    setRandomRotation('figure-hover');
+    setRandomRotation('category');
+    // document.addEventListener('contextmenu', event => event.preventDefault());
 });
   
 function setBorderRarius(stickers){
@@ -50,6 +53,22 @@ function setAllBorderRadius() {
     stickers = Array.prototype.concat.apply(stickers, closeProduct);
 
     setBorderRarius(stickers);
+}
+
+function setRandomRotation(className) {
+  let min = -5;
+  let max = 5;
+  var elements = document.getElementsByClassName(className);
+  var deg;
+  var leftRight;
+  for(i=0;i<elements.length;i++) {
+    deg = Math.random() * (max - min + 1) + min;
+    elements[i].style.webkitTransform = 'rotate(' + deg + 'deg)';
+    elements[i].style.mozTransform    = 'rotate(' + deg + 'deg)';
+    elements[i].style.msTransform     = 'rotate(' + deg + 'deg)';
+    elements[i].style.oTransform      = 'rotate(' + deg + 'deg)';
+    elements[i].style.transform       = 'rotate(' + deg + 'deg)';
+  }
 }
 
 function goTo(page) {
