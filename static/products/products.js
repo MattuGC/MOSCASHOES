@@ -22,17 +22,34 @@ function loadProducts() {
     });
 }
 
-function selectCategory(sectionID, category) {
+function showCategories(sectionID) {
     var section = document.getElementById(sectionID);
+    section.getElementsByClassName('categories')[0];
+    
+    var categories = section.getElementsByClassName('category');
 
-    var products = section.getElementsByClassName('product');
+    categories[0].style.left = '0%';
+    categories[1].style.left = '33%';
+    categories[2].style.left = '66%';
+    section.getElementsByClassName('categories')[0].style.transform = 'translateY(0%)';
+}
+
+function selectCategory(sectionID, category) {
+    var section;
+    section = document.getElementById(sectionID);
+
+    var products;
+    products = section.getElementsByClassName('product');
     for( i=0; i<products.length ;i++ ) {
-        if( products[i].getAttribute( 'data-category' ) !== category ) {
+        if ( products[i].getAttribute( 'data-category' ) === category ) {
+            products[i].setAttribute( 'data-show', '1' );
+        } else {
             products[i].setAttribute( 'data-show', '0' );
         }
     }
 
-    var categories = document.getElementsByClassName('category');
+    var categories;
+    categories = section.getElementsByClassName('category');
 
     categories[0].style.left = '-100vw';
     categories[1].style.left = '100vw';
@@ -40,19 +57,62 @@ function selectCategory(sectionID, category) {
     section.getElementsByClassName('categories')[0].style.transform = 'translateY(-122%)';
 }
 
-function openProduct(productID) {
+function showProduct(productID, status) {
     // const section = document.getElementById(sectionID);
     
     // Get Product Data
     // var product = products[productID];
     // Populate with product data
 
-    var productPopUp = document.getElementsByClassName('product-pop-up')[0];
-    productPopUp.style.top = '3.3vh';
+    var productPopUp;
+    var randomPostion;
+    var random;
+    var negPos;
+    productPopUp = document.getElementById(productID);
+    if(status) {
+        var products = document.getElementsByClassName('product-pop-up');
+        for ( i=0; i<products.length; i++ ) {
+            products[i].style.zIndex = '11000';
+        }
+
+        productPopUp.style.top = '3.3vh';
+        productPopUp.style.left = '50%';
+        productPopUp.style.zIndex = '11001';
+        
+        let min = -3;
+        let max = 3;
+        var deg;
+        deg = Math.random() * (max - min + 1) + min;
+        deg = deg + 'deg';
+        productPopUp.style.transform = `translateX(-50%) rotate(${deg})`;
+    } else {
+        random = Math.random();
+        if ( random < 0.5 ) {
+            side = 'vw';
+        } else {
+            side = 'vh';
+        }
+        
+        random = Math.random();
+        if ( random < 0.5 ) {
+            negPos = 200;
+        } else {
+            negPos = -200;
+        }
+
+        randomPostion = negPos;
+        randomPostion = randomPostion + side;
+        if ( side ===  'vh' ) {
+            productPopUp.style.top = randomPostion;
+        } else {
+            productPopUp.style.left = randomPostion;
+        }
+    }
 }
 
-function tabSelection(tabSelectionID) {
-    var buttons = document.querySelectorAll('.tabs button');
+function tabSelection(productID, tabSelectionID) {
+    var product = document.getElementById(productID);
+    var buttons = product.querySelectorAll('.tabs button');
     for(i=0;i<buttons.length;i++) {
         buttons[i].classList.remove('button-selected');
     }
@@ -69,14 +129,20 @@ function tabSelection(tabSelectionID) {
     tab.classList.add('active-tab');
 }
 
-function closeProduct() {
-    var productPopUp = document.getElementsByClassName('product-pop-up')[0];
-    productPopUp.style.top = '-200vh';
-}
-
-function setMainPic(productID, imgURL) {
+function setMainPic(productID, src) {
     var product = document.getElementById(productID);
-    var mainPic = product.getElementsByClassName('main-pic')[0];
-    mainPic.setAttribute('src', imgURL);
+    var mainPic;
+    if ( src.includes('jpg') || src.includes('jpeg') || src.includes('png') ) {
+        mainPic = product.querySelector('.main-pic img');
+        mainPic.style.display = 'block';
+        
+        product.querySelector('.main-pic video').style.display = 'none';
+    } else if ( src.includes('mp4') ) {
+        mainPic = product.querySelector('.main-pic video source');
+        product.querySelector('.main-pic video').style.display = 'block';
+
+        product.querySelector('.main-pic img').style.display = 'none';
+    }
+    mainPic.setAttribute('src', src);
     setRandomRotation('main-pic');
 }

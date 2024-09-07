@@ -37,6 +37,7 @@ function setAllBorderRadius() {
     const backgroundCloth = document.getElementsByClassName('background-cloth');
     const page = document.getElementsByClassName('page');
     const productPopUp = document.getElementsByClassName('product-pop-up');
+    const changeCategory = document.getElementsByClassName('change-category');
     const closeProduct = document.getElementsByClassName('close-product');
 
     var stickers = [];
@@ -50,6 +51,7 @@ function setAllBorderRadius() {
     stickers = Array.prototype.concat.apply(stickers, backgroundCloth);
     stickers = Array.prototype.concat.apply(stickers, page);
     stickers = Array.prototype.concat.apply(stickers, productPopUp);
+    stickers = Array.prototype.concat.apply(stickers, changeCategory);
     stickers = Array.prototype.concat.apply(stickers, closeProduct);
 
     setBorderRarius(stickers);

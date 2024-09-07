@@ -308,16 +308,17 @@
                 <button class="category sewn-button flats" onclick="selectCategory('shoes', 'flats')">Flats</button>
                 <button class="category sewn-button boots" onclick="selectCategory('shoes', 'boots')">Boots</button>
             </div>
+            <button class="change-category sewn-button" onclick="showCategories('shoes')">Change Category</button>
             <div id="product-list"></div>
             <div id="products" class="products-sections">
                 <div class="product" data-show="1" data-category="shoes">
-                    <figure class="figure-hover" data-product-id="1" onclick="openProduct('1')">
+                    <figure class="figure-hover" data-product-id="1" onclick="showProduct('1', true)">
                         <img class="product-miniature sewn-button" src="/static/img/products/ankle_boots_bold.jpg" alt="Ankle Boots Bold" title="Ankle Boots Bold" />
                         <figcaption>Ankle Boots Bold</figcaption>
                     </figure>
                 </div>
                 <div class="product" data-show="1" data-category="flats">
-                    <figure class="figure-hover">
+                    <figure class="figure-hover" data-product-id="2" onclick="showProduct('2', true)">
                         <img class="product-miniature sewn-button" src="/static/img/products/boots_elegance.jpg" alt="Boots Elegance" title="Boots Elegance" />
                         <figcaption>Ankle Boots Bold</figcaption>
                     </figure>
@@ -459,8 +460,8 @@
         <div class="background-cloth sewn-button invert-colors"></div>
         <div class="background-cloth sewn-button"></div>
         
-        <div id="Ankle Boots Bold" class="product-pop-up sewn-button">
-            <div class="close-product sewn-button" onclick="closeProduct()">
+        <div id="1" class="product-pop-up sewn-button">
+            <div class="close-product sewn-button" onclick="showProduct('1', false)">
                 <?xml version="1.0" ?>
                     <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/>
@@ -468,12 +469,26 @@
             </div>
             <div class="container">
                 <div class="pics">
-                    <img class="main-pic sewn-button" src="/static/img/products/ankle_boots_bold.jpg" alt="Ankle Boots Bold" title="Ankle Boots Bold" />
+                    <div class="main-pic">
+                        <img class="sewn-button" src="/static/img/products/ankle_boots_bold.jpg" data-show="1" alt="Ankle Boots Bold" title="Ankle Boots Bold" />
+                        <video class="sewn-button" data-show="0" autoplay loop muted>
+                            <source src="/static/img/products/video.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
                     <div class="pics-slider sewn-button invert-colors">
                         <div class="all-pics">
-                            <img onclick="setMainPic('Ankle Boots Bold','/static/img/products/ankle_boots_bold.jpg')" class="figure-hover sewn-button" src="/static/img/products/ankle_boots_bold.jpg" alt="Ankle Boots Bold" title="Ankle Boots Bold"/>
-                            <img onclick="setMainPic('Ankle Boots Bold','/static/img/products/clogs_casual.jpg')" class="figure-hover sewn-button" src="/static/img/products/clogs_casual.jpg" alt="Ankle Boots Bold" title="Clogs Casual"/>
-                            <img onclick="setMainPic('Ankle Boots Bold','/static/img/products/boots_elegance.jpg')" class="figure-hover sewn-button" src="/static/img/products/boots_elegance.jpg" alt="Ankle Boots Bold" title="Boots Elegance"/>
+                            <div class="product-element">
+                                <img onclick="setMainPic('1','/static/img/products/ankle_boots_bold.jpg')" class="figure-hover sewn-button" src="/static/img/products/ankle_boots_bold.jpg" alt="Ankle Boots Bold" title="Ankle Boots Bold"/>
+                            </div>
+                            <div class="product-element">
+                                <!-- <img  alt="Ankle Boots Bold" title="Clogs Casual"/> -->
+                                <video onclick="setMainPic('1','/static/img/products/video.mp4')" class="sewn-button" autoplay loop muted>
+                                    <source src="/static/img/products/video.mp4" type="video/mp4"/>
+                                </video>
+                            </div>
+                            <div class="product-element">
+                                <img onclick="setMainPic('1','/static/img/products/boots_elegance.jpg')" class="figure-hover sewn-button" src="/static/img/products/boots_elegance.jpg" alt="Ankle Boots Bold" title="Boots Elegance"/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -495,10 +510,10 @@
                     </select>
                 </div>
                 <div class="tabs">
-                    <button id="description" class="description button-selected" onclick="tabSelection('description-data')" data-lang-key="description">Description</button>
-                    <button id="sizes" class="sizes" onclick="tabSelection('sizes-data')" data-lang-key="sizes">Sizes</button>
-                    <button id="materials-and-take-care" class="materials-and-take-care" onclick="tabSelection('materials-and-take-care-data')" data-lang-key="materials-and-take-care">Materials and Take Care</button>
-                    <button id="time-and-take-back" class="time-and-take-back" onclick="tabSelection('time-and-take-back-data')" data-lang-key="time-and-take-back">Time and Take Back</button>
+                    <button id="description" class="description button-selected" onclick="tabSelection('1', 'description-data')" data-lang-key="description">Description</button>
+                    <button id="sizes" class="sizes" onclick="tabSelection('1', 'sizes-data')" data-lang-key="sizes">Sizes</button>
+                    <button id="materials-and-take-care" class="materials-and-take-care" onclick="tabSelection('1', 'materials-and-take-care-data')" data-lang-key="materials-and-take-care">Materials and Take Care</button>
+                    <button id="time-and-take-back" class="time-and-take-back" onclick="tabSelection('1', 'time-and-take-back-data')" data-lang-key="time-and-take-back">Time and Take Back</button>
                 </div>
                 <div class="info sewn-button invert-colors">
                     <div id="description-data" class="active-tab">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
@@ -509,13 +524,98 @@
                 <div class="related-products sewn-button invert-colors">
                     <div class="related-products-list">
                         <div class="related-product">
-                            <figure class="figure-hover" data-product-id="1" onclick="openProduct('1')">
+                            <figure class="figure-hover 1" data-product-id="1" onclick="showProduct('1', true)">
                                 <img class="product-miniature sewn-button" src="/static/img/products/ankle_boots_bold.jpg" alt="Ankle Boots Bold" title="Ankle Boots Bold" />
                                 <figcaption>Ankle Boots Bold</figcaption>
                             </figure>
                         </div>
                         <div class="related-product">
+                            <figure class="figure-hover" data-product-id="2" onclick="showProduct('2', true)">
+                                <img class="product-miniature sewn-button" src="/static/img/products/boots_elegance.jpg" alt="Boots Elegance" title="Boots Elegance" />
+                                <figcaption>Ankle Boots Bold</figcaption>
+                            </figure>
+                        </div>
+                        <div class="related-product">
                             <figure class="figure-hover">
+                                <img class="product-miniature sewn-button" src="/static/img/products/clogs_casual.jpg" alt="Clogs Casual" title="Clogs Casual" />
+                                <figcaption>Clogs Casual</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="2" class="product-pop-up sewn-button">
+            <div class="close-product sewn-button" onclick="showProduct('2', false)">
+                <?xml version="1.0" ?>
+                    <svg id="Layer_1" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/>
+                    </svg>
+            </div>
+            <div class="container">
+                <div class="pics">
+                    <div class="main-pic">
+                        <img class="sewn-button" src="/static/img/products/boots_elegance.jpg" data-show="1" alt="Boots Elegance" title="Boots Elegance" />
+                        <video class="sewn-button" data-show="0" autoplay loop muted>
+                            <source src="/static/img/products/video.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                    <div class="pics-slider sewn-button invert-colors">
+                        <div class="all-pics">
+                            <div class="product-element">
+                                <img onclick="setMainPic('2','/static/img/products/ankle_boots_bold.jpg')" class="figure-hover sewn-button" src="/static/img/products/ankle_boots_bold.jpg" alt="Ankle Boots Bold" title="Ankle Boots Bold"/>
+                            </div>
+                            <div class="product-element">
+                                <!-- <img  alt="Ankle Boots Bold" title="Clogs Casual"/> -->
+                                <video onclick="setMainPic('2','/static/img/products/video.mp4')" class="sewn-button" autoplay loop muted>
+                                    <source src="/static/img/products/video.mp4" type="video/mp4"/>
+                                </video>
+                            </div>
+                            <div class="product-element">
+                                <img onclick="setMainPic('2','/static/img/products/boots_elegance.jpg')" class="figure-hover sewn-button" src="/static/img/products/boots_elegance.jpg" alt="Ankle Boots Bold" title="Boots Elegance"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title">
+                    <h2>Boots Elegance</h2>
+                </div>
+                <div class="buy-button sewn-button">
+                    <button data-lang-key="add-to-cart" onclick="addToCart()">ADD TO CART</button>
+                </div>
+                <div class="price">
+                    <p class="currency">USD</p><p>299</p>
+                </div>
+                <div class="size">
+                    <p data-lang-key="size">Size</p>
+                    <select name="size" id="size">
+                        <option value="37">37</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                    </select>
+                </div>
+                <div class="tabs">
+                    <button id="description" class="description button-selected" onclick="tabSelection('2', 'description-data')" data-lang-key="description">Description</button>
+                    <button id="sizes" class="sizes" onclick="tabSelection('2', 'sizes-data')" data-lang-key="sizes">Sizes</button>
+                    <button id="materials-and-take-care" class="materials-and-take-care" onclick="tabSelection('2', 'materials-and-take-care-data')" data-lang-key="materials-and-take-care">Materials and Take Care</button>
+                    <button id="time-and-take-back" class="time-and-take-back" onclick="tabSelection('2', 'time-and-take-back-data')" data-lang-key="time-and-take-back">Time and Take Back</button>
+                </div>
+                <div class="info sewn-button invert-colors">
+                    <div id="description-data" class="active-tab">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div id="sizes-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div id="materials-and-take-care-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div id="time-and-take-back-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                </div>
+                <div class="related-products sewn-button invert-colors">
+                    <div class="related-products-list">
+                        <div class="related-product">
+                            <figure class="figure-hover 1" data-product-id="1" onclick="showProduct('1', true)">
+                                <img class="product-miniature sewn-button" src="/static/img/products/ankle_boots_bold.jpg" alt="Ankle Boots Bold" title="Ankle Boots Bold" />
+                                <figcaption>Ankle Boots Bold</figcaption>
+                            </figure>
+                        </div>
+                        <div class="related-product">
+                            <figure class="figure-hover" data-product-id="2" onclick="showProduct('2', true)">
                                 <img class="product-miniature sewn-button" src="/static/img/products/boots_elegance.jpg" alt="Boots Elegance" title="Boots Elegance" />
                                 <figcaption>Ankle Boots Bold</figcaption>
                             </figure>

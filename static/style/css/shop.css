@@ -28,7 +28,7 @@
     height: 100%;
 
     transition: all var(--transition-duration) var(--transition-style);
-    z-index: 1;
+    z-index: 2;
 }
 
 .categories > button:nth-child(1) {
@@ -50,6 +50,15 @@
     width: 30%;
 }
 
+.change-category {
+    margin: 2vh;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1vh;
+}
+
 .shoes {
     transform: rotate(11deg);
 }
@@ -68,6 +77,10 @@
 
 .product[data-show="0"]{
     display:none;
+}
+
+.product[data-show="1"]{
+    display: block;
 }
 
 .product img {
