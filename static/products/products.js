@@ -110,22 +110,22 @@ function showProduct(productID, status) {
     }
 }
 
-function tabSelection(productID, tabSelectionID) {
+function tabSelection(productID, tabSelection) {
     var product = document.getElementById(productID);
     var buttons = product.querySelectorAll('.tabs button');
     for(i=0;i<buttons.length;i++) {
         buttons[i].classList.remove('button-selected');
     }
 
-    var buttonSelection = document.getElementById(tabSelectionID.replace(/-data$/, ""));
+    var buttonSelection = product.getElementsByClassName(tabSelection.replace(/-data$/, ""))[0];
     buttonSelection.classList.add('button-selected');
 
-    var tabs = document.querySelectorAll('.info div');
+    var tabs = product.querySelectorAll('.info div');
     for(j=0;j<tabs.length;j++) {
         tabs[j].classList.remove('active-tab');
     }
 
-    var tab = document.getElementById(tabSelectionID);
+    var tab = product.getElementsByClassName(tabSelection)[0];
     tab.classList.add('active-tab');
 }
 

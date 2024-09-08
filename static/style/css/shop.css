@@ -113,6 +113,7 @@ figcaption {
 figure img {
     display: block;
 }
+
 .figure-hover:hover {
     cursor: pointer;
     -webkit-transform:  scale(1.2)

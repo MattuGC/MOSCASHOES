@@ -14,9 +14,8 @@ section {
     width: var(--section-width);
     
     background-color: var(--secundary-color) !important;
-    border: var(--button-border-width) var(--main-color) !important;
-    border-style: var(--sticker-border-style) !important;
-    outline: var(--main-color) var(--sticker-outline-style) var(--sticker-outline-width) !important;
+    border-color: var(--main-color) !important;
+    outline: var(--sticker-outline-width) var(--sticker-outline-style) var(--secundary-color) !important;
 }
 
 /* .page {
@@ -39,7 +38,7 @@ section {
 .invert-colors {
     background-color: var(--secundary-color);
     border-color: var(--main-color);
-    outline-color: var(--main-color);
+    outline: var(--sticker-outline-width) var(--sticker-outline-style) var(--secundary-color) !important;
 }
 
 .background-cloth:nth-of-type(1) {

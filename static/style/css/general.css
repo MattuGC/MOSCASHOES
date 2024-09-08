@@ -7,7 +7,7 @@
     --sticker-border-style: dashed;
     --button-border-width: 0.25vh;
     --sticker-outline-style: solid;
-    --sticker-outline-width: 0.125vh;
+    --sticker-outline-width: 0.44vh;
     --transition-style: ease-in-out;
     --transition-duration: 1s;
     --scroll-text-duration: 55s;
@@ -65,6 +65,10 @@ h3 {
     font-size: 2rem;
 }
 
+input {
+    font-weight: 900;
+}
+
 main {
     flex: 1; /* Allow main to grow and fill the available space */
     display: flex;
@@ -81,9 +85,8 @@ main {
 .sewn-button{
     box-shadow: var(--shadow-box) var(--shadow-box-color);
     background-color: var(--main-color);
-    border: var(--button-border-width) var(--secundary-color);
-    border-style: var(--sticker-border-style);
-    outline: var(--secundary-color) var(--sticker-outline-style) var(--sticker-outline-width);
+    border: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
+    outline: var(--sticker-outline-width) var(--sticker-outline-style) var(--main-color);
 }
 
 @keyframes scroll-text {
@@ -131,11 +134,11 @@ button, a {
     transition: all 0.5s var(--transition-style);
 }
 
-main button:hover,
-#loginContainer button:hover {
-    background-color: var(--secundary-color);
-    color: var(--main-color);
-    border-color: var(--main-color);
+button:hover {
+    background-color: var(--secundary-color) !important;
+    color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    outline: var(--sticker-outline-width) var(--sticker-outline-style) var(--secundary-color) !important;
 }
 
 /* ScrollBar */

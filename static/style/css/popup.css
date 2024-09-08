@@ -45,7 +45,7 @@
     padding: 0.7rem;
     
     box-shadow: var(--shadow-box) transparent;
-    border: var(--button-border-width) solid transparent;
+    border: var(--button-border-width) var(--sticker-border-style) transparent;
 
     transition: all 0.3s var(--transition-style);
 }
@@ -55,7 +55,7 @@
     box-shadow: var(--shadow-box) var(--shadow-box-color);
     border-color: var(--secundary-color);
     border-style: var(--sticker-border-style);
-    outline-color: var(--secundary-color);
+    outline-color: var(--main-color);
 }
 
 /* Rolling text */
@@ -66,10 +66,6 @@
     background-color: var(--main-color);
     color: transparent;
     font-size: var(--rolling-text-font-size);
-
-    box-shadow: var(--shadow-box) var(--shadow-box-color);
-    border-top: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
-    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
 }
 
 .rolling-text-top {

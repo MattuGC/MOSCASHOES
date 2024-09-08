@@ -133,9 +133,9 @@
 
 .swing:focus,
 .swing:active {
-    color: #377D6A;
+    color: var(--main-color);
     text-indent: 0;
-    background: #fff;
+    background: var(--secundary-color);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
@@ -232,7 +232,7 @@ background-color: transparent;
     display: none;
     width: 0.6vw; /* Ajusta el tamaño del tilde */
     height: 1.3vh; /* Ajusta el tamaño del tilde */
-    border: solid var(--secundary-color); /* Asegúrate de que el color sea visible */
+    border: var(--sticker-outline-style) var(--secundary-color); /* Asegúrate de que el color sea visible */
     border-width: 0 2px 2px 0; /* Ajusta los bordes para formar un tilde */
     left: 5px; /* Ajusta la posición del tilde */
     top: 2px; /* Ajusta la posición del tilde */
@@ -294,7 +294,7 @@ background-color: transparent;
 }
 
 path[data-check="true"] {
-    color: var(--secondary-color); /* Color cuando data-check es true */
+    color: var(--secundary-color); /* Color cuando data-check es true */
 }
 
 path[data-check="false"] {

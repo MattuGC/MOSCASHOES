@@ -30,9 +30,15 @@ button {
     user-select: none;
 }
 
-button:hover {
-    border-top: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
-    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--secundary-color);
+#menu button:hover {
+    border-top: var(--button-border-width) var(--sticker-border-style) var(--main-color) !important;
+    border-bottom: var(--button-border-width) var(--sticker-border-style) var(--main-color) !important;
+    outline: var(--sticker-outline-width) var(--sticker-outline-style) var(--secundary-color) !important;
+}
+
+.menu-ico-no-hover:hover {
+    background-color: var(--main-color) !important;
+    outline: 0 var(--sticker-outline-style) var(--main-color) !important;
 }
 
 #cart-button:hover,
@@ -117,7 +123,7 @@ button:hover {
 
 #left-menu,
 #right-menu {
-    height: var(--menu-height);
+    height: auto;
 }
 
 #right-menu {
@@ -322,6 +328,6 @@ button:hover {
     clip-path: none;
     -webkit-mask: none;
     border: none;
-    outline: 0.3vh solid var(--c);
+    outline: 0.3vh var(--sticker-outline-style) var(--c);
     outline-offset: 0.6vh;
   }

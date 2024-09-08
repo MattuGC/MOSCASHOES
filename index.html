@@ -27,7 +27,7 @@
 <body>
     <div id="welcome-popup" class="popup">
         <div class="popup-content">
-            <div class="rolling-bg rolling-text-top">A</div>
+            <div class="rolling-bg sewn-button rolling-text-top">A</div>
             <div class="rolling-text" id="top-rolling-text">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
             
             <img src="static/img/mosca/cropped-mosca-iso-blanca-1-1.png" class="logo top-image rotateimg360" alt="Top Image">
@@ -43,7 +43,7 @@
             
             <img src="static/img/mosca/cropped-mosca-iso-blanca-1-1.png" class="logo bottom-image rotateimg180" alt="Bottom Image">
             
-            <div class="rolling-bg rolling-text-bottom">A</div>
+            <div class="rolling-bg sewn-button rolling-text-bottom">A</div>
             <div class="rolling-text" id="bottom-rolling-text">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
         </div>
     </div>
@@ -93,7 +93,7 @@
                 <a id="home-button" onclick="goTo('home')">MOSCA</a>
             </div>
             <div id="rolling-box">
-                <div class="rolling rolling-bg">A</div>
+                <div class="rolling rolling-bg sewn-button">A</div>
                 <div class="rolling rolling-text" id="banner-top-rolling-text" data-lang-key="rollingText">MOSCA PRODUCTION IS MANAGED THROUGH THE PRE-SALE SYSTEM / ITEMS WILL BE MANUFACTURED AFTER THE PURCHASE IS MADE</div>
             </div>
         </div>
@@ -308,7 +308,7 @@
                 <button class="category sewn-button flats" onclick="selectCategory('shoes', 'flats')">Flats</button>
                 <button class="category sewn-button boots" onclick="selectCategory('shoes', 'boots')">Boots</button>
             </div>
-            <button class="change-category sewn-button" onclick="showCategories('shoes')">Change Category</button>
+            <button class="change-category sewn-button" onclick="showCategories('shoes')" data-lang-key="change-category">Change Category</button>
             <div id="product-list"></div>
             <div id="products" class="products-sections">
                 <div class="product" data-show="1" data-category="shoes">
@@ -470,8 +470,8 @@
             <div class="container">
                 <div class="pics">
                     <div class="main-pic">
-                        <img class="sewn-button" src="/static/img/products/ankle_boots_bold.jpg" data-show="1" alt="Ankle Boots Bold" title="Ankle Boots Bold" />
-                        <video class="sewn-button" data-show="0" autoplay loop muted>
+                        <img class="sewn-button invert-colors" src="/static/img/products/ankle_boots_bold.jpg" data-show="1" alt="Ankle Boots Bold" title="Ankle Boots Bold" />
+                        <video class="sewn-button invert-colors" data-show="0" autoplay loop muted>
                             <source src="/static/img/products/video.mp4" type="video/mp4"/>
                         </video>
                     </div>
@@ -482,7 +482,7 @@
                             </div>
                             <div class="product-element">
                                 <!-- <img  alt="Ankle Boots Bold" title="Clogs Casual"/> -->
-                                <video onclick="setMainPic('1','/static/img/products/video.mp4')" class="sewn-button" autoplay loop muted>
+                                <video onclick="setMainPic('1','/static/img/products/video.mp4')" class="figure-hover sewn-button" autoplay loop muted>
                                     <source src="/static/img/products/video.mp4" type="video/mp4"/>
                                 </video>
                             </div>
@@ -516,10 +516,10 @@
                     <button id="time-and-take-back" class="time-and-take-back" onclick="tabSelection('1', 'time-and-take-back-data')" data-lang-key="time-and-take-back">Time and Take Back</button>
                 </div>
                 <div class="info sewn-button invert-colors">
-                    <div id="description-data" class="active-tab">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                    <div id="sizes-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                    <div id="materials-and-take-care-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                    <div id="time-and-take-back-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div class="description-data active-tab">Description 1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div class="sizes-data">Sizes 1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div class="materials-and-take-care-data">Materials and Take Care 1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div class="time-and-take-back-data">Time and Take Back 1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
                 </div>
                 <div class="related-products sewn-button invert-colors">
                     <div class="related-products-list">
@@ -554,9 +554,9 @@
             </div>
             <div class="container">
                 <div class="pics">
-                    <div class="main-pic">
-                        <img class="sewn-button" src="/static/img/products/boots_elegance.jpg" data-show="1" alt="Boots Elegance" title="Boots Elegance" />
-                        <video class="sewn-button" data-show="0" autoplay loop muted>
+                    <div class="main-pic ">
+                        <img class="sewn-button invert-colors" src="/static/img/products/boots_elegance.jpg" data-show="1" alt="Boots Elegance" title="Boots Elegance" />
+                        <video class="sewn-button invert-colors" data-show="0" autoplay loop muted>
                             <source src="/static/img/products/video.mp4" type="video/mp4"/>
                         </video>
                     </div>
@@ -595,16 +595,16 @@
                     </select>
                 </div>
                 <div class="tabs">
-                    <button id="description" class="description button-selected" onclick="tabSelection('2', 'description-data')" data-lang-key="description">Description</button>
-                    <button id="sizes" class="sizes" onclick="tabSelection('2', 'sizes-data')" data-lang-key="sizes">Sizes</button>
-                    <button id="materials-and-take-care" class="materials-and-take-care" onclick="tabSelection('2', 'materials-and-take-care-data')" data-lang-key="materials-and-take-care">Materials and Take Care</button>
-                    <button id="time-and-take-back" class="time-and-take-back" onclick="tabSelection('2', 'time-and-take-back-data')" data-lang-key="time-and-take-back">Time and Take Back</button>
+                    <button class="description button-selected" onclick="tabSelection('2', 'description-data')" data-lang-key="description">Description</button>
+                    <button class="sizes" onclick="tabSelection('2', 'sizes-data')" data-lang-key="sizes">Sizes</button>
+                    <button class="materials-and-take-care" onclick="tabSelection('2', 'materials-and-take-care-data')" data-lang-key="materials-and-take-care">Materials and Take Care</button>
+                    <button class="time-and-take-back" onclick="tabSelection('2', 'time-and-take-back-data')" data-lang-key="time-and-take-back">Time and Take Back</button>
                 </div>
                 <div class="info sewn-button invert-colors">
-                    <div id="description-data" class="active-tab">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                    <div id="sizes-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                    <div id="materials-and-take-care-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
-                    <div id="time-and-take-back-data">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div class="description-data active-tab">Description 2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div class="sizes-data">Sizes 2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div class="materials-and-take-care-data">Materials and Take Care 2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div class="time-and-take-back-data">Time and Take Back 2. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
                 </div>
                 <div class="related-products sewn-button invert-colors">
                     <div class="related-products-list">
